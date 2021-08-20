@@ -27,7 +27,7 @@ import { Project } from "../model/project";
           <desn-project-card [project]="project4"></desn-project-card>
         </div>
       </div>
-      <a href="#" class="button is-primary mt-3">
+      <a [routerLink]="['codingame']" class="button is-primary mt-3">
         <span>Voir plus de puzzles</span>
       </a>
     </section>

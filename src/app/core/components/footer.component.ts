@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Link } from '../model/link';
+import { Link } from '../../home/model/link';
 
 @Component({
   selector: 'desn-footer',
