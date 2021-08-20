@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Skill {
-  name: string;
-  level: number;
-}
+import { Skill } from '../model/skill';
 
 @Component({
   selector: 'desn-skills',

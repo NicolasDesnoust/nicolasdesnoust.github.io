@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Skill } from './skills.component';
+import { Skill } from "../model/skill";
 
 @Component({
   selector: 'desn-skill-list',

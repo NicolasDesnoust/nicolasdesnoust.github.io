@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Link {
-  faIcon?: string;
-  customIcon?: string;
-  label: string;
-  url: string;
-}
+import { Link } from '../model/link';
 
 @Component({
   selector: 'desn-footer',

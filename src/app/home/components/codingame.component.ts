@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from './projects.component';
+import { Project } from "../model/project";
 
 @Component({
   selector: 'desn-codingame',
