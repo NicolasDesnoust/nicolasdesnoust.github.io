@@ -1,0 +1,7 @@
+@import "bulma/sass/utilities/mixins.sass";
+
+.modal .card {
+  @include mobile {
+    border-radius: 0;
+  }
+}

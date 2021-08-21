@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Prototype d'une plateforme IoT",
+    "subtitle": "Dassault Aviation",
+    "content": "",
+    "image": {
+      "folder": "dassault-aviation",
+      "widths": [200, 593, 888, 1116, 1370, 1400]
+    },
+    "slidesUrl": "https://docs.google.com/presentation/d/1sY2yfRRpKNHQpLEjeZqc0j6lynSN4_o8/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true"
+  },
+  {
+    "title": "Atelier des métiers",
+    "subtitle": "Aix-Marseille Université",
+    "content": "",
+    "image": {
+      "folder": "adm",
+      "widths": [200, 634, 954, 1222, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+  },
+  {
+    "title": "XYZ Ingéniérie",
+    "subtitle": "Projet personnel",
+    "content": "",
+    "image": {
+      "folder": "xyz-ingenierie",
+      "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+  },
+  {
+    "title": "Marble Wars",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "image": {
+      "folder": "marble-wars",
+      "widths": [200, 449, 621, 821, 968, 1140, 1318, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  }
+]

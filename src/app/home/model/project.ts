@@ -1,11 +1,11 @@
+import { Image } from "./image";
+
 export interface Project {
   title: string;
   subtitle: string;
-  imageUrl: string;
+  image?: Image;
   content: string;
-  difficultyColor?: string;
-  previewUrl?: string;
+
   slidesUrl?: string;
-  subjectUrl?: string;
   sourceCodeUrl?: string;
 }

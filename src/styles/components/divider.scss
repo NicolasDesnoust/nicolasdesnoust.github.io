@@ -1,0 +1,7 @@
+.divider {
+  color: #64649b8f;
+  &::before,
+  &::after {
+    background-color: #64649b29;
+  }
+}

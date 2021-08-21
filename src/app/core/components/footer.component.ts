@@ -4,7 +4,7 @@ import { Link } from '../../home/model/link';
 @Component({
   selector: 'desn-footer',
   template: `
-    <footer id="footer" class="footer has-background-primary has-text-white">
+    <footer id="footer" class="footer has-background-primary">
       <div class="content has-text-centered">
         <div class="mb-6 buttons is-justify-content-center">
           <a
@@ -28,7 +28,7 @@ import { Link } from '../../home/model/link';
             </span>
           </a>
         </div>
-        <p>
+        <p class="has-text-white">
           Fait à la main avec
           <a
             target="_blank"

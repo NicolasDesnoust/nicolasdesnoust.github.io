@@ -1,0 +1,67 @@
+<div class="card custom-card">
+  <header class="card-header">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{ puzzle?.title }}</p>
+        <p class="subtitle is-7">
+          <i
+            *ngIf="puzzle?.difficultyColor"
+            class="fas fa-circle"
+            style="color: {{ puzzle?.difficultyColor }}"
+          ></i>
+          {{ puzzle?.subtitle }}
+        </p>
+      </div>
+    </div>
+  </header>
+  <div class="card-content">
+    <div class="card-image">
+      <figure class="image is-16by9 is-full">
+        <img
+          sizes="(max-width: 1400px) 100vw, 1400px"
+          [srcset]="puzzle?.image | srcset"
+          src="assets/images/{{ puzzle?.image?.folder }}/{{
+            puzzle?.image?.folder
+          }}_w_1400.jpg"
+          alt=""
+        />
+      </figure>
+    </div>
+  </div>
+
+  <footer class="card-footer">
+    <a class="card-footer-item" (click)="showPuzzleDetails()"> Voir plus </a>
+  </footer>
+</div>
+
+<div class="modal" [ngClass]="{ 'is-active': shouldShowPuzzleDetails }">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="card">
+      <div class="card-content">
+        <p class="title">
+          {{ puzzle?.title }}
+        </p>
+        <p class="subtitle">{{ puzzle?.subtitle }}</p>
+        <div [innerHtml]="puzzle?.content"></div>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          <span>
+            Voir le <a [href]="puzzle?.subjectUrl">sujet complet</a>
+          </span>
+        </p>
+        <p class="card-footer-item">
+          <span>
+            Voir le <a [href]="puzzle?.sourceCodeUrl">code source</a>
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="hidePuzzleDetails()"
+  ></button>
+</div>
