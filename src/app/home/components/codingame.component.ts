@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PuzzleService } from 'src/app/core/services/puzzle.service';
-import { Project } from "../model/project";
+import { Project } from '../model/project';
 import { Puzzle } from '../model/puzzle';
 
 @Component({
@@ -16,8 +16,20 @@ import { Puzzle } from '../model/puzzle';
         des puzzles de difficulté croissante ou de s'affronter dans des duels
         d'intelligences artificielles.
       </h2>
-      <div class="columns" *ngIf="featuredPuzzles$ | async as featuredPuzzles">
-        <div class="column" *ngFor="let featuredPuzzle of featuredPuzzles">
+
+      <div
+        class="columns is-multiline is-centered"
+        *ngIf="featuredPuzzles$ | async as featuredPuzzles"
+      >
+        <div
+          class="column
+          is-full-mobile
+        is-half-tablet
+        is-half-desktop
+        is-one-third-widescreen
+        is-one-quarter-fullhd"
+          *ngFor="let featuredPuzzle of featuredPuzzles"
+        >
           <desn-puzzle-card [puzzle]="featuredPuzzle"></desn-puzzle-card>
         </div>
       </div>

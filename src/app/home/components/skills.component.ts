@@ -94,14 +94,7 @@ import { Skill } from '../model/skill';
       </div>
     </section>
   `,
-  styles: [
-    `
-      section.skills {
-        margin-top: -14rem;
-        margin-bottom: -14rem;
-      }
-    `,
-  ],
+  styles: [``],
 })
 export class SkillsComponent implements OnInit {
   languages: Skill[] = [

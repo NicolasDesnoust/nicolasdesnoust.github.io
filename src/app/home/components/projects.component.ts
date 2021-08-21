@@ -12,12 +12,22 @@ import { Project } from '../model/project';
         A simple container to divide your page into <strong>sections</strong>,
         like the one you're currently reading.
       </h2>
-      <div class="columns" *ngIf="featuredProjects$ | async as featuredProjects">
-        <div class="column" *ngFor="let featuredProject of featuredProjects">
+      <div
+        class="columns is-multiline is-centered"
+        *ngIf="featuredProjects$ | async as featuredProjects"
+      >
+        <div
+          class="column
+                 is-full-mobile
+                 is-half-tablet
+                 is-half-desktop
+                 is-one-third-widescreen
+                 is-one-quarter-fullhd"
+          *ngFor="let featuredProject of featuredProjects">
           <desn-project-card [project]="featuredProject"></desn-project-card>
         </div>
       </div>
-      <a href="#" class="button is-primary mt-3">
+      <a [routerLink]="['projects']" class="button is-primary mt-3">
         <span>Voir plus de projets</span>
       </a>
     </section>

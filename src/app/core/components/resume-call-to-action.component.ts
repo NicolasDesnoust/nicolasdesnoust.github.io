@@ -50,6 +50,9 @@ import { saveAs } from 'file-saver';
       section.resume .box {
         margin-top: -6.5rem;
       }
+      section.resume {
+        margin-top: 4.5rem;
+      }
     `,
   ],
 })
