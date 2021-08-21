@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PuzzleService } from 'src/app/core/services/puzzle.service';
-import { Project } from '../model/project';
-import { Puzzle } from '../model/puzzle';
+import { Project } from '../../core/model/project';
+import { Puzzle } from '../../core/model/puzzle';
 
 @Component({
   selector: 'desn-codingame',
@@ -33,7 +33,7 @@ import { Puzzle } from '../model/puzzle';
           <desn-puzzle-card [puzzle]="featuredPuzzle"></desn-puzzle-card>
         </div>
       </div>
-      <a [routerLink]="['codingame']" class="button is-primary mt-3">
+      <a [routerLink]="['/codingame']" class="button is-primary mt-3">
         <span>Voir plus de puzzles</span>
       </a>
     </section>

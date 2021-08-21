@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Image } from "src/app/home/model/image";
+import { Image } from "src/app/core/model/image";
 
 @Pipe({
   name: 'srcset',

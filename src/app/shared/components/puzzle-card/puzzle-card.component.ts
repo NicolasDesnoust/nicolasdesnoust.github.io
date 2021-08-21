@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Puzzle } from 'src/app/home/model/puzzle';
+import { Puzzle } from 'src/app/core/model/puzzle';
 
 @Component({
   selector: 'desn-puzzle-card',

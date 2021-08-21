@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Project } from '../../../home/model/project';
+import { Project } from '../../../core/model/project';
 
 @Component({
   selector: 'desn-project-card',

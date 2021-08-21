@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProjectService } from 'src/app/core/services/projects.service';
-import { Project } from '../model/project';
+import { Project } from '../../core/model/project';
 
 @Component({
   selector: 'desn-projects',
@@ -27,7 +27,7 @@ import { Project } from '../model/project';
           <desn-project-card [project]="featuredProject"></desn-project-card>
         </div>
       </div>
-      <a [routerLink]="['projects']" class="button is-primary mt-3">
+      <a [routerLink]="['/projects']" class="button is-primary mt-3">
         <span>Voir plus de projets</span>
       </a>
     </section>

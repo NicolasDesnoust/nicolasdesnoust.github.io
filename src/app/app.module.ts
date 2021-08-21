@@ -11,16 +11,7 @@ import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    CoreModule,
-    HomeModule,
-    CodingameModule,
-    ProjectsModule
-  ],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CoreModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
