@@ -10,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
         <a
           role="button"
           class="navbar-burger"
+          [ngClass]="{ 'is-active': showNavbarMenu }"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          (click)="toggleNavbarMenu()"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -20,10 +22,15 @@ import { Component, OnInit } from '@angular/core';
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start"></div>
+      <div
+        id="navbarBasicExample"
+        class="navbar-menu"
+        [ngClass]="{ 'is-active': showNavbarMenu }"
+      >
         <div class="navbar-end">
-          <a class="navbar-item"> Compétences </a>
+          <a [routerLink]="['/']" fragment="skills" class="navbar-item">
+            Compétences
+          </a>
           <a [routerLink]="['/']" fragment="projets" class="navbar-item">
             Projets
           </a>
@@ -43,7 +50,13 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class NavbarComponent implements OnInit {
+  showNavbarMenu: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleNavbarMenu() {
+    this.showNavbarMenu = !this.showNavbarMenu;
+  }
 }

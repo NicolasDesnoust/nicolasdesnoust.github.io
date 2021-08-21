@@ -4,7 +4,20 @@ import { Skill } from '../model/skill';
 @Component({
   selector: 'desn-skills',
   template: `
-    <section class="section skills is-medium has-text-centered">
+    <section
+      id="skills"
+      class="section skills is-medium has-text-centered has-background-primary"
+    >
+      <h1 class="title is-spaced has-text-white">
+        Bonjour, je m'appelle Nicolas. Ravi de vous rencontrer !
+      </h1>
+      <h2 class="subtitle has-text-white">
+        Voici un aperçu des compétences que j'ai pu aquérir. Une note proche de
+        0 signifie que je viens récemment de découvrir cette technologie. Une
+        note proche de 5 n'indique pas que je connais tout à propos de cette
+        technologie, mais plutôt que je suis confient dans mes capacités à
+        l'utiliser avec succès dans un projet d'entreprise.
+      </h2>
       <div class="container is-narrow">
         <div class="tile is-ancestor">
           <div class="tile is-6 is-vertical is-parent">
