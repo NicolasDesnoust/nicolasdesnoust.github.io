@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProjectService } from 'src/app/core/services/projects.service';
 import { Project } from 'src/app/core/model/project';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'desn-projects-page',
@@ -19,9 +21,9 @@ import { Project } from 'src/app/core/model/project';
 export class ProjectsPageComponent implements OnInit {
   projects$: Observable<Project[]> | undefined;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.projects$ = this.projectService.getProjects();
+    this.projects$ = this.route.data.pipe(map((data) => data.projects || []));
   }
 }

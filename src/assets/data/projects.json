@@ -23,6 +23,10 @@
     "title": "XYZ Ingéniérie",
     "subtitle": "Projet personnel",
     "content": "",
+    "image": {
+      "folder": "xyz-ingenierie",
+      "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
+    },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
   },
   {
