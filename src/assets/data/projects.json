@@ -23,10 +23,6 @@
     "title": "XYZ Ingéniérie",
     "subtitle": "Projet personnel",
     "content": "",
-    "image": {
-      "folder": "xyz-ingenierie",
-      "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
-    },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
   },
   {
@@ -37,6 +33,66 @@
       "folder": "marble-wars",
       "widths": [200, 449, 621, 821, 968, 1140, 1318, 1400]
     },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Réservation d'activités aquatiques",
+    "subtitle": "Projet bénévole",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "NP-Complet",
+    "subtitle": "Projets encadrés",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Géolocalisation",
+    "subtitle": "",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Traduction",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Géométrie avancée",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Desnote Book",
+    "subtitle": "Projet personnel",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Ascenseur",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Gestion de curriculum vitae",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Annuaire de personnes",
+    "subtitle": "Projet encadré",
+    "content": "",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Pendu socket",
+    "subtitle": "Projet encadré",
+    "content": "",
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   }
 ]

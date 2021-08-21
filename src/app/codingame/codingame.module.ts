@@ -8,6 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [CodingamePageComponent],
-  imports: [CodingameRoutingModule, HomeModule, SharedModule],
+  imports: [CodingameRoutingModule, SharedModule],
 })
 export class CodingameModule {}

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { CodingameModule } from './codingame/codingame.module';
+import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { CodingameModule } from './codingame/codingame.module';
     HttpClientModule,
     CoreModule,
     HomeModule,
-    CodingameModule
+    CodingameModule,
+    ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

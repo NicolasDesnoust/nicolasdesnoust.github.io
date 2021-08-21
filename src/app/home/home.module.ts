@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { AboutMeComponent } from './components/about-me.component';
 import { CodingameComponent } from './components/codingame.component';
 import { HeroComponent } from './components/hero.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -18,7 +16,6 @@ import { SharedModule } from '../shared/shared.module';
     HomePageComponent,
     HeroComponent,
     SkillsComponent,
-    AboutMeComponent,
     ProjectsComponent,
     SkillLevelIndicatorComponent,
     CodingameComponent,
