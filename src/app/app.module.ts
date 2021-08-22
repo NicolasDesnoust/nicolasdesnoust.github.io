@@ -4,14 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
-import { CodingameModule } from './codingame/codingame.module';
-import { ProjectsModule } from './projects/projects.module';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CoreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CoreModule,
+    ScullyLibModule.forRoot({ alwaysMonitor: true }),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

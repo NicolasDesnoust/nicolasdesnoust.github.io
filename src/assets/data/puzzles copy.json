@@ -1,0 +1,199 @@
+[
+  {
+    "title": "Mars Lander 3",
+    "subtitle": "Algorithme génétique",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est de faire atterrir,
+      sans crash, une capsule sur Mars. Le joueur peut
+      agir sur l'angle de rotation de la capsule et la
+      puissance de ses fusées.
+      La solution implémentée se base sur un algorithme génétique
+      qui génère un ensemble de trajectoires aléatoires et les raffine
+      au fur et à mesure jusqu'à en trouver une optimale.
+    </p>
+    <span>
+      2021
+    </span>
+  ",
+    "difficultyColor": "#ea5974",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=4769182761873&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/expert/mars-lander-episode-3",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  },
+  {
+    "title": "Winamax Sponsored Challenge",
+    "subtitle": "Back-tracking",
+    "content": "
+    <p>
+      L'objectif de ce challenge est d'écrire un programme capable de
+      simuler les coups à effectuer sur un parcours de golf afin d'économiser
+      au mieux le temps et l'effort à dépenser pendant la partie.
+      La solution implémentée se base sur un algorithme de Back-tracking
+      qui parcours l'espace des solutions candidates de manière optimisée.
+    </p>
+    <span>
+      Décembre 2019 - Avril 2020
+    </span>
+  ",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=9395401373638&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/hard/winamax-sponsored-contest",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+  },
+  {
+    "title": "Le labyrinthe",
+    "subtitle": "Parcours de graphes",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est de déplacer un personnage dans un labyrinthe en 2D
+      jusqu'à une case donnée et de le faire revenir à son point de départ
+      en ayant un nombre de mouvement limités. La carte est également masquée, seules les
+      cases autour du personnage sont visibles. La solution implémentée est une variante
+      du parcours en largeur de graphes.
+    </p>
+    <span>
+      <i class="fas fa-tools"></i>
+    </span>
+    En développement
+",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=4769048694870&format=puzzle_cover",
+    "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
+    "sourceCodeUrl":
+      "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+  },
+  {
+    "title": "Power of Thor 2",
+    "subtitle": "Barycentres",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est d'anéantir des géants sur une carte en 2D
+      en controlant un personnage qui peut envoyer des eclairs autour de lui.
+      Le nombre d'éclairs étant limité, la solution implémentée cherche à se rendre
+      au barycentre des géants et à n'envoyer des éclairs que lorsque le personnage
+      se retrouve pris au piège par les géants.
+    </p>
+    <span>
+      2021
+    </span>
+",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=4769032632549&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/hard/power-of-thor-episode-2",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Bender - Episode 1",
+    "subtitle": "Automates",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est de faire atterrir,
+      sans crash, une capsule sur Mars. Le joueur peut
+      agir sur l'angle de rotation de la capsule et la
+      puissance de ses fusées.
+      La solution implémentée se base sur un algorithme génétique
+      qui génère un ensemble de trajectoires aléatoires et les raffine
+      au fur et à mesure jusqu'à en trouver une optimale.
+    </p>
+    <span>
+      2021
+    </span>
+  ",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=5691325885043&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/medium/bender-episode-1",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  },
+  {
+    "title": "Shadows of the Knight - Episode 1",
+    "subtitle": "Recherche dichotomique",
+    "content": "
+    <p>
+      L'objectif de ce challenge est d'écrire un programme capable de
+      simuler les coups à effectuer sur un parcours de golf afin d'économiser
+      au mieux le temps et l'effort à dépenser pendant la partie.
+      La solution implémentée se base sur un algorithme de Back-tracking
+      qui parcours l'espace des solutions candidates de manière optimisée.
+    </p>
+    <span>
+      Décembre 2019 - Avril 2020
+    </span>
+  ",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=5691367634830&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/hard/winamax-sponsored-contest",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+  },
+  {
+    "title": "La Bataille",
+    "subtitle": "Files",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est de déplacer un personnage dans un labyrinthe en 2D
+      jusqu'à une case donnée et de le faire revenir à son point de départ
+      en ayant un nombre de mouvement limités. La carte est également masquée, seules les
+      cases autour du personnage sont visibles. La solution implémentée est une variante
+      du parcours en largeur de graphes.
+    </p>
+    <span>
+      <i class="fas fa-tools"></i>
+    </span>
+    En développement
+",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=4769256833559&format=puzzle_cover",
+    "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
+    "sourceCodeUrl":
+      "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+  },
+  {
+    "title": "There is no Spoon - Episode 1",
+    "subtitle": "Matrices",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est d'anéantir des géants sur une carte en 2D
+      en controlant un personnage qui peut envoyer des eclairs autour de lui.
+      Le nombre d'éclairs étant limité, la solution implémentée cherche à se rendre
+      au barycentre des géants et à n'envoyer des éclairs que lorsque le personnage
+      se retrouve pris au piège par les géants.
+    </p>
+    <span>
+      2021
+    </span>
+",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=5691386166434&format=puzzle_cover",
+    "subjectUrl":
+      "https://www.codingame.com/training/hard/power-of-thor-episode-2",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Byte pair encoding",
+    "subtitle": "Encodage",
+    "content": "
+    <p>
+      L'objectif de ce puzzle est de faire atterrir,
+      sans crash, une capsule sur Mars. Le joueur peut
+      agir sur l'angle de rotation de la capsule et la
+      puissance de ses fusées.
+      La solution implémentée se base sur un algorithme génétique
+      qui génère un ensemble de trajectoires aléatoires et les raffine
+      au fur et à mesure jusqu'à en trouver une optimale.
+    </p>
+    <span>
+      2021
+    </span>
+  ",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "imageUrl": "assets/da.png",
+    "subjectUrl":
+      "https://www.codingame.com/training/expert/mars-lander-episode-3",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  }
+]
