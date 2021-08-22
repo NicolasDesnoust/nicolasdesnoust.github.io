@@ -12,7 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
         alt="Placeholder image"
       />
       <p class="title is-size-4 is-spaced">{{ title }}</p>
-      <p>{{ description }}</p>
+      <!-- <p>{{ description }}</p> -->
       <div class="mb-4">
         <ng-content></ng-content>
         <!-- <desn-skill-list title="SQL :" [skills]="sqlSkills"></desn-skill-list>
@@ -23,7 +23,14 @@ import { Component, Input, OnInit } from '@angular/core';
       </div>
     </div>
   `,
-  styles: [],
+  styles: [
+    `
+      :host {
+        display: flex;
+        height: 100%;
+      }
+    `,
+  ],
 })
 export class SkillBoxComponent implements OnInit {
   @Input() imageUrl: string = '';
