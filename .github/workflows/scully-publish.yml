@@ -17,6 +17,6 @@ jobs:
       - uses: cmgriffing/scully-gh-pages-action@v9
         name: Build & Publish app on Github Pages branch
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-branch: main
           build-args: --prod
