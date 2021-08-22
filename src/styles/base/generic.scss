@@ -1,0 +1,16 @@
+$text-strong: inherit;
+$body-background-color: rgba(240, 248, 255, 0.521);
+
+html {
+  overflow-y: auto !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenu {
+  flex-grow: 1;
+}

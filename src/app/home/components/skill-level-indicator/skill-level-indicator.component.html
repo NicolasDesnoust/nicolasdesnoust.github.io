@@ -1,0 +1,14 @@
+<div [attr.data-tooltip]="tooltipText">
+  <span
+    *ngFor="let item of [].constructor(value); let i = index"
+    class="icon {{ class }}"
+  >
+    <i class="fas fa-dot-circle"></i>
+  </span>
+  <span
+    *ngFor="let item of [].constructor(5 - value); let i = index"
+    class="icon {{ class }}"
+  >
+    <i class="far fa-circle"></i>
+  </span>
+</div>

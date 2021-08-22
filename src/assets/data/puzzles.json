@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Mars Lander 3",
+    "subtitle": "Algorithme génétique",
+    "content": "",
+    "difficultyColor": "#ea5974",
+    "image": {
+      "folder": "marslander3",
+      "widths": [200, 723, 1011, 1259, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  },
+  {
+    "title": "Winamax Sponsored Challenge",
+    "subtitle": "Back-tracking",
+    "content": "",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "image": {
+      "folder": "winamax",
+      "widths": [200, 451, 633, 836, 989, 1205, 1400]
+    },
+    "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=9395401373638&format=puzzle_cover",
+    "subjectUrl": "https://www.codingame.com/training/hard/winamax-sponsored-contest",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+  },
+  {
+    "title": "Le labyrinthe",
+    "subtitle": "Parcours de graphes",
+    "content": "",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "image": {
+      "folder": "labyrinthe",
+      "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+  },
+  {
+    "title": "Power of Thor 2",
+    "subtitle": "Barycentres",
+    "content": "",
+    "difficultyColor": "rgb(234, 143, 89)",
+    "image": {
+      "folder": "powerofthor2",
+      "widths": [200, 632, 908, 1150, 1351, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/hard/power-of-thor-episode-2",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Bender - Episode 1",
+    "subtitle": "Automates",
+    "content": "",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "image": {
+      "folder": "bender1",
+      "widths": [200, 556, 800, 1045, 1219, 1368, 1388, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/medium/bender-episode-1",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  },
+  {
+    "title": "Shadows of the Knight - Episode 1",
+    "subtitle": "Recherche dichotomique",
+    "content": "",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "image": {
+      "folder": "shadowsoftheknight1",
+      "widths": [200, 693, 922, 1073, 1229, 1392, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/hard/winamax-sponsored-contest",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+  },
+  {
+    "title": "La Bataille",
+    "subtitle": "Files",
+    "content": "",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "image": {
+      "folder": "labataille",
+      "widths": [200, 597, 840, 1082, 1265, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+  },
+  {
+    "title": "There is no Spoon - Episode 1",
+    "subtitle": "Matrices",
+    "content": "",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "image": {
+      "folder": "thereisnospoon1",
+      "widths": [200, 588, 851, 1027, 1202, 1359, 1384, 1400]
+    },
+    "subjectUrl": "https://www.codingame.com/training/hard/power-of-thor-episode-2",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+  },
+  {
+    "title": "Byte pair encoding",
+    "subtitle": "Encodage",
+    "content": "",
+    "difficultyColor": "rgb(234, 218, 89)",
+    "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+  }
+]

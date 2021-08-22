@@ -1,0 +1,28 @@
+<section class="section is-medium has-text-centered">
+  <h1 class="title is-spaced">Projets</h1>
+  <h2 class="subtitle">
+    La plateforme <a>Codingame</a> permet aux recruteurs d'évaluer les candidats
+    à des postes de développeur. Mais pas que ! Elle permet également aux
+    développeurs du monde entier de s'entrainer en résolvant des puzzles de
+    difficulté croissante ou de s'affronter dans des duels d'intelligences
+    artificielles.
+  </h2>
+  <div
+    class="columns is-multiline is-centered"
+    *ngIf="projects$ | async as projects"
+  >
+    <div
+      class="
+        column
+        is-full-mobile
+        is-half-tablet
+        is-half-desktop
+        is-one-third-widescreen
+        is-one-quarter-fullhd
+      "
+      *ngFor="let project of projects"
+    >
+      <desn-project-card [project]="project"></desn-project-card>
+    </div>
+  </div>
+</section>

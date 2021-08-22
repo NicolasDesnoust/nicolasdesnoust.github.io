@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+// 1. Import the initial variables
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
+@import "utilities/initial-variables";
+
+// 5. Add new color variables to the color map.
+@import "../../node_modules/bulma/sass/utilities/derived-variables";
+$addColors: ();
+$colors: map-merge($colors, $addColors);
+
+@import "utilities/all";
+@import "base/all";
+@import "components/all";
+@import "helpers/all";
+@import "vendors/all";

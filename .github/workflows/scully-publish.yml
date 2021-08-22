@@ -1,0 +1,22 @@
+name: Scully Publish
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Disable Jekyll
+        run: mkdir -p ./dist/static/ && touch ./dist/static/.nojekyll
+
+      - uses: cmgriffing/scully-gh-pages-action@v9
+        name: Build & Publish app on Github Pages branch
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: main
+          build-args: --prod
