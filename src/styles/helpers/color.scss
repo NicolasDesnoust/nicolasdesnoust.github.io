@@ -1,9 +1,11 @@
 .has-background-primary {
-  a:not(.button) {
-    color: #8ec8fb;
+  .has-text-white {
+    a:not(.button) {
+      color: #8ec8fb;
 
-    &:hover {
-      color: #ecf5fd;
+      &:hover {
+        color: #ecf5fd;
+      }
     }
   }
 }

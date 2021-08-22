@@ -17,3 +17,5 @@
 .icon {
   width: 1.2rem;
 }
+
+.tooltip.is-tooltip-multiline::before { white-space:pre-line }
