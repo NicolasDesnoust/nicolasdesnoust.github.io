@@ -11,7 +11,7 @@ Cette application permet actuellement de rédiger des articles en markdown, de l
 <div class="is-flex is-justify-content-center">
 <figure>
   <img src="/assets/content/projects/desnote-book_2.png" 
-        alt="Aperçu de l'application" width="883" height="362">
+        alt="Aperçu de l'application" width="1144" height="841">
   <figcaption>Aperçu de l'application</figcaption>
 </figure>
 </div>
