@@ -28,18 +28,24 @@
       </section>
 
       <footer class="modal-card-foot card-footer" style="padding: 0px">
-        <p class="card-footer-item has-text-centered">
+        <p
+          *ngIf="observables.project?.slidesUrl"
+          class="card-footer-item has-text-centered"
+        >
           <span>
             Voir la&nbsp;<a [href]="observables.project?.slidesUrl">
               présentation de la soutenance
             </a>
           </span>
         </p>
-        <p class="card-footer-item has-text-centered">
+        <p
+          *ngIf="observables.project?.sourceCodeUrl"
+          class="card-footer-item has-text-centered"
+        >
           <span>
-            Voir le&nbsp;<a [href]="observables.project?.sourceCodeUrl"
-              >code source</a
-            >
+            Voir le&nbsp;<a [href]="observables.project?.sourceCodeUrl">
+              code source
+            </a>
           </span>
         </p>
       </footer>

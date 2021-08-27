@@ -43,6 +43,10 @@
     "id": "activites-aquatiques",
     "title": "Réservation d'activités aquatiques",
     "subtitle": "Projet bénévole",
+    "image": {
+      "folder": "activites-aquatiques",
+      "widths": [200, 506, 813, 1018, 1237, 1330, 1400]
+    },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
   {
