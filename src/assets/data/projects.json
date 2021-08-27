@@ -88,7 +88,11 @@
     "id": "ascenseur",
     "title": "Ascenseur",
     "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "image": {
+      "folder": "ascenseur",
+      "widths": [200, 911, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ASCENSEUR"
   },
   {
     "id": "gestion-cv",
