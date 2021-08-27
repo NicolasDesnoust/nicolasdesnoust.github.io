@@ -8,8 +8,8 @@
     artificielles.
   </h2>
   <div
-    class="columns is-multiline is-centered"
     *ngIf="projects$ | async as projects"
+    class="columns is-multiline is-centered"
   >
     <div
       class="
@@ -22,7 +22,23 @@
       "
       *ngFor="let project of projects"
     >
-      <desn-project-card [project]="project"></desn-project-card>
+      <desn-project-card
+        [project]="project"
+        (viewMoreButtonClicked)="showProjectDetails(project)"
+      ></desn-project-card>
     </div>
   </div>
 </section>
+
+<!-- <ng-container *ngIf="selectedProject$ | async as selectedProject">
+  <desn-project-detail
+    *ngIf="selectedProject"
+    [project]="selectedProject"
+    [projectContent]="projectContent$ | async"
+    (closeButtonClicked)="hideProjectDetails()"
+  ></desn-project-detail>
+</ng-container> -->
+
+<!-- <ng-container *ngIf="selectedProject$ | async as selectedProject"> -->
+  <router-outlet></router-outlet>
+<!-- </ng-container> -->

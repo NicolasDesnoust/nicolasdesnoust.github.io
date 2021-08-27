@@ -1,0 +1,15 @@
+$modal-card-head-background-color: white;
+$modal-card-spacing: 80px;
+
+.custom-modal-card-title.modal-card-title {
+  font-family: $family-secondary;
+  flex-grow: unset;
+  flex-shrink: unset;
+}
+.custom-modal-spacer {
+  flex-grow: 1;
+  width: 1rem;
+}
+.modal-card {
+  max-height: calc(100vh - #{$modal-card-spacing});
+}

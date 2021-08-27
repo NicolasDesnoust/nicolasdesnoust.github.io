@@ -25,38 +25,8 @@
   </div>
 
   <footer class="card-footer">
-    <a class="card-footer-item" (click)="showProjectDetails()"> Voir plus </a>
+    <a class="card-footer-item" (click)="viewMoreButtonClicked.emit()">
+      Voir plus
+    </a>
   </footer>
-</div>
-
-<div class="modal" [ngClass]="{ 'is-active': shouldShowProjectDetails }">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="card">
-      <div class="card-content">
-        <p class="title">
-          {{ project?.title }}
-        </p>
-        <p class="subtitle">{{ project?.subtitle }}</p>
-        <div [innerHtml]="project?.content"></div>
-      </div>
-      <footer class="card-footer">
-        <p class="card-footer-item">
-          <span>
-            Voir la <a [href]="project?.slidesUrl">présentation de la soutenance</a>
-          </span>
-        </p>
-        <p class="card-footer-item">
-          <span>
-            Voir le <a [href]="project?.sourceCodeUrl">code source</a>
-          </span>
-        </p>
-      </footer>
-    </div>
-  </div>
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    (click)="hideProjectDetails()"
-  ></button>
 </div>

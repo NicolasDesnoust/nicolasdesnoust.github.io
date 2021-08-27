@@ -7,7 +7,7 @@ import { PuzzleService } from 'src/app/core/services/puzzle.service';
 @Injectable({
   providedIn: 'root',
 })
-export class PuzzleResolver implements Resolve<Puzzle[]> {
+export class PuzzlesResolver implements Resolve<Puzzle[]> {
   constructor(private puzzleService: PuzzleService) {}
 
   resolve(): Observable<Puzzle[]> {

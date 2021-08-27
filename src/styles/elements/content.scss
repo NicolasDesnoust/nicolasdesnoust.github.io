@@ -1,0 +1,19 @@
+.custom-content.content {
+  h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    font-family: $family-secondary;
+  }
+  h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: $family-secondary;
+  }
+  figure {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  img {
+    border-radius: 6px;
+  }
+}

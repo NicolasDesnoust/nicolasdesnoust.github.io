@@ -1,0 +1,48 @@
+<ng-container
+  *ngIf="{
+    project: selectedProject$ | async
+  } as observables"
+>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="custom-modal-card-title modal-card-title">
+          {{ observables.project?.title }}
+        </p>
+        <div class="custom-modal-spacer"></div>
+        <a class="delete" aria-label="close" (click)="hideProjectDetails()"></a>
+      </header>
+
+      <section class="modal-card-body">
+        <div class="custom-content content">
+          <markdown
+            testDir
+            addCodeHeaders
+            (error)="onError()"
+            [data]="projectContent$ | async"
+          >
+          </markdown>
+          <!-- <scully-content></scully-content> -->
+        </div>
+      </section>
+
+      <footer class="modal-card-foot card-footer" style="padding: 0px">
+        <p class="card-footer-item has-text-centered">
+          <span>
+            Voir la&nbsp;<a [href]="observables.project?.slidesUrl">
+              présentation de la soutenance
+            </a>
+          </span>
+        </p>
+        <p class="card-footer-item has-text-centered">
+          <span>
+            Voir le&nbsp;<a [href]="observables.project?.sourceCodeUrl"
+              >code source</a
+            >
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</ng-container>

@@ -30,38 +30,8 @@
   </div>
 
   <footer class="card-footer">
-    <a class="card-footer-item" (click)="showPuzzleDetails()"> Voir plus </a>
+    <a class="card-footer-item" (click)="viewMoreButtonClicked.emit()">
+      Voir plus
+    </a>
   </footer>
-</div>
-
-<div class="modal" [ngClass]="{ 'is-active': shouldShowPuzzleDetails }">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="card">
-      <div class="card-content">
-        <p class="title">
-          {{ puzzle?.title }}
-        </p>
-        <p class="subtitle">{{ puzzle?.subtitle }}</p>
-        <div [innerHtml]="puzzle?.content"></div>
-      </div>
-      <footer class="card-footer">
-        <p class="card-footer-item">
-          <span>
-            Voir le <a [href]="puzzle?.subjectUrl">sujet complet</a>
-          </span>
-        </p>
-        <p class="card-footer-item">
-          <span>
-            Voir le <a [href]="puzzle?.sourceCodeUrl">code source</a>
-          </span>
-        </p>
-      </footer>
-    </div>
-  </div>
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    (click)="hidePuzzleDetails()"
-  ></button>
 </div>

@@ -7,10 +7,10 @@ import { ProjectService } from 'src/app/core/services/projects.service';
 @Injectable({
   providedIn: 'root',
 })
-export class ProjectResolver implements Resolve<Project[]> {
+export class FeaturedProjectsResolver implements Resolve<Project[]> {
   constructor(private projectService: ProjectService) {}
 
   resolve(): Observable<Project[]> {
-    return this.projectService.getProjects();
+    return this.projectService.getFeaturedProjects();
   }
 }
