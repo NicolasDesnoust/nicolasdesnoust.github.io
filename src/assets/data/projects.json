@@ -110,6 +110,10 @@
     "id": "pendu-socket",
     "title": "Pendu socket",
     "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "image": {
+      "folder": "pendu-socket",
+      "widths": [200, 1027, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/PenduSocket"
   }
 ]
