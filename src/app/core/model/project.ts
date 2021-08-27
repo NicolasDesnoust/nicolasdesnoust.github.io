@@ -7,5 +7,6 @@ export interface Project {
   image?: Image;
 
   slidesUrl?: string;
+  applicationUrl?: string;
   sourceCodeUrl?: string;
 }

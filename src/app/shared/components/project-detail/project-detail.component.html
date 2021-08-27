@@ -39,6 +39,16 @@
           </span>
         </p>
         <p
+          *ngIf="observables.project?.applicationUrl"
+          class="card-footer-item has-text-centered"
+        >
+          <span>
+            Voir&nbsp;<a [href]="observables.project?.applicationUrl">
+              l'application
+            </a>
+          </span>
+        </p>
+        <p
           *ngIf="observables.project?.sourceCodeUrl"
           class="card-footer-item has-text-centered"
         >
