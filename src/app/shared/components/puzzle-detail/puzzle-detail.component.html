@@ -1,0 +1,51 @@
+<ng-container
+  *ngIf="{
+    puzzle: selectedPuzzle$ | async,
+    puzzleContent: puzzleContent$ | async
+  } as observables"
+>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="custom-modal-card-title modal-card-title">
+          {{ observables.puzzle?.title }}
+        </p>
+        <div class="custom-modal-spacer"></div>
+        <a class="delete" aria-label="close" (click)="hidePuzzleDetails()"></a>
+      </header>
+
+      <section class="modal-card-body">
+        <div class="custom-content content">
+          <markdown
+            testDir
+            addCodeHeaders
+            (error)="onError()"
+            [data]="observables.puzzleContent"
+          >
+          </markdown>
+          <div style="display: none">
+            <scully-content *ngIf="isScullyRunning"></scully-content>
+          </div>
+        </div>
+      </section>
+
+      <footer class="modal-card-foot card-footer" style="padding: 0px">
+        <p class="card-footer-item has-text-centered">
+          <span>
+            Voir le&nbsp;<a [href]="observables.puzzle?.subjectUrl">
+              sujet complet
+            </a>
+          </span>
+        </p>
+        <p class="card-footer-item has-text-centered">
+          <span>
+            Voir le&nbsp;<a [href]="observables.puzzle?.sourceCodeUrl"
+              >code source</a
+            >
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</ng-container>

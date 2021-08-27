@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PuzzleService } from 'src/app/core/services/puzzle.service';
-import { Project } from '../../core/model/project';
+import { map } from 'rxjs/operators';
 import { Puzzle } from '../../core/model/puzzle';
 
 @Component({
@@ -30,7 +30,10 @@ import { Puzzle } from '../../core/model/puzzle';
         is-one-quarter-fullhd"
           *ngFor="let featuredPuzzle of featuredPuzzles"
         >
-          <desn-puzzle-card [puzzle]="featuredPuzzle"></desn-puzzle-card>
+          <desn-puzzle-card
+            [puzzle]="featuredPuzzle"
+            (viewMoreButtonClicked)="showPuzzleDetails(featuredPuzzle)"
+          ></desn-puzzle-card>
         </div>
       </div>
       <a [routerLink]="['/codingame']" class="button is-primary mt-3">
@@ -43,9 +46,15 @@ import { Puzzle } from '../../core/model/puzzle';
 export class CodingameComponent implements OnInit {
   featuredPuzzles$: Observable<Puzzle[]> | undefined;
 
-  constructor(private puzzleService: PuzzleService) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.featuredPuzzles$ = this.puzzleService.getFeaturedPuzzles();
+    this.featuredPuzzles$ = this.route.data.pipe(
+      map((data) => data.featuredPuzzles || [])
+    );
+  }
+
+  showPuzzleDetails(puzzle: Puzzle) {
+    this.router.navigate([`/home/puzzles/${puzzle.id}`]);
   }
 }

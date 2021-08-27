@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Puzzle } from 'src/app/core/model/puzzle';
 
@@ -9,13 +9,5 @@ import { Puzzle } from 'src/app/core/model/puzzle';
 })
 export class PuzzleCardComponent {
   @Input() puzzle: Puzzle | null = null;
-  shouldShowPuzzleDetails: boolean = false;
-
-  showPuzzleDetails() {
-    this.shouldShowPuzzleDetails = true;
-  }
-
-  hidePuzzleDetails() {
-    this.shouldShowPuzzleDetails = false;
-  }
+  @Output() viewMoreButtonClicked = new EventEmitter<void>();
 }

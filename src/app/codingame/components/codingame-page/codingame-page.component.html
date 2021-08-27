@@ -22,7 +22,12 @@
       "
       *ngFor="let puzzle of puzzles"
     >
-      <desn-puzzle-card [puzzle]="puzzle"></desn-puzzle-card>
+      <desn-puzzle-card
+        [puzzle]="puzzle"
+        (viewMoreButtonClicked)="showPuzzleDetails(puzzle)"
+      ></desn-puzzle-card>
     </div>
   </div>
 </section>
+
+<router-outlet></router-outlet>

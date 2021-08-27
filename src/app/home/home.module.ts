@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { CodingameComponent } from './components/codingame.component';
 import { HeroComponent } from './components/hero.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePageComponent } from './components/home-page.component';
 import { ProjectsComponent } from './components/projects.component';
 import { SkillBoxComponent } from './components/skill-box.component';
 import { SkillLevelIndicatorComponent } from './components/skill-level-indicator/skill-level-indicator.component';

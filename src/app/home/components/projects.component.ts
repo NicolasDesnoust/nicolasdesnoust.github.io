@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ProjectService } from 'src/app/core/services/projects.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Project } from '../../core/model/project';
 
 @Component({
@@ -23,8 +24,12 @@ import { Project } from '../../core/model/project';
                  is-half-desktop
                  is-one-third-widescreen
                  is-one-quarter-fullhd"
-          *ngFor="let featuredProject of featuredProjects">
-          <desn-project-card [project]="featuredProject"></desn-project-card>
+          *ngFor="let featuredProject of featuredProjects"
+        >
+          <desn-project-card
+            [project]="featuredProject"
+            (viewMoreButtonClicked)="showProjectDetails(featuredProject)"
+          ></desn-project-card>
         </div>
       </div>
       <a [routerLink]="['/projects']" class="button is-primary mt-3">
@@ -37,9 +42,15 @@ import { Project } from '../../core/model/project';
 export class ProjectsComponent implements OnInit {
   featuredProjects$: Observable<Project[]> | undefined;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.featuredProjects$ = this.projectService.getFeaturedProjects();
+    this.featuredProjects$ = this.route.data.pipe(
+      map((data) => data.featuredProjects || [])
+    );
+  }
+
+  showProjectDetails(project: Project) {
+    this.router.navigate([`/home/projects/${project.id}`]);
   }
 }

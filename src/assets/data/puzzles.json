@@ -1,8 +1,8 @@
 [
   {
+    "id": "marslander3",
     "title": "Mars Lander 3",
     "subtitle": "Algorithme génétique",
-    "content": "",
     "difficultyColor": "#ea5974",
     "image": {
       "folder": "marslander3",
@@ -12,9 +12,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
   },
   {
+    "id": "winamax",
     "title": "Winamax Sponsored Challenge",
     "subtitle": "Back-tracking",
-    "content": "",
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "winamax",
@@ -25,9 +25,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
   },
   {
+    "id": "labyrinthe",
     "title": "Le labyrinthe",
     "subtitle": "Parcours de graphes",
-    "content": "",
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "labyrinthe",
@@ -37,9 +37,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
   },
   {
+    "id": "powerofthor2",
     "title": "Power of Thor 2",
     "subtitle": "Barycentres",
-    "content": "",
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "powerofthor2",
@@ -49,9 +49,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
   {
+    "id": "bender1",
     "title": "Bender - Episode 1",
     "subtitle": "Automates",
-    "content": "",
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "bender1",
@@ -61,9 +61,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
   },
   {
+    "id": "shadowsoftheknight1",
     "title": "Shadows of the Knight - Episode 1",
     "subtitle": "Recherche dichotomique",
-    "content": "",
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "shadowsoftheknight1",
@@ -73,9 +73,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
   },
   {
+    "id": "labataille",
     "title": "La Bataille",
     "subtitle": "Files",
-    "content": "",
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "labataille",
@@ -85,9 +85,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
   },
   {
+    "id": "thereisnospoon1",
     "title": "There is no Spoon - Episode 1",
     "subtitle": "Matrices",
-    "content": "",
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "thereisnospoon1",
@@ -97,9 +97,9 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
   {
+    "id": "byte-pair-encoding",
     "title": "Byte pair encoding",
     "subtitle": "Encodage",
-    "content": "",
     "difficultyColor": "rgb(234, 218, 89)",
     "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"

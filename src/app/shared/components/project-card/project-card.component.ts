@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Project } from '../../../core/model/project';
 
@@ -9,13 +9,5 @@ import { Project } from '../../../core/model/project';
 })
 export class ProjectCardComponent {
   @Input() project: Project | null = null;
-  shouldShowProjectDetails: boolean = false;
-
-  showProjectDetails() {
-    this.shouldShowProjectDetails = true;
-  }
-
-  hideProjectDetails() {
-    this.shouldShowProjectDetails = false;
-  }
+  @Output() viewMoreButtonClicked = new EventEmitter<void>();
 }
