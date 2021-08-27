@@ -77,7 +77,12 @@
     "id": "desnote-book",
     "title": "Desnote Book",
     "subtitle": "Projet personnel",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "image": {
+      "folder": "desnote-book",
+      "widths": [200, 604, 1009, 1400]
+    },
+    "applicationUrl": "https://nicolasdesnoust.github.io/Desnote-Book/home",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/Desnote-Book"
   },
   {
     "id": "ascenseur",
