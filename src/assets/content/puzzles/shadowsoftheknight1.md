@@ -12,7 +12,7 @@ L'algorithme implémenté effectue une recherche dichotomique dans un tableau à
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/shadowsoftheknight1_1.png" 
+  <img src="/assets/content/puzzles/shadowsoftheknight1_1.png" 
        alt="Exemple d'une recherche dichotomique" width="638" height="359">
     <figcaption>Exemple d'une recherche dichotomique - 31 tours restants</figcaption>
 </figure>
@@ -20,7 +20,7 @@ L'algorithme implémenté effectue une recherche dichotomique dans un tableau à
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/shadowsoftheknight1_2.png" 
+  <img src="/assets/content/puzzles/shadowsoftheknight1_2.png" 
        alt="Exemple d'une recherche dichotomique (2)" width="638" height="359">
     <figcaption>Exemple d'une recherche dichotomique - 30 tours restants</figcaption>
 </figure>

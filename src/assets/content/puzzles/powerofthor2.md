@@ -6,7 +6,7 @@ L'objectif de ce puzzle est d'anéantir des géants sur une carte en 2D en contr
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/powerofthor2_1.png" 
+  <img src="/assets/content/puzzles/powerofthor2_1.png" 
        alt="Capture d'écran du problème Power of Thor 2" width="1276" height="638">
     <figcaption>Capture d'écran du problème Power of Thor 2</figcaption>
 </figure>
@@ -18,7 +18,7 @@ Cette solution a des limites, notamment lorsque les géants sont alignés. Pour 
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/powerofthor2_2.png" 
+  <img src="/assets/content/puzzles/powerofthor2_2.png" 
        alt="Cas particulier des géants alignés" width="1276" height="638">
     <figcaption>Cas particulier des géants alignés</figcaption>
 </figure>

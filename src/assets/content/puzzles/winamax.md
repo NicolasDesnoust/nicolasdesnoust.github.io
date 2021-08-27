@@ -9,7 +9,7 @@ au mieux le temps et l'effort à dépenser pendant la partie.
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/winamax_1.png" 
+  <img src="/assets/content/puzzles/winamax_1.png" 
        alt="Schématisation du problème Mars Lander" width="500" height="327">
     <figcaption>Exemple d'un parcours de golf Winamax</figcaption>
 </figure>
@@ -19,7 +19,7 @@ Sur chaque parcours se trouve une certaine quantité de balles et une quantité 
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="http://localhost:4200/assets/content/puzzles/winamax_2.png" 
+  <img src="/assets/content/puzzles/winamax_2.png" 
        alt="Schématisation du problème Mars Lander" width="500" height="327">
     <figcaption>Solution de l'exemple précédent</figcaption>
 </figure>

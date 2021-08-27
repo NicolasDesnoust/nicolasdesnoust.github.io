@@ -11,7 +11,7 @@ De plus, la carte est masquée, seules les cases autour du personnage sont visib
 
 <div class="is-flex is-justify-content-center">
 <figure>
-   <img src="http://localhost:4200/assets/content/puzzles/labyrinthe_1.png" 
+   <img src="/assets/content/puzzles/labyrinthe_1.png" 
         alt="Capture d'écran du problème Le Labyrinthe" width="638" height="319">
     <figcaption>Capture d'écran du problème Le Labyrinthe</figcaption>
 </figure>
