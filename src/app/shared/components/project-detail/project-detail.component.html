@@ -5,7 +5,7 @@
 >
   <div class="modal is-active">
     <div class="modal-background"></div>
-    <div class="modal-card">
+    <div class="modal-card" (clickOutside)="hideProjectDetails()">
       <header class="modal-card-head">
         <p class="custom-modal-card-title modal-card-title">
           {{ observables.project?.title }}

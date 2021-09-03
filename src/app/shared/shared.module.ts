@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { PuzzleDetailComponent } from './components/puzzle-detail/puzzle-detail.component';
 import { QuickOverviewComponent } from './components/quick-overview/quick-overview.component';
 import { JoinPipe } from './pipes/join.pipe';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { JoinPipe } from './pipes/join.pipe';
     PuzzleDetailComponent,
     QuickOverviewComponent,
     JoinPipe,
+    ClickOutsideDirective,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { JoinPipe } from './pipes/join.pipe';
     ProjectDetailComponent,
     PuzzleDetailComponent,
     ScullyLibModule,
+    ClickOutsideDirective
   ],
 })
 export class SharedModule {}
