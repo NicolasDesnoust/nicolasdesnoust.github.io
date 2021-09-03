@@ -1,4 +1,5 @@
 import { Image } from "./image";
+import { QuickOverview } from "./quick-overview";
 
 export interface Project {
   id: string;
@@ -9,4 +10,6 @@ export interface Project {
   slidesUrl?: string;
   applicationUrl?: string;
   sourceCodeUrl?: string;
+
+  quickOverview?: QuickOverview;
 }

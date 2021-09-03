@@ -1,4 +1,5 @@
 import { Image } from "./image";
+import { QuickOverview } from "./quick-overview";
 
 export interface Puzzle {
   id: string;
@@ -10,4 +11,6 @@ export interface Puzzle {
   difficultyColor?: string;
   subjectUrl?: string;
   sourceCodeUrl?: string;
+
+  quickOverview?: QuickOverview;
 }

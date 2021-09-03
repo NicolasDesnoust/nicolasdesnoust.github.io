@@ -9,7 +9,18 @@
       "widths": [200, 723, 1011, 1259, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander",
+    "quickOverview": {
+      "langages": ["Java", "Typescript", "SCSS", "HTML"],
+      "frameworks": ["Spring Boot", "Angular"],
+      "base de données": ["Elasticsearch"],
+      "concepts": [
+        "Algorithmes génétiques",
+        "Optimisation",
+        "Exploitation de logs",
+        "Cinématique"
+      ]
+    }
   },
   {
     "id": "winamax",
@@ -22,7 +33,11 @@
     },
     "imageUrl": "https://www.codingame.com/servlet/fileservlet?id=9395401373638&format=puzzle_cover",
     "subjectUrl": "https://www.codingame.com/training/hard/winamax-sponsored-contest",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Backtracking", "Piles", "Problèmes NP-Complets"]
+    }
   },
   {
     "id": "labyrinthe",
@@ -34,7 +49,16 @@
       "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": [
+        "Graphes",
+        "Parcours en largeur",
+        "Recherche de chemin",
+        "Brouillard de guerre"
+      ]
+    }
   },
   {
     "id": "powerofthor2",
@@ -46,7 +70,15 @@
       "widths": [200, 632, 908, 1150, 1351, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/power-of-thor-episode-2",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": [
+        "Barycentres",
+        "Distance de Manhattan",
+        "Gestion de cas dégénérés"
+      ]
+    }
   },
   {
     "id": "bender1",
@@ -58,7 +90,11 @@
       "widths": [200, 556, 800, 1045, 1219, 1368, 1388, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/medium/bender-episode-1",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Automates finis déterministes", "Historisation"]
+    }
   },
   {
     "id": "shadowsoftheknight1",
@@ -70,7 +106,11 @@
       "widths": [200, 693, 922, 1073, 1229, 1392, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/winamax-sponsored-contest",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Recherche dichotomique"]
+    }
   },
   {
     "id": "labataille",
@@ -82,7 +122,11 @@
       "widths": [200, 597, 840, 1082, 1265, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Files"]
+    }
   },
   {
     "id": "thereisnospoon1",
@@ -94,7 +138,11 @@
       "widths": [200, 588, 851, 1027, 1202, 1359, 1384, 1400]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/power-of-thor-episode-2",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Matrices"]
+    }
   },
   {
     "id": "byte-pair-encoding",
@@ -102,6 +150,10 @@
     "subtitle": "Encodage",
     "difficultyColor": "rgb(234, 218, 89)",
     "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarsLander",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": ["Encodage", "Compression"]
+    }
   }
 ]
