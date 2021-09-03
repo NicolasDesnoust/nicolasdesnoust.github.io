@@ -7,7 +7,20 @@
       "folder": "dassault-aviation",
       "widths": [200, 593, 888, 1116, 1370, 1400]
     },
-    "slidesUrl": "https://docs.google.com/presentation/d/1sY2yfRRpKNHQpLEjeZqc0j6lynSN4_o8/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true"
+    "slidesUrl": "https://docs.google.com/presentation/d/1sY2yfRRpKNHQpLEjeZqc0j6lynSN4_o8/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
+    "quickOverview": {
+      "langages": ["Typescript", "C#", "SCSS", "HTML"],
+      "frameworks": ["Kuzzle", "Angular"],
+      "base de données": ["Elasticsearch", "Redis"],
+      "concepts": [
+        "Internet des objets (IoT)",
+        "ETL",
+        "Intégration logicielle",
+        "Monitoring de températures",
+        "Visualisation de données",
+        "Conteneurisation"
+      ]
+    }
   },
   {
     "id": "adm",
@@ -17,7 +30,16 @@
       "folder": "adm",
       "widths": [200, 634, 954, 1222, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM",
+    "quickOverview": {
+      "langages": ["Java", "Typescript", "SCSS", "HTML"],
+      "frameworks": ["Spring Boot", "Angular"],
+      "base de données": ["HyperSQL", "MySQL"],
+      "concepts": [
+        "Moteur de recherche inversé",
+        "Système d’authentification centralisée et unique (CAS SSO)"
+      ]
+    }
   },
   {
     "id": "xyz-ingenierie",
@@ -27,7 +49,18 @@
       "folder": "xyz-ingenierie",
       "widths": [687, 1220, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY",
+    "quickOverview": {
+      "langages": ["Typescript", "SCSS", "HTML"],
+      "frameworks": ["Angular"],
+      "base de données": ["HyperSQL", "MySQL"],
+      "concepts": [
+        "Développement de Single Page Applications",
+        "Programmation réactive",
+        "Gestion d'état centralisée",
+        "Design patterns spécifiques au Frontend"
+      ]
+    }
   },
   {
     "id": "marble-wars",
@@ -37,7 +70,12 @@
       "folder": "marble-wars",
       "widths": [200, 449, 621, 821, 968, 1140, 1318, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars",
+    "quickOverview": {
+      "langages": ["C"],
+      "librairies": ["GTK"],
+      "concepts": ["Zuma Revenge", "Interfaces Graphiques", "Courbes de Bézier"]
+    }
   },
   {
     "id": "activites-aquatiques",
@@ -47,7 +85,17 @@
       "folder": "activites-aquatiques",
       "widths": [200, 506, 813, 1018, 1237, 1330, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "sourceCodeUrl": "https://gitlab.com/niaba-desnoust/reservation-activites-aquatiques",
+    "quickOverview": {
+      "langages": ["Java", "Typescript", "SCSS", "HTML"],
+      "frameworks": ["Spring Boot", "Angular"],
+      "base de données": ["PostgreSQL"],
+      "concepts": [
+        "Docker / Docker Compose",
+        "Modèle d'architecture C4",
+        "Méthode agile Kanban"
+      ]
+    }
   },
   {
     "id": "np-complet",
@@ -82,7 +130,13 @@
       "widths": [200, 604, 1009, 1400]
     },
     "applicationUrl": "https://nicolasdesnoust.github.io/Desnote-Book/home",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/Desnote-Book"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/Desnote-Book",
+    "quickOverview": {
+      "langages": ["Typescript", "SCSS", "HTML"],
+      "frameworks": ["Angular"],
+      "librairies": ["Scully"],
+      "concepts": ["JAMstack", "Transpilation de Markdown vers HTML"]
+    }
   },
   {
     "id": "ascenseur",
@@ -92,7 +146,16 @@
       "folder": "ascenseur",
       "widths": [200, 911, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ASCENSEUR"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ASCENSEUR",
+    "quickOverview": {
+      "langages": ["Java"],
+      "librairies": ["JavaFx"],
+      "concepts": [
+        "Génie logiciel",
+        "Simulation",
+        "Design pattern Modèle-Vue-Contrôleur (MVC)"
+      ]
+    }
   },
   {
     "id": "gestion-cv",
@@ -114,6 +177,14 @@
       "folder": "pendu-socket",
       "widths": [200, 1027, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/PenduSocket"
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/PenduSocket",
+    "quickOverview": {
+      "langages": ["Java"],
+      "concepts": [
+        "Package java.net",
+        "Sockets",
+        "Protocole TCP"
+      ]
+    }
   }
 ]
