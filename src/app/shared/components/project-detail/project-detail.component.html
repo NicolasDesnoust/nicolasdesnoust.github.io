@@ -16,6 +16,10 @@
 
       <section class="modal-card-body">
         <div class="custom-content content">
+          <desn-quick-overview
+            *ngIf="observables.project?.quickOverview"
+            [quickOverview]="observables.project?.quickOverview"
+          ></desn-quick-overview>
           <markdown
             testDir
             addCodeHeaders

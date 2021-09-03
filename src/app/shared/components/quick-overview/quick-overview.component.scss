@@ -1,0 +1,51 @@
+.quick-overview {
+  color: #242628;
+  background-color: #2c2c540f;
+  text-align: left;
+  font: 400 1rem/1.5em;
+  letter-spacing: 0;
+  word-wrap: break-word;
+  margin: -20px -1.2749rem 2rem -1rem;
+  list-style: none;
+  padding: 15px;
+
+  &-item {
+    align-items: center;
+    font: 400 0.875rem/1.5em;
+    color: #242628;
+    display: block;
+    border-top: 1px solid #d7d8db;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &__definition {
+      display: flex;
+      flex: none;
+      width: 100%;
+      margin: 0;
+      color: #18191b;
+      padding: 0.5rem 0;
+    }
+
+    &__field {
+      flex: 1.5;
+      color: #24176a;
+    }
+
+    &__name {
+      max-width: 54em;
+      hyphens: auto;
+      display: block;
+      color: #585f67;
+      font-style: italic;
+      padding-right: 0.5rem;
+    }
+
+    &__description {
+      flex: 2.5;
+      margin-left: 0.5rem;
+    }
+  }
+}

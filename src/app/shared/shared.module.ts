@@ -8,6 +8,8 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MarkdownModule } from 'ngx-markdown';
 import { RouterModule } from '@angular/router';
 import { PuzzleDetailComponent } from './components/puzzle-detail/puzzle-detail.component';
+import { QuickOverviewComponent } from './components/quick-overview/quick-overview.component';
+import { JoinPipe } from './pipes/join.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { PuzzleDetailComponent } from './components/puzzle-detail/puzzle-detail.
     SrcsetPipe,
     ProjectDetailComponent,
     PuzzleDetailComponent,
+    QuickOverviewComponent,
+    JoinPipe,
   ],
   imports: [
     CommonModule,
