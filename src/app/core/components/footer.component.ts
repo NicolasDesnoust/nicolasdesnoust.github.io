@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Link } from '../../home/model/link';
 
 @Component({
@@ -54,20 +54,8 @@ import { Link } from '../../home/model/link';
       </div>
     </footer>
   `,
-  styles: [
-    `
-      footer {
-        /* background-color: black;
-        background-image: linear-gradient(
-          102.1deg,
-          rgba(90, 60, 238, 0.6196078431372549) 61%,
-          #362595 61.1%
-        ); */
-      }
-    `,
-  ],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   currentYear = new Date().getFullYear();
   links: Link[] = [
     {
@@ -96,8 +84,4 @@ export class FooterComponent implements OnInit {
       url: 'mailto:desnoust.nicolas451@gmail.com',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

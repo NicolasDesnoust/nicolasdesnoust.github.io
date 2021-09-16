@@ -7,10 +7,10 @@
   }
 }
 
-:host ::ng-deep markdown > :first-child,
-:host ::ng-deep markdown > :nth-child(2) {
+:host ::ng-deep .markdown-content > :first-child,
+:host ::ng-deep .markdown-content > :nth-child(2) {
   display: none;
 }
-:host ::ng-deep markdown > :nth-child(3) {
+:host ::ng-deep .markdown-content > :nth-child(3) {
   margin-top: 0;
 }

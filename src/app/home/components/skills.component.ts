@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Skill } from '../model/skill';
 
 @Component({
@@ -120,7 +120,7 @@ import { Skill } from '../model/skill';
     `,
   ],
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
   languages: Skill[] = [
     { name: 'Java', level: 5 },
     { name: 'TypeScript', level: 4 },
@@ -176,8 +176,4 @@ export class SkillsComponent implements OnInit {
     { name: 'DBeaver', level: 3 },
     { name: 'MobaXterm', level: 2 },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

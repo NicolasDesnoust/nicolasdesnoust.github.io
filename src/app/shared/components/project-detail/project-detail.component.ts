@@ -1,4 +1,4 @@
-import { Component, Renderer2, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { isScullyRunning } from '@scullyio/ng-lib';
 import { combineLatest, Observable } from 'rxjs';

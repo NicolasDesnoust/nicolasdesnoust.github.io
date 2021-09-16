@@ -3,7 +3,7 @@ import {
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Skill } from '../model/skill';
@@ -37,7 +37,6 @@ import { Skill } from '../model/skill';
       <span class="icon">
         <i class="fas fa-angle-{{ expanded ? 'down' : 'up' }}"></i>
       </span>
-      <!-- [name]="expanded ? 'chevron-up' : 'more-horizontal'" -->
     </a>
   `,
   styles: [
