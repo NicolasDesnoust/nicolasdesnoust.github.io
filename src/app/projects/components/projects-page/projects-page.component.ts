@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest, forkJoin, Observable } from 'rxjs';
-import { ProjectService } from 'src/app/core/services/projects.service';
-import { Project } from 'src/app/core/model/project';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Project } from 'src/app/core/model/project';
 
 @Component({
   selector: 'desn-projects-page',

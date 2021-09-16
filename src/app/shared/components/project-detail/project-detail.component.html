@@ -21,13 +21,16 @@
             [quickOverview]="observables.project?.quickOverview"
           ></desn-quick-overview>
           <markdown
+            class="markdown-content"
             testDir
             addCodeHeaders
             (error)="onError()"
             [data]="projectContent$ | async"
           >
           </markdown>
-          <!-- <scully-content></scully-content> -->
+          <div style="display: none">
+            <scully-content *ngIf="isScullyRunning"></scully-content>
+          </div>
         </div>
       </section>
 

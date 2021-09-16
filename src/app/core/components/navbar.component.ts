@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'desn-navbar',
@@ -49,12 +49,8 @@ import { Component, OnInit } from '@angular/core';
     `,
   ],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   showNavbarMenu: boolean = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleNavbarMenu() {
     this.showNavbarMenu = !this.showNavbarMenu;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'desn-hero',
@@ -37,8 +37,4 @@ import { Component, OnInit } from '@angular/core';
     `,
   ],
 })
-export class HeroComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class HeroComponent {}

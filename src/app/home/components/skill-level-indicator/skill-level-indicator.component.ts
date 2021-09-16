@@ -2,8 +2,7 @@ import {
   Component,
   Input,
   OnChanges,
-  OnInit,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 
 @Component({
@@ -11,7 +10,7 @@ import {
   templateUrl: './skill-level-indicator.component.html',
   styleUrls: ['./skill-level-indicator.component.scss'],
 })
-export class SkillLevelIndicatorComponent implements OnInit, OnChanges {
+export class SkillLevelIndicatorComponent implements OnChanges {
   @Input() value: number = 0;
   class: string = 'very-low';
   tooltipText: string = 'Tooltip text';
@@ -38,8 +37,6 @@ export class SkillLevelIndicatorComponent implements OnInit, OnChanges {
       "J'utilise cette technologie au quotidien sans ralentissements."
     );
   }
-
-  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.value) {

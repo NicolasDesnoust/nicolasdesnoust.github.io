@@ -7,7 +7,8 @@
           <i
             *ngIf="puzzle?.difficultyColor"
             class="fas fa-circle"
-            style="color: {{ puzzle?.difficultyColor }}"
+            [ngStyle]="{ color: puzzle?.difficultyColor }"
+            aria-hidden="true"
           ></i>
           {{ puzzle?.subtitle }}
         </p>
