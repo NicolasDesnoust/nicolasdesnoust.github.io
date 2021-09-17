@@ -1,0 +1,38 @@
+<section class="section resume has-background-primary has-text-centered">
+  <div class="container is-narrow">
+    <div class="box">
+      <div class="columns level">
+        <div class="column level-item">
+          <h1 class="title is-4">Entrer en contact</h1>
+        </div>
+        <div class="column level-item">
+          <p>
+            Vous souhaitez me recruter? Vous pouvez me contacter par email, sur
+            Linkedin et télécharger mon Curriculum Vitae.
+          </p>
+        </div>
+        <div class="column level-item">
+          <button
+            *ngIf="isFileSaverSupported"
+            class="button is-primary"
+            (click)="downloadResume()"
+          >
+            <span class="icon">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </span>
+            <span>Télécharger mon CV</span>
+          </button>
+
+          <div
+            *ngIf="!isFileSaverSupported"
+            class="notification is-warning is-light"
+          >
+            Vous ne pouvez pas télécharger mon CV: votre navigateur ne supporte
+            pas cette fonctionnalité. Vous pouvez néanmoins changer de
+            navigateur ou me contacter par mail.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

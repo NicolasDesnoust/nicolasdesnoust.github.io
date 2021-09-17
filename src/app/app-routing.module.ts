@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ExtraOptions } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { HomeLayoutComponent } from './core/layouts/home-layout.component';
 import { LightLayoutComponent } from './core/layouts/light-layout.component';
 
 const routerOptions: ExtraOptions = {
-  // scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0, 64],
-  // onSameUrlNavigation: 'reload',
-
 };
 
 const routes: Routes = [

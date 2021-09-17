@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
         flex-grow: 1;
         flex-direction: column;
       }
-      :host ::ng-deep .navbar-menu {
+      :host ::ng-deep .navbar, :host ::ng-deep .navbar-menu {
         background-color: #f7fbff !important;
       }
     `,

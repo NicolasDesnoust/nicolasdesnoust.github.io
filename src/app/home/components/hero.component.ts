@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <div class="hero-body">
         <p class="title is-spaced">Développeur Web Fullstack</p>
         <div class="is-flex is-justify-content-center">
-          <div class="divider" style="width: 60%; margin-top: 0">ᔕ</div>
+          <div class="divider">ᔕ</div>
         </div>
         <p class="subtitle">
           La passion est un puissant moteur de découverte. Elle entraine avec
@@ -29,6 +29,8 @@ import { Component } from '@angular/core';
     `
       .divider {
         color: #2c2c54;
+        width: 60%;
+        margin-top: 0;
       }
       .divider::after,
       .divider::before {

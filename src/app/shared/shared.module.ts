@@ -1,43 +1,35 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PuzzleCardComponent } from './components/puzzle-card/puzzle-card.component';
-import { SrcsetPipe } from './pipes/srcset.pipe';
-import { ProjectCardComponent } from './components/project-card/project-card.component';
-import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MarkdownModule } from 'ngx-markdown';
-import { RouterModule } from '@angular/router';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { PuzzleCardComponent } from './components/puzzle-card/puzzle-card.component';
 import { PuzzleDetailComponent } from './components/puzzle-detail/puzzle-detail.component';
 import { QuickOverviewComponent } from './components/quick-overview/quick-overview.component';
-import { JoinPipe } from './pipes/join.pipe';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { SecuredExternalLinkDirective } from './directives/secured-external-link.directive';
+import { JoinPipe } from './pipes/join.pipe';
+import { SrcsetPipe } from './pipes/srcset.pipe';
+
+const components = [
+  ProjectDetailComponent,
+  PuzzleDetailComponent,
+  QuickOverviewComponent,
+  PuzzleCardComponent,
+  ProjectCardComponent,
+];
+
+const directives = [ClickOutsideDirective, SecuredExternalLinkDirective];
+
+const pipes = [SrcsetPipe, JoinPipe];
+
+const modules = [ScullyLibModule, CommonModule];
 
 @NgModule({
-  declarations: [
-    PuzzleCardComponent,
-    ProjectCardComponent,
-    SrcsetPipe,
-    ProjectDetailComponent,
-    PuzzleDetailComponent,
-    QuickOverviewComponent,
-    JoinPipe,
-    ClickOutsideDirective,
-  ],
-  imports: [
-    CommonModule,
-    ScullyLibModule,
-    MarkdownModule.forChild(),
-    RouterModule,
-  ],
-  exports: [
-    CommonModule,
-    PuzzleCardComponent,
-    ProjectCardComponent,
-    SrcsetPipe,
-    ProjectDetailComponent,
-    PuzzleDetailComponent,
-    ScullyLibModule,
-    ClickOutsideDirective
-  ],
+  declarations: [...components, ...directives, ...pipes],
+  imports: [MarkdownModule.forChild(), RouterModule, ...modules],
+  exports: [...components, ...directives, ...pipes, ...modules],
 })
 export class SharedModule {}
