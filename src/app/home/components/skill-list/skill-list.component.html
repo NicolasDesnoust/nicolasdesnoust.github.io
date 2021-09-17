@@ -1,0 +1,32 @@
+<p class="list-title has-text-primary has-text-weight-normal">
+  {{ title }}
+</p>
+<ng-container *ngIf="filteredSkills$ | async as filteredSkills">
+  <div *ngFor="let skill of filteredSkills" class="columns is-mobile">
+    <div
+      class="
+        column
+        is-flex is-justify-content-flex-end
+        has-text-right has-text-right
+        p-1
+      "
+    >
+      {{ skill.name }}
+    </div>
+    <div class="column is-flex is-align-items-center p-1">
+      <desn-skill-level-indicator
+        [value]="skill.level"
+      ></desn-skill-level-indicator>
+    </div>
+  </div>
+</ng-container>
+<a
+  *ngIf="limit && limit < skills.length"
+  (click)="applyLimit()"
+  aria-label="Expand button"
+>
+  Voir {{ expanded ? "plus" : "moins" }}
+  <span class="icon">
+    <i class="fas fa-angle-{{ expanded ? 'down' : 'up' }}" aria-hidden="true"></i>
+  </span>
+</a>

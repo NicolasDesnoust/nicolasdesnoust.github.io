@@ -1,9 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges
-} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'desn-skill-level-indicator',
@@ -12,7 +7,6 @@ import {
 })
 export class SkillLevelIndicatorComponent implements OnChanges {
   @Input() value: number = 0;
-  class: string = 'very-low';
   tooltipText: string = 'Tooltip text';
   toolTipTextMap: Map<number, string>;
 
@@ -40,18 +34,7 @@ export class SkillLevelIndicatorComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.value) {
-      if (this.value <= 1) {
-        this.class = 'very-low';
-      } else if (this.value <= 2) {
-        this.class = 'low';
-      } else if (this.value <= 3) {
-        this.class = 'medium';
-      } else if (this.value <= 4) {
-        this.class = 'high';
-      } else if (this.value > 4) {
-        this.class = 'very-high';
-      }
+      this.tooltipText = this.toolTipTextMap.get(this.value) || '';
     }
-    this.tooltipText = this.toolTipTextMap.get(this.value) || '';
   }
 }

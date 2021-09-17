@@ -8,7 +8,19 @@ import { Project } from 'src/app/core/model/project';
   providedIn: 'root',
 })
 export class ProjectService {
-  private projectsUrl = 'assets/data/projects.json';
+  private readonly projectsUrl = 'assets/data/projects.json';
+
+  private readonly missingImagePlaceholder = {
+    folder: 'defaultbanner',
+    widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+  };
+
+  private readonly featuredProjectIds = new Set([
+    'dassault-aviation',
+    'adm',
+    'xyz-ingenierie',
+    'marble-wars',
+  ]);
 
   constructor(private http: HttpClient) {}
 
@@ -18,13 +30,10 @@ export class ProjectService {
       .pipe(map((projects) => this.replaceMissingImages(projects)));
   }
 
-  replaceMissingImages(projects: Project[]) {
+  private replaceMissingImages(projects: Project[]) {
     for (let project of projects) {
       if (!project.image) {
-        project.image = {
-          folder: 'defaultbanner',
-          widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
-        };
+        project.image = this.missingImagePlaceholder;
       }
     }
 
@@ -37,13 +46,9 @@ export class ProjectService {
     );
   }
 
-  keepFeaturedProjects(projects: Project[]): Project[] {
-    const sett: Set<string> = new Set([
-      'dassault-aviation',
-      'adm',
-      'xyz-ingenierie',
-      'marble-wars',
-    ]);
-    return projects.filter((project) => sett.has(project.image!.folder));
+  private keepFeaturedProjects(projects: Project[]): Project[] {
+    return projects.filter((project) =>
+      this.featuredProjectIds.has(project.id)
+    );
   }
 }

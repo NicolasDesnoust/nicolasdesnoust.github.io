@@ -14,3 +14,7 @@ body {
 .contenu {
   flex-grow: 1;
 }
+
+img:-moz-loading {
+  visibility: hidden;
+}

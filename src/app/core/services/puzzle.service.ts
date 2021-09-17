@@ -8,7 +8,19 @@ import { Puzzle } from 'src/app/core/model/puzzle';
   providedIn: 'root',
 })
 export class PuzzleService {
-  private puzzlesUrl = 'assets/data/puzzles.json';
+  private readonly puzzlesUrl = 'assets/data/puzzles.json';
+
+  private readonly missingImagePlaceholder = {
+    folder: 'defaultbanner',
+    widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+  };
+
+  private readonly featuredPuzzleIds = new Set([
+    'marslander3',
+    'winamax',
+    'labyrinthe',
+    'powerofthor2',
+  ]);
 
   constructor(private http: HttpClient) {}
 
@@ -18,13 +30,10 @@ export class PuzzleService {
       .pipe(map((puzzles) => this.replaceMissingImages(puzzles)));
   }
 
-  replaceMissingImages(puzzles: Puzzle[]) {
+  private replaceMissingImages(puzzles: Puzzle[]) {
     for (let puzzle of puzzles) {
       if (!puzzle.image) {
-        puzzle.image = {
-          folder: 'defaultbanner',
-          widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
-        };
+        puzzle.image = this.missingImagePlaceholder;
       }
     }
 
@@ -37,13 +46,7 @@ export class PuzzleService {
     );
   }
 
-  keepFeaturedPuzzles(puzzles: Puzzle[]): Puzzle[] {
-    const sett: Set<string> = new Set([
-      'marslander3',
-      'winamax',
-      'labyrinthe',
-      'powerofthor2',
-    ]);
-    return puzzles.filter((puzzle) => sett.has(puzzle.image!.folder));
+  private keepFeaturedPuzzles(puzzles: Puzzle[]): Puzzle[] {
+    return puzzles.filter((puzzle) => this.featuredPuzzleIds.has(puzzle.id));
   }
 }

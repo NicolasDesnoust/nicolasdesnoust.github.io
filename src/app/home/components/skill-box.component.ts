@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
         [src]="imageUrl"
         width="40"
         height="40"
-        alt="Placeholder image"
+        alt="Icône de '{{ title }}'"
       />
       <p class="title is-size-4 is-spaced">{{ title }}</p>
       <div class="mb-4">
