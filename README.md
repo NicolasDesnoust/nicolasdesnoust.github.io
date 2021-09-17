@@ -1,4 +1,5 @@
-# Portfolio
+# Portfolio de Nicolas Desnoust
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NicolasDesnoust_nicolasdesnoust.github.io&metric=alert_status)](https://sonarcloud.io/dashboard?id=NicolasDesnoust_nicolasdesnoust.github.io) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=NicolasDesnoust_nicolasdesnoust.github.io&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=NicolasDesnoust_nicolasdesnoust.github.io)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
