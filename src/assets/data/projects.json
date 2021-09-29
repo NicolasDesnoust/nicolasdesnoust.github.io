@@ -43,13 +43,13 @@
   },
   {
     "id": "xyz-ingenierie",
-    "title": "XYZ Ingéniérie",
+    "title": "XYZ Ingénierie",
     "subtitle": "Projet personnel",
     "image": {
       "folder": "xyz-ingenierie",
       "widths": [687, 1220, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-ANGULAR-STJ-ILD-DESNOUST-LY",
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-Ingenierie",
     "quickOverview": {
       "langages": ["Typescript", "SCSS", "HTML"],
       "frameworks": ["Angular"],
