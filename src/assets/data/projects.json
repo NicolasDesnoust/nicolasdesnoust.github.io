@@ -47,7 +47,7 @@
     "subtitle": "Projet personnel",
     "image": {
       "folder": "xyz-ingenierie",
-      "widths": [687, 1220, 1400]
+      "widths": [200, 1026, 1400]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-Ingenierie",
     "quickOverview": {
@@ -127,7 +127,7 @@
     "subtitle": "Projet personnel",
     "image": {
       "folder": "desnote-book",
-      "widths": [200, 604, 1009, 1400]
+      "widths": [200, 1201, 1400]
     },
     "applicationUrl": "https://nicolasdesnoust.github.io/Desnote-Book/home",
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/Desnote-Book",
