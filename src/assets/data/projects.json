@@ -7,7 +7,7 @@
       "folder": "dassault-aviation",
       "widths": [200, 593, 888, 1116, 1370, 1400]
     },
-    "slidesUrl": "https://docs.google.com/presentation/d/1sY2yfRRpKNHQpLEjeZqc0j6lynSN4_o8/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
+    "slidesUrl": "https://drive.google.com/file/d/1SVg7MTTNiJogSOGbiav2wjcY7s7RW4Lp/view?usp=sharing",
     "quickOverview": {
       "langages": ["Typescript", "C#", "SCSS", "HTML"],
       "frameworks": ["Kuzzle", "Angular"],
@@ -169,12 +169,6 @@
   {
     "id": "gestion-cv",
     "title": "Gestion de curriculum vitae",
-    "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
-  },
-  {
-    "id": "annuaire-personnes",
-    "title": "Annuaire de personnes",
     "subtitle": "Projet encadré",
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
