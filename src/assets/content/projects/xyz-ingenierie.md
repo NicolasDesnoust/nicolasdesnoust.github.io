@@ -31,10 +31,10 @@ Ce projet a également permit des pratiquer d'autres concepts&nbsp;:
 
 ## Reprise du projet
 
-Ce projet a depuis été repris pour faire office de terrain de jeu personnel dans lequel j'explore de nouveaux concepts, comme par exemple&nbsp;:
+Ce projet a depuis été repris pour faire office de terrain de jeu dans lequel j'explore de nouveaux concepts, comme par exemple&nbsp;:
 
 - La librairie [Angular Material Design](https://material.angular.io/).
-- Des designs patterns spécifiques au frontend ([Smart/Presentation components](https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/), [Store façade](https://auth0.com/blog/ngrx-facades-pros-and-cons/), [BEM](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade#BEM), [modèle 7-1](https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599201-utilisez-le-systeme-7-1-pour-une-codebase-plus-simple-a-gerer)).
+- Des designs patterns ([Smart/Presentation components](https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/), [Store façade](https://auth0.com/blog/ngrx-facades-pros-and-cons/), [BEM](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade#BEM), [modèle 7-1](https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599201-utilisez-le-systeme-7-1-pour-une-codebase-plus-simple-a-gerer)).
 - La gestion d'état centralisée avec [Ngrx](https://ngrx.io/).
 - L'utilisation de routes imbriquées pour implémenter un système de layout.
 
@@ -45,3 +45,5 @@ Ce projet a depuis été repris pour faire office de terrain de jeu personnel da
   <figcaption>Capture d'écran de la nouvelle version du projet</figcaption>
 </figure>
 </div>
+
+> Le projet a depuis peu un backend développé avec le framework Spring Boot. Plus d'informations sur le [Readme du projet](https://github.com/NicolasDesnoust/XYZ-Ingenierie).

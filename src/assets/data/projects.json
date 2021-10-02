@@ -51,14 +51,14 @@
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-Ingenierie",
     "quickOverview": {
-      "langages": ["Typescript", "SCSS", "HTML"],
-      "frameworks": ["Angular"],
-      "base de données": ["HyperSQL", "MySQL"],
+      "langages": ["Java", "Typescript", "SCSS", "HTML"],
+      "frameworks": ["Spring Boot", "Angular"],
+      "base de données": ["H2"],
       "concepts": [
-        "Développement de Single Page Applications",
+        "Single Page Application",
         "Programmation réactive",
         "Gestion d'état centralisée",
-        "Design patterns spécifiques au Frontend"
+        "Design patterns"
       ]
     }
   },
@@ -180,11 +180,7 @@
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/PenduSocket",
     "quickOverview": {
       "langages": ["Java"],
-      "concepts": [
-        "Package java.net",
-        "Sockets",
-        "Protocole TCP"
-      ]
+      "concepts": ["Package java.net", "Sockets", "Protocole TCP"]
     }
   }
 ]
