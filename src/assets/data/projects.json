@@ -106,8 +106,17 @@
   {
     "id": "geolocalisation",
     "title": "Géolocalisation",
-    "subtitle": "",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
+    "subtitle": "Projet encadré",
+    "image": {
+      "folder": "geolocalisation",
+      "widths": [200, 937, 1400]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/GEOLOCALISATION",
+    "quickOverview": {
+      "langages": ["Javascript", "CSS", "HTML"],
+      "frameworks": ["JQuery"],
+      "concepts": ["Géolocalisation", "Filtrage multi-critères"]
+    }
   },
   {
     "id": "traduction",
