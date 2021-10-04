@@ -98,12 +98,6 @@
     }
   },
   {
-    "id": "np-complet",
-    "title": "NP-Complet",
-    "subtitle": "Projets encadrés",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
-  },
-  {
     "id": "geolocalisation",
     "title": "Géolocalisation",
     "subtitle": "Projet encadré",
@@ -117,18 +111,6 @@
       "frameworks": ["JQuery"],
       "concepts": ["Géolocalisation", "Filtrage multi-critères"]
     }
-  },
-  {
-    "id": "traduction",
-    "title": "Traduction",
-    "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
-  },
-  {
-    "id": "geometrie-avancee",
-    "title": "Géométrie avancée",
-    "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
   {
     "id": "desnote-book",
@@ -165,12 +147,6 @@
         "Design pattern Modèle-Vue-Contrôleur (MVC)"
       ]
     }
-  },
-  {
-    "id": "gestion-cv",
-    "title": "Gestion de curriculum vitae",
-    "subtitle": "Projet encadré",
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars"
   },
   {
     "id": "pendu-socket",
