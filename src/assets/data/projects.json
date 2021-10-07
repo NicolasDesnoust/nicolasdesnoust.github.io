@@ -30,7 +30,7 @@
       "folder": "adm",
       "widths": [200, 634, 954, 1222, 1400]
     },
-    "sourceCodeUrl": "https://github.com/NicolasDesnoust/ADM",
+    "slidesUrl": "https://docs.google.com/presentation/d/10oWDqGLhDWdqb2moowZV0i5JAt7u6Usa/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
     "quickOverview": {
       "langages": ["Java", "Typescript", "SCSS", "HTML"],
       "frameworks": ["Spring Boot", "Angular"],
