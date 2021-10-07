@@ -23,25 +23,6 @@
     }
   },
   {
-    "id": "adm",
-    "title": "Atelier des métiers",
-    "subtitle": "Aix-Marseille Université",
-    "image": {
-      "folder": "adm",
-      "widths": [200, 634, 954, 1222, 1400]
-    },
-    "slidesUrl": "https://docs.google.com/presentation/d/10oWDqGLhDWdqb2moowZV0i5JAt7u6Usa/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
-    "quickOverview": {
-      "langages": ["Java", "Typescript", "SCSS", "HTML"],
-      "frameworks": ["Spring Boot", "Angular"],
-      "base de données": ["HyperSQL", "MySQL"],
-      "concepts": [
-        "Moteur de recherche inversé",
-        "Système d’authentification centralisée et unique (CAS SSO)"
-      ]
-    }
-  },
-  {
     "id": "xyz-ingenierie",
     "title": "XYZ Ingénierie",
     "subtitle": "Projet personnel",
@@ -59,6 +40,25 @@
         "Programmation réactive",
         "Gestion d'état centralisée",
         "Design patterns"
+      ]
+    }
+  },
+  {
+    "id": "adm",
+    "title": "Atelier des métiers",
+    "subtitle": "Aix-Marseille Université",
+    "image": {
+      "folder": "adm",
+      "widths": [200, 530, 834, 1023, 1280, 1400]
+    },
+    "slidesUrl": "https://docs.google.com/presentation/d/10oWDqGLhDWdqb2moowZV0i5JAt7u6Usa/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
+    "quickOverview": {
+      "langages": ["Java", "Typescript", "SCSS", "HTML"],
+      "frameworks": ["Spring Boot", "Angular"],
+      "base de données": ["HyperSQL", "MySQL"],
+      "concepts": [
+        "Moteur de recherche inversé",
+        "Système d’authentification centralisée et unique (CAS SSO)"
       ]
     }
   },
