@@ -58,7 +58,8 @@
       "base de données": ["HyperSQL", "MySQL"],
       "concepts": [
         "Moteur de recherche inversé",
-        "Système d’authentification centralisée et unique (CAS SSO)"
+        "Système d’authentification centralisée et unique (CAS SSO)",
+        "Expérience utilisateur"
       ]
     }
   },
