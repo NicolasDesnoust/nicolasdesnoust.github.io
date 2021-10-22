@@ -24,6 +24,7 @@
     "@scullyio/init": "^1.1.4",
     "@scullyio/ng-lib": "^1.1.1",
     "@scullyio/scully": "^1.1.1",
+    "atropos": "^1.0.1",
     "bulma": "^0.9.3",
     "file-saver": "^2.0.5",
     "marked": "^3.0.0",

@@ -1,11 +1,23 @@
 [
   {
     "id": "dassault-aviation",
-    "title": "Prototype d'une plateforme IoT",
+    "title": "Plateforme IoT",
     "subtitle": "Dassault Aviation",
     "image": {
       "folder": "dassault-aviation",
-      "widths": [200, 593, 888, 1116, 1370, 1400]
+      "backgroundColor": "#426eb0",
+      "layers": [
+        {
+          "widths": [200, 793, 1180, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "slidesUrl": "https://drive.google.com/file/d/1SVg7MTTNiJogSOGbiav2wjcY7s7RW4Lp/view?usp=sharing",
     "quickOverview": {
@@ -28,7 +40,24 @@
     "subtitle": "Projet personnel",
     "image": {
       "folder": "xyz-ingenierie",
-      "widths": [200, 1026, 1400]
+      "backgroundColor": "#faf2fd",
+      "layers": [
+        {
+          "widths": [200, 1400],
+          "offset": -5,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 3,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/XYZ-Ingenierie",
     "quickOverview": {
@@ -49,7 +78,19 @@
     "subtitle": "Aix-Marseille Université",
     "image": {
       "folder": "adm",
-      "widths": [200, 530, 834, 1023, 1280, 1400]
+      "backgroundColor": "#3967b2",
+      "layers": [
+        {
+          "widths": [200, 860, 1296, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "slidesUrl": "https://docs.google.com/presentation/d/10oWDqGLhDWdqb2moowZV0i5JAt7u6Usa/edit?usp=sharing&ouid=110983295053167197060&rtpof=true&sd=true",
     "quickOverview": {
@@ -69,7 +110,19 @@
     "subtitle": "Projet encadré",
     "image": {
       "folder": "marble-wars",
-      "widths": [200, 449, 621, 821, 968, 1140, 1318, 1400]
+      "backgroundColor": "black",
+      "layers": [
+        {
+          "widths": [200, 1246, 1400],
+          "offset": -5,
+          "extension": "jpg"
+        },
+        {
+          "widths": [200, 444, 620, 768, 900, 1019, 1128, 1231, 1332, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/MarbleWars",
     "quickOverview": {
@@ -84,7 +137,19 @@
     "subtitle": "Projet bénévole",
     "image": {
       "folder": "activites-aquatiques",
-      "widths": [200, 506, 813, 1018, 1237, 1330, 1400]
+      "backgroundColor": "rgb(205 230 242)",
+      "layers": [
+        {
+          "widths": [200, 729, 1048, 1309, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://gitlab.com/niaba-desnoust/reservation-activites-aquatiques",
     "quickOverview": {
@@ -104,7 +169,29 @@
     "subtitle": "Projet encadré",
     "image": {
       "folder": "geolocalisation",
-      "widths": [200, 937, 1400]
+      "backgroundColor": "white",
+      "layers": [
+        {
+          "widths": [200, 1400],
+          "offset": -5,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 3,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/GEOLOCALISATION",
     "quickOverview": {
@@ -119,7 +206,19 @@
     "subtitle": "Projet personnel",
     "image": {
       "folder": "desnote-book",
-      "widths": [200, 1201, 1400]
+      "backgroundColor": "#c1f9fa",
+      "layers": [
+        {
+          "widths": [200, 1400],
+          "offset": -5,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "applicationUrl": "https://nicolasdesnoust.github.io/Desnote-Book/home",
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/Desnote-Book",
@@ -136,7 +235,19 @@
     "subtitle": "Projet encadré",
     "image": {
       "folder": "ascenseur",
-      "widths": [200, 911, 1400]
+      "backgroundColor": "rgb(244 244 244)",
+      "layers": [
+        {
+          "widths": [200, 1151, 1400],
+          "offset": 0,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 2,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/ASCENSEUR",
     "quickOverview": {
@@ -155,7 +266,19 @@
     "subtitle": "Projet encadré",
     "image": {
       "folder": "pendu-socket",
-      "widths": [200, 1027, 1400]
+      "backgroundColor": "#dde5e7",
+      "layers": [
+        {
+          "widths": [200, 1400],
+          "offset": 4,
+          "extension": "png"
+        },
+        {
+          "widths": [200, 1400],
+          "offset": 5,
+          "extension": "png"
+        }
+      ]
     },
     "sourceCodeUrl": "https://github.com/NicolasDesnoust/PenduSocket",
     "quickOverview": {

@@ -12,7 +12,14 @@ export class PuzzleService {
 
   private readonly missingImagePlaceholder = {
     folder: 'defaultbanner',
-    widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+    backgroundColor: '#131c29',
+    layers: [
+      {
+        widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+        offset: -5,
+        extension: 'jpg'
+      },
+    ],
   };
 
   private readonly featuredPuzzleIds = new Set([

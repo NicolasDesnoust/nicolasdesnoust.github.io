@@ -6,7 +6,13 @@
     "difficultyColor": "#ea5974",
     "image": {
       "folder": "marslander3",
-      "widths": [200, 723, 1011, 1259, 1400]
+      "layers": [
+        {
+          "widths": [200, 723, 1011, 1259, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/expert/mars-lander-episode-3",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/MarsLander",
@@ -29,7 +35,13 @@
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "winamax",
-      "widths": [200, 451, 633, 836, 989, 1205, 1400]
+      "layers": [
+        {
+          "widths": [200, 451, 633, 836, 989, 1205, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/winamax-sponsored-contest",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/WinamaxSponsoredChallenge",
@@ -45,7 +57,14 @@
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "labyrinthe",
-      "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400]
+      "backgroundColor": "white",
+      "layers": [
+        {
+          "widths": [200, 525, 756, 931, 1159, 1361, 1374, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/the-labyrinth",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/LeLabyrinthe",
@@ -66,7 +85,14 @@
     "difficultyColor": "rgb(234, 143, 89)",
     "image": {
       "folder": "powerofthor2",
-      "widths": [200, 632, 908, 1150, 1351, 1400]
+      "backgroundColor": "white",
+      "layers": [
+        {
+          "widths": [200, 632, 908, 1150, 1351, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/hard/power-of-thor-episode-2",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/PowerOfThor",
@@ -86,7 +112,13 @@
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "bender1",
-      "widths": [200, 556, 800, 1045, 1219, 1368, 1388, 1400]
+      "layers": [
+        {
+          "widths": [200, 556, 800, 1045, 1219, 1368, 1388, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/medium/bender-episode-1",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/Bender",
@@ -102,7 +134,13 @@
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "shadowsoftheknight1",
-      "widths": [200, 693, 922, 1073, 1229, 1392, 1400]
+      "layers": [
+        {
+          "widths": [200, 693, 922, 1073, 1229, 1392, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/ShadowsOfTheKnight",
@@ -118,7 +156,13 @@
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "labataille",
-      "widths": [200, 597, 840, 1082, 1265, 1400]
+      "layers": [
+        {
+          "widths": [200, 597, 840, 1082, 1265, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/medium/winamax-battle",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/LaBataille",
@@ -134,7 +178,13 @@
     "difficultyColor": "rgb(234, 218, 89)",
     "image": {
       "folder": "thereisnospoon1",
-      "widths": [200, 588, 851, 1027, 1202, 1359, 1384, 1400]
+      "layers": [
+        {
+          "widths": [200, 588, 851, 1027, 1202, 1359, 1384, 1400],
+          "offset": 0,
+          "extension": "jpg"
+        }
+      ]
     },
     "subjectUrl": "https://www.codingame.com/training/medium/there-is-no-spoon-episode-1",
     "sourceCodeUrl": "https://github.com/nicolasdesnoust-codingame/ThereIsNoSpoon",

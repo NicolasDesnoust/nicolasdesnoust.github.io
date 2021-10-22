@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Project } from 'src/app/core/model/project';
+import { Image } from '../model/image';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +11,16 @@ import { Project } from 'src/app/core/model/project';
 export class ProjectService {
   private readonly projectsUrl = 'assets/data/projects.json';
 
-  private readonly missingImagePlaceholder = {
+  private readonly missingImagePlaceholder: Image = {
     folder: 'defaultbanner',
-    widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+    backgroundColor: '#131c29',
+    layers: [
+      {
+        widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
+        offset: -5,
+        extension: 'jpg'
+      },
+    ],
   };
 
   private readonly featuredProjectIds = new Set([

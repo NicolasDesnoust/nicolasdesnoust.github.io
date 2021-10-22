@@ -1,4 +1,9 @@
 export interface Image {
   folder: string;
-  widths: number[];
+  layers: Array<{
+    widths: number[];
+    offset: number;
+    extension: string;
+  }>
+  backgroundColor: string;
 }
