@@ -17,7 +17,7 @@ export class PuzzleCardComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const _myAtropos = Atropos({
       el: this.atropos?.nativeElement,
-      // highlight: false,
+      rotateTouch: 'scroll-y'
     });
   }
 }

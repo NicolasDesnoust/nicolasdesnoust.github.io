@@ -26,6 +26,7 @@ export class ProjectCardComponent implements AfterViewInit {
     const _myAtropos = Atropos({
       el: this.atropos?.nativeElement,
       highlight: false,
+      rotateTouch: 'scroll-y'
     });
   }
 }
