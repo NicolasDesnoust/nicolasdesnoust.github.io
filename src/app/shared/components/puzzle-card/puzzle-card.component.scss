@@ -5,3 +5,30 @@
     border-radius: 0;
   }
 }
+
+
+.atropos-inner {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+}
+
+.card-header {
+  background-color: inherit;
+}
+.card-content {
+  background-color: black;
+}
+.card-footer {
+  z-index: 30;
+  background-color: inherit;
+}
+figure:not(:first-child) {
+  position: absolute;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+::ng-deep .atropos-shadow {
+  background: #00000026 !important;
+}

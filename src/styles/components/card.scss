@@ -22,7 +22,7 @@
     flex-grow: 1;
 
     &-content {
-      overflow-y: hidden;
+      overflow: hidden;
     }
 
     &:not(:last-child) {

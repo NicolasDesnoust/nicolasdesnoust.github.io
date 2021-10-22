@@ -5,15 +5,15 @@ import { Image } from "src/app/core/model/image";
   name: 'srcset',
 })
 export class SrcsetPipe implements PipeTransform {
-  transform(value: Image | undefined): string {
+  transform(image: Image | undefined, layerIndex: number): string {
     let srcset = '';
 
-    if(!value) {
+    if(!image) {
       return '';
     }
 
-    for (let width of value.widths) {
-      srcset += `assets/images/${value.folder}/${value.folder}_w_${width}.jpg   ${width}w,`;
+    for (let width of image.layers[layerIndex].widths) {
+      srcset += `assets/images/${image.folder}/${image.folder}_l${layerIndex}_w${width}.${ image.layers[layerIndex].extension }   ${width}w,`;
     }
 
     return srcset;

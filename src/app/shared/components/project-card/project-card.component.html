@@ -1,32 +1,53 @@
-<div class="card custom-card">
-  <header class="card-header">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{ project?.title }}</p>
-        <p class="subtitle is-7">
-          {{ project?.subtitle }}
-        </p>
+<div class="atropos my-atropos" #atropos>
+  <div class="atropos-scale">
+    <div class="atropos-rotate">
+      <div class="atropos-inner">
+        <div class="card custom-card">
+          <header class="card-header">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4" data-atropos-offset="5">
+                  {{ project?.title }}
+                </p>
+                <p class="subtitle is-7" data-atropos-offset="5">
+                  {{ project?.subtitle }}
+                </p>
+              </div>
+            </div>
+          </header>
+          <div
+            class="card-content"
+            [ngStyle]="{ 'background-color': project?.image?.backgroundColor }"
+          >
+            <div class="card-image">
+              <figure
+                class="image is-16by9 is-full"
+                *ngFor="let layer of project?.image?.layers; let index = index"
+              >
+                <img
+                  [attr.data-atropos-offset]="layer?.offset"
+                  sizes="(max-width: 1400px) 100vw, 1400px"
+                  [srcset]="project?.image | srcset: index"
+                  src="assets/images/{{ project?.image?.folder }}/{{
+                    project?.image?.folder
+                  }}_l{{ index }}_w1400.{{ layer.extension }}"
+                  alt=""
+                />
+              </figure>
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <a
+              class="card-footer-item"
+              (click)="viewMoreButtonClicked.emit()"
+              data-atropos-offset="5"
+            >
+              Voir plus
+            </a>
+          </footer>
+        </div>
       </div>
     </div>
-  </header>
-  <div class="card-content">
-    <div class="card-image">
-      <figure class="image is-16by9 is-full">
-        <img
-          sizes="(max-width: 1400px) 100vw, 1400px"
-          [srcset]="project?.image | srcset"
-          src="assets/images/{{ project?.image?.folder }}/{{
-            project?.image?.folder
-          }}_w_1400.jpg"
-          alt=""
-        />
-      </figure>
-    </div>
   </div>
-
-  <footer class="card-footer">
-    <a class="card-footer-item" (click)="viewMoreButtonClicked.emit()">
-      Voir plus
-    </a>
-  </footer>
 </div>
