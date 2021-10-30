@@ -28,6 +28,7 @@
     "bulma": "^0.9.3",
     "file-saver": "^2.0.5",
     "marked": "^3.0.0",
+    "ngx-device-detector": "^1.5.2",
     "ngx-markdown": "^10.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
