@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MarkdownModule } from 'ngx-markdown';
+import { AtroposComponent } from './components/atropos/atropos.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { PuzzleCardComponent } from './components/puzzle-card/puzzle-card.component';
@@ -19,6 +20,7 @@ const components = [
   QuickOverviewComponent,
   PuzzleCardComponent,
   ProjectCardComponent,
+  AtroposComponent,
 ];
 
 const directives = [ClickOutsideDirective, SecuredExternalLinkDirective];
