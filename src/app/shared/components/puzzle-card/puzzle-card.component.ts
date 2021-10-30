@@ -1,23 +1,26 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
+import { AtroposOptions } from 'atropos';
 import { Puzzle } from 'src/app/core/model/puzzle';
-
-declare var Atropos: any;
 
 @Component({
   selector: 'desn-puzzle-card',
   templateUrl: './puzzle-card.component.html',
   styleUrls: ['./puzzle-card.component.scss'],
 })
-export class PuzzleCardComponent implements AfterViewInit {
+export class PuzzleCardComponent {
   @Input() puzzle: Puzzle | null = null;
   @Output() viewMoreButtonClicked = new EventEmitter<void>();
 
-  @ViewChild('atropos') private atropos: ElementRef | undefined;
+  atroposOptions: AtroposOptions;
 
-  ngAfterViewInit(): void {
-    const _myAtropos = Atropos({
-      el: this.atropos?.nativeElement,
-      rotateTouch: 'scroll-y'
-    });
+  constructor() {
+    this.atroposOptions = {
+      rotateTouch: false,
+    };
   }
 }

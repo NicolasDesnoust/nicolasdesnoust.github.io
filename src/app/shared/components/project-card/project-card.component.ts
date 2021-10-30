@@ -1,32 +1,26 @@
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  EventEmitter,
+  Component, EventEmitter,
   Input,
-  Output,
-  ViewChild
+  Output
 } from '@angular/core';
+import { AtroposOptions } from 'atropos';
 import { Project } from '../../../core/model/project';
-
-declare var Atropos: any;
 
 @Component({
   selector: 'desn-project-card',
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss'],
 })
-export class ProjectCardComponent implements AfterViewInit {
+export class ProjectCardComponent {
   @Input() project: Project | null = null;
   @Output() viewMoreButtonClicked = new EventEmitter<void>();
 
-  @ViewChild('atropos') private atropos: ElementRef | undefined;
+  atroposOptions: AtroposOptions;
 
-  ngAfterViewInit(): void {
-    const _myAtropos = Atropos({
-      el: this.atropos?.nativeElement,
+  constructor() {
+    this.atroposOptions = {
       highlight: false,
-      rotateTouch: 'scroll-y'
-    });
+      rotateTouch: false,
+    };
   }
 }

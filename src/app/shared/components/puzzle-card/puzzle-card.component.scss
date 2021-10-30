@@ -6,11 +6,6 @@
   }
 }
 
-
-.atropos-inner {
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
-}
-
 .card-header {
   background-color: inherit;
 }
@@ -27,8 +22,4 @@ figure:not(:first-child) {
   top: 0;
   left: 0;
   width: 100%;
-}
-
-::ng-deep .atropos-shadow {
-  background: #00000026 !important;
 }
