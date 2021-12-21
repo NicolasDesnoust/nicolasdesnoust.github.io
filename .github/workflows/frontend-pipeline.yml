@@ -1,0 +1,27 @@
+name: Frontend pipeline
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      WORKING_DIRECTORY: ./frontend
+    steps:
+      - uses: actions/checkout@v2
+
+
+      - name: Disable Jekyll
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+        run: mkdir -p ./dist/static/ && touch ./dist/static/.nojekyll
+
+      - uses: NicolasDesnoust/scully-gh-pages-action@v12
+        name: Build & Publish app on Github Pages branch
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: main
+          build-args: --prod
+          working-directory: ${{ env.WORKING_DIRECTORY }}

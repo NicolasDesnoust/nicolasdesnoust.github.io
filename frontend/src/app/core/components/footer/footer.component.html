@@ -1,0 +1,56 @@
+<footer id="footer" class="footer has-background-primary">
+  <div class="content has-text-centered">
+    <div class="mb-6 buttons is-justify-content-center">
+      <a
+        *ngFor="let link of links"
+        class="button"
+        [attr.data-tooltip]="link.label"
+        [href]="link.url"
+        [attr.aria-label]="link.ariaLabel"
+      >
+        <span *ngIf="link.faIcon" class="icon is-large">
+          <i [class]="link.faIcon" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="link.customIcon" class="icon is-large">
+          <img
+            style="border-radius: 0.25rem"
+            [src]="link.customIcon"
+            height="20px"
+            width="20px"
+            alt="Icône de '{{ link.label }}'"
+          />
+        </span>
+      </a>
+    </div>
+    <p class="has-text-white">
+      Conçu avec
+      <a
+        href="https://angular.io/"
+        aria-label="Accéder à la page d'accueil d'Angular"
+      >
+        Angular</a
+      >,
+      <a
+        href="https://bulma.io/"
+        aria-label="Accéder à la page d'accueil de Bulma"
+      >
+        Bulma</a
+      >,
+      <a
+        href="https://scully.io/"
+        aria-label="Accéder à la page d'accueil de Scully"
+      >
+        Scully
+      </a>
+      et
+      <a
+        href="https://aws.amazon.com/fr"
+        aria-label="Accéder à la page d'accueil de Amazon Web Services"
+      >
+        Amazon Web Services
+      </a>
+      <br />
+      <small>&copy; Copyright {{ currentYear }}, Nicolas Desnoust</small>
+    </p>
+  </div>
+</footer>

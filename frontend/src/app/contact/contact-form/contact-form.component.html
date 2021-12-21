@@ -1,0 +1,133 @@
+<section class="section is-medium has-text-centered">
+  <h1 id="projets" class="title is-spaced">Contact</h1>
+  <h2 class="subtitle">
+    Vous pouvez m'envoyer un message si vous avez des questions à me poser ou si
+    vous souhaitez planifier un entretien.
+  </h2>
+
+  <div class="columns mt-6">
+    <div class="column is-10 is-offset-1">
+      <div class="block has-text-left">
+        <form [formGroup]="contactForm">
+          <div class="field">
+            <label class="label required">Objet du message</label>
+            <p class="control">
+              <input
+                [ngClass]="{
+                  'is-danger':
+                    f.subject.invalid && (f.subject.dirty || f.subject.touched)
+                }"
+                required="required"
+                formControlName="subject"
+                class="input"
+                type="text"
+              />
+            </p>
+            <span
+              *ngIf="
+                f.subject.invalid && (f.subject.dirty || f.subject.touched)
+              "
+              [appendErrorMessageOf]="f.subject"
+              class="help is-danger error-message"
+            >
+            </span>
+          </div>
+
+          <div class="field">
+            <label class="label required">Corps du message</label>
+            <p class="control">
+              <textarea
+                [ngClass]="{
+                  'is-danger':
+                    f.body.invalid && (f.body.dirty || f.body.touched)
+                }"
+                required="required"
+                formControlName="body"
+                class="textarea"
+                rows="10"
+              ></textarea>
+            </p>
+            <span
+              *ngIf="f.body.invalid && (f.body.dirty || f.body.touched)"
+              [appendErrorMessageOf]="f.body"
+              class="help is-danger error-message"
+            >
+            </span>
+            <span class="help">
+              Expliquez-ici les raisons pour lesquelles vous souhaitez me
+              contacter.
+            </span>
+          </div>
+
+          <div class="field">
+            <label class="label required">Votre nom complet</label>
+            <p class="control has-icons-left">
+              <input
+                [ngClass]="{
+                  'is-danger':
+                    f.senderName.invalid &&
+                    (f.senderName.dirty || f.senderName.touched)
+                }"
+                required="required"
+                formControlName="senderName"
+                class="input"
+                type="text"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-user" aria-hidden="true"></i>
+              </span>
+            </p>
+            <span
+              *ngIf="
+                f.senderName.invalid &&
+                (f.senderName.dirty || f.senderName.touched)
+              "
+              [appendErrorMessageOf]="f.senderName"
+              class="help is-danger error-message"
+            >
+            </span>
+          </div>
+
+          <div class="field">
+            <label class="label required">Votre mail</label>
+            <p class="control has-icons-left">
+              <input
+                required="required"
+                formControlName="senderEmailAddress"
+                class="input"
+                [ngClass]="{
+                  'is-danger':
+                    f.senderEmailAddress.invalid &&
+                    (f.senderEmailAddress.dirty || f.senderEmailAddress.touched)
+                }"
+                type="email"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </span>
+            </p>
+            <span
+              *ngIf="
+                f.senderEmailAddress.invalid &&
+                (f.senderEmailAddress.dirty || f.senderEmailAddress.touched)
+              "
+              [appendErrorMessageOf]="f.senderEmailAddress"
+              class="help is-danger error-message"
+            >
+            </span>
+            <span class="help">
+              J'utiliserais uniquement votre mail pour vous répondre.
+            </span>
+          </div>
+        </form>
+      </div>
+      <button
+        class="button is-primary"
+        (click)="sendContactMessage()"
+        [ngClass]="{ 'is-loading': isSubmittingForm }"
+      >
+        Envoyer le message
+      </button>
+    </div>
+  </div>
+</section>

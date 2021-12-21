@@ -1,0 +1,30 @@
+name: Backend pipeline
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      WORKING_DIRECTORY: ./backend
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - uses: aws-actions/setup-sam@v1
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-3
+      # sam build
+      - run: sam build --use-container
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+      # sam deploy
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name portfolio-rest-api --s3-bucket inventory-find-function-2454 --region eu-west-3 --capabilities CAPABILITY_IAM 
+        working-directory: ${{ env.WORKING_DIRECTORY }}
