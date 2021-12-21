@@ -1,55 +1,18 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
+frontend/.scully/
 
-# dependencies
-/node_modules
+backend/.aws-sam/
 
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
+backend/.idea/
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+backend/.settings/
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+backend/.vscode/
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+backend/target/
 
-# System Files
-.DS_Store
-Thumbs.db
+*.iml
 
-scully/plugins/*.js
-scully/plugins/*.map
+backend/.project
 
-scully.log
-
-scully.*.config.js
-
-src/assets/scully-routes.json
+backend/.classpath

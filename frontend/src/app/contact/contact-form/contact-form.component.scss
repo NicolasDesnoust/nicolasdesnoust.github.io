@@ -1,0 +1,11 @@
+// .field {
+//   padding-bottom: 1.5rem;
+// }
+
+// .error-message {
+//   position: absolute;
+// }
+.required:after {
+  content:" *";
+  color: red;
+}
