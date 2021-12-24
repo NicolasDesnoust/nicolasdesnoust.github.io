@@ -1,3 +1,0 @@
-Inspirations:
-- https://mattfarley.ca/
-- https://bulmatemplates.github.io/bulma-templates/templates/personal.html
