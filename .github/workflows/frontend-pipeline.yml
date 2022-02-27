@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - production
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-pipeline.yml'
 
 jobs:
   build-deploy:

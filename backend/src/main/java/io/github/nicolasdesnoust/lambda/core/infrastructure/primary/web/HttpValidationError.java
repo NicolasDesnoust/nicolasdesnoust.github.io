@@ -1,16 +1,19 @@
-package io.github.nicolasdesnoust.lambda.core;
+package io.github.nicolasdesnoust.lambda.core.infrastructure.primary.web;
 
-import io.github.nicolasdesnoust.lambda.core.HttpError.HttpSubError;
-import jakarta.validation.ConstraintViolation;
+import io.github.nicolasdesnoust.lambda.core.infrastructure.primary.web.HttpError.HttpSubError;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.ConstraintViolation;
+
 @Data
 @Builder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
+@RegisterForReflection
 public class HttpValidationError implements HttpSubError {
     private String object;
     private String field;
