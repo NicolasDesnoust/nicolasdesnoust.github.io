@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - production
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-pipeline.yml'
 
 jobs:
   build-deploy:
@@ -21,10 +24,26 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
-      # sam build
-      - run: sam build --use-container
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          version: 'latest'
+          java-version: '11'
+          components: 'native-image'
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+
+      # native build
+      - run: chmod +x mvnw
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+      - run: ./mvnw clean package -Dnative
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       # sam deploy
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name portfolio-rest-api --s3-bucket inventory-find-function-2454 --region eu-west-3 --capabilities CAPABILITY_IAM 
+      - run: |
+          sam deploy \
+            -t target/sam.native.yaml \
+            --no-confirm-changeset --no-fail-on-empty-changeset \
+            --stack-name portfolio-rest-api \
+            --s3-bucket inventory-find-function-2454 \
+            --region eu-west-3 \
+            --capabilities CAPABILITY_IAM 
         working-directory: ${{ env.WORKING_DIRECTORY }}

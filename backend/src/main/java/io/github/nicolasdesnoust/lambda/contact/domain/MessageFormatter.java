@@ -1,4 +1,4 @@
-package io.github.nicolasdesnoust.lambda.contact;
+package io.github.nicolasdesnoust.lambda.contact.domain;
 
 public class MessageFormatter {
     // The HTML body for the email.
