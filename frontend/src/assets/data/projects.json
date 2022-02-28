@@ -169,38 +169,6 @@
     }
   },
   {
-    "id": "activites-aquatiques",
-    "title": "Réservation d'activités aquatiques",
-    "subtitle": "Projet bénévole",
-    "image": {
-      "folder": "activites-aquatiques",
-      "backgroundColor": "rgb(205 230 242)",
-      "layers": [
-        {
-          "widths": [200, 729, 1048, 1309, 1400],
-          "offset": 0,
-          "extension": "jpg"
-        },
-        {
-          "widths": [200, 1400],
-          "offset": 5,
-          "extension": "png"
-        }
-      ]
-    },
-    "sourceCodeUrl": "https://gitlab.com/niaba-desnoust/reservation-activites-aquatiques",
-    "quickOverview": {
-      "langages": ["Java", "Typescript", "SCSS", "HTML"],
-      "frameworks": ["Spring Boot", "Angular"],
-      "base de données": ["PostgreSQL"],
-      "concepts": [
-        "Docker / Docker Compose",
-        "Modèle d'architecture C4",
-        "Méthode agile Kanban"
-      ]
-    }
-  },
-  {
     "id": "geolocalisation",
     "title": "Géolocalisation",
     "subtitle": "Projet encadré",
