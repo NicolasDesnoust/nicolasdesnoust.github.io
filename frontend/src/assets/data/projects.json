@@ -105,6 +105,43 @@
     }
   },
   {
+    "id": "wordsearch",
+    "title": "Wordsearch",
+    "subtitle": "Projet personnel",
+    "image": {
+      "folder": "wordsearch",
+      "backgroundColor": "#abedd2",
+      "layers": [
+        {
+          "widths": [1400],
+          "offset": -5,
+          "extension": "png"
+        },
+        {
+          "widths": [1400],
+          "offset": 0,
+          "extension": "png"
+        },
+        {
+          "widths": [1400],
+          "offset": 1,
+          "extension": "png"
+        }
+      ]
+    },
+    "sourceCodeUrl": "https://github.com/NicolasDesnoust/wordsearch",
+    "quickOverview": {
+      "langages": ["Java", "Gherkin"],
+      "frameworks": ["Spring Boot"],
+      "librairies": ["Cucumber", "ArchUnit", "Tesseract"],
+      "concepts": [
+        "Clean architecture",
+        "Reconnaissance optique de caractères",
+        "Multi-stage Docker builds"
+      ]
+    }
+  },
+  {
     "id": "marble-wars",
     "title": "Marble Wars",
     "subtitle": "Projet encadré",

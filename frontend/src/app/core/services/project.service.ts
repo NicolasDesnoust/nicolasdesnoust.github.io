@@ -27,7 +27,7 @@ export class ProjectService {
     'dassault-aviation',
     'adm',
     'xyz-ingenierie',
-    'marble-wars',
+    'wordsearch',
   ]);
 
   constructor(private http: HttpClient) {}
