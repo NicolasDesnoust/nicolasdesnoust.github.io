@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 import { HomeLayoutComponent } from './core/layouts/home-layout.component';
 import { LightLayoutComponent } from './core/layouts/light-layout.component';
 
@@ -13,6 +14,17 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
+  },
+  {
+    path: '',
+    component: HomeLayoutComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./home/home.module').then((m) => m.HomeModule),
+      },
+    ],
   },
   {
     path: '',
@@ -33,21 +45,9 @@ const routes: Routes = [
         loadChildren: () =>
           import('./contact/contact.module').then((m) => m.ContactModule),
       },
+      { path: '**', component: NotFoundComponent },
     ],
   },
-  {
-    path: '',
-    component: HomeLayoutComponent,
-    children: [
-      {
-        path: 'home',
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
-      },
-    ],
-  },
-  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
-  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

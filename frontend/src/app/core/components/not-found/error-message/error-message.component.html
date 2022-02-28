@@ -1,0 +1,20 @@
+<div class="error-message-container">
+  <img
+    class="error-message-image"
+    [src]="errorMessage?.image?.url"
+    alt=""
+    [ngStyle]="{ width: errorMessage?.image?.desiredWidth + 'px' }"
+    [width]="errorMessage?.image?.realWidth"
+    [height]="errorMessage?.image?.realHeight"
+  />
+  <h1 class="title">{{ errorMessage?.title }}</h1>
+  <p>
+    {{ errorMessage?.message }}
+  </p>
+  <button
+    class="error-message-action button is-primary"
+    (click)="errorMessage?.button?.action()"
+  >
+    {{ errorMessage?.button?.label }}
+  </button>
+</div>
