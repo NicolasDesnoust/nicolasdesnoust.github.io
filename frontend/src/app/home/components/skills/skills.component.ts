@@ -17,54 +17,56 @@ import { Skill } from '../../model/skill';
 export class SkillsComponent {
   languages: Skill[] = [
     { name: 'Java', level: 5 },
-    { name: 'TypeScript', level: 4 },
-    { name: 'JavaScript', level: 3 },
+    { name: 'TypeScript', level: 5 },
+    { name: 'JavaScript', level: 4 },
     { name: 'HTML', level: 5 },
     { name: 'CSS / SCSS', level: 4 },
     { name: 'C', level: 2 },
   ];
 
   librairies: Skill[] = [
-    { name: 'Ngrx', level: 3 },
+    { name: 'JPA / Hibernate', level: 4 },
+    { name: 'JUnit + AssertJ', level: 5 },
     { name: 'Rxjs', level: 4 },
+    { name: 'Cucumber', level: 3 },
+    { name: 'ArchUnit', level: 4 },
+    { name: 'Ngrx', level: 3 },
     { name: 'Scully', level: 3 },
     { name: 'Angular Material Design', level: 4 },
     { name: 'Bootstrap', level: 3 },
-    { name: 'Bulma', level: 2 },
-    { name: 'JPA / Hibernate', level: 4 },
     { name: 'Lombok', level: 4 },
   ];
 
   frameworks: Skill[] = [
     { name: 'Angular', level: 5 },
-    { name: 'Spring Boot', level: 4 },
-    { name: 'NestJS', level: 3 },
+    { name: 'Spring Boot', level: 5 },
+    { name: 'Quarkus', level: 2 },
+    { name: 'NestJS', level: 2 },
   ];
 
   databases: Skill[] = [
-    { name: 'PostgreSQL', level: 5 },
-    { name: 'Elasticsearch', level: 4 },
+    { name: 'PostgreSQL', level: 4 },
+    { name: 'Elasticsearch', level: 2 },
     { name: 'HyperSQL / H2', level: 4 },
-    { name: 'MySQL', level: 5 },
-    { name: 'MongoDB', level: 2 },
+    { name: 'MySQL', level: 4 },
   ];
 
   methodologies: Skill[] = [
     { name: 'Scrum', level: 4 },
     { name: 'Kanban', level: 4 },
-    { name: 'Test Driven Devlopment', level: 3 },
+    { name: 'Test Driven Devlopment', level: 2 },
   ];
 
   devops: Skill[] = [
     { name: 'Docker', level: 4 },
+    { name: 'Github Actions', level: 4 },
     { name: 'Gitlab CI', level: 3 },
-    { name: 'Github Actions', level: 2 },
   ];
 
   softwares: Skill[] = [
-    { name: 'Eclipse / STS', level: 5 },
-    { name: 'Jira / Confluence', level: 4 },
     { name: 'Visual Studio Code', level: 5 },
+    { name: 'IntelliJ', level: 3 },
+    { name: 'Jira / Confluence', level: 4 },
     { name: 'Gitkraken', level: 4 },
     { name: 'Postman', level: 4 },
     { name: 'DBeaver', level: 3 },
