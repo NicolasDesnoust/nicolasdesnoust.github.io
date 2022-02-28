@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+}
+
+.error-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.error-message-image {
+  margin-bottom: 2rem;
+  height: auto;
+}
+
+.error-message-action {
+  margin-top: 1rem;
+}

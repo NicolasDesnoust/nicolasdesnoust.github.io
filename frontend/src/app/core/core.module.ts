@@ -7,6 +7,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ErrorMessageComponent } from './components/not-found/error-message/error-message.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ResumeCallToActionComponent } from './components/resume-call-to-action/resume-call-to-action.component';
 import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { LightLayoutComponent } from './layouts/light-layout.component';
@@ -17,6 +19,8 @@ const COMPONENTS: any[] = [
   FooterComponent,
   NavbarComponent,
   ResumeCallToActionComponent,
+  NotFoundComponent,
+  ErrorMessageComponent
 ];
 
 const LAYOUTS: any[] = [HomeLayoutComponent, LightLayoutComponent];
