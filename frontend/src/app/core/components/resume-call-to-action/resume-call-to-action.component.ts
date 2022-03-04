@@ -36,7 +36,7 @@ export class ResumeCallToActionComponent implements OnInit {
   downloadResume() {
     if (this.isFileSaverSupported) {
       this.http
-        .get('/assets/curriculum-vitae-2021.pdf', { responseType: 'blob' })
+        .get('/assets/curriculum-vitae_nicolas-desnoust.pdf', { responseType: 'blob' })
         .subscribe((resumeData: any) => {
           const resumeAsBlob = new Blob([resumeData], {
             type: 'application/pdf',
