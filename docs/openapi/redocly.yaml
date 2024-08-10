@@ -1,0 +1,8 @@
+extends:
+  - recommended
+
+plugins:
+  - plugins/aws-api-gateway-postprocess.js
+
+decorators:
+  aws-api-gateway-postprocess/remove-dots: on

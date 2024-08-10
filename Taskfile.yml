@@ -6,3 +6,6 @@ includes:
   iac:
     dir: ./iac
     taskfile: ./iac
+  openapi:
+    dir: ./docs/openapi
+    taskfile: ./docs/openapi

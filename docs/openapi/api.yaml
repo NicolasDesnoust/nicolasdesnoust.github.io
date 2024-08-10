@@ -1,0 +1,23 @@
+openapi: "3.0.1"
+info:
+  version: "1.0.0"
+  title: "Backend API Documentation for Nicolas Desnoust's Portfolio"
+  description: "This documentation outlines the backend API endpoints and features for Nicolas Desnoust's portfolio website."
+externalDocs:
+  description: Project README
+  url: https://github.com/NicolasDesnoust/nicolasdesnoust.github.io
+servers:
+  - url: "{baseUrl}"
+    description: Base URL
+    variables:
+      baseUrl:
+        default: "${base_url}"
+
+paths:
+  /send-contact-mail:
+    $ref: "./contact/_paths.yaml#/paths/~1send-contact-mail"
+
+x-amazon-apigateway-request-validators:
+  validate_request:
+    validateRequestBody: true
+    validateRequestParameters: true

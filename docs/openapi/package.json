@@ -1,0 +1,7 @@
+{
+  "name": "openapi",
+  "private": true,
+  "devDependencies": {
+    "@redocly/cli": "1.2.0"
+  }
+}

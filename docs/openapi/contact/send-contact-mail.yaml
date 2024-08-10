@@ -1,0 +1,30 @@
+components:
+  schemas:
+    SendContactMailRequest:
+      type: object
+      required:
+        - subject
+        - body
+        - sender
+      properties:
+        subject:
+          type: string
+          maxLength: 200
+        body:
+          type: string
+          maxLength: 5000
+        sender:
+          $ref: "#/components/schemas/SendContactMailRequest.Sender"
+
+    SendContactMailRequest.Sender:
+      type: object
+      required:
+        - name
+        - emailAddress
+      properties:
+        name:
+          type: string
+          maxLength: 200
+        emailAddress:
+          type: string
+          maxLength: 320
