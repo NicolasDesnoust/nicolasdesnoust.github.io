@@ -1,18 +1,35 @@
-
-frontend/.scully/
-
-backend/.aws-sam/
-
-backend/.idea/
-
-backend/.settings/
-
-backend/.vscode/
-
-backend/target/
-
+# IDE files
+.vscode/
+.idea/
 *.iml
 
-backend/.project
+# Node files
+**/node_modules
 
-backend/.classpath
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tflock
+*.core
+**/.terraform/
+**/.terraform/*
+**/.terraform.lock.hcl
+*.backup
+
+# Environment files
+.env.*
+
+# Log files
+*.log
+
+# Build artifacts
+.archives/
+build/
+builds/
+
+# Scully files
+**/.scully/
+
+# SAM files
+**/.aws-sam/

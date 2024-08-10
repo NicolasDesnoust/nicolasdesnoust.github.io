@@ -1,0 +1,8 @@
+version: "3.38.0"
+
+dotenv: [".env.{{.ENV_FILE}}"]
+
+includes:
+  iac:
+    dir: ./iac
+    taskfile: ./iac

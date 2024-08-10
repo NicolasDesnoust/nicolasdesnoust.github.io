@@ -1,0 +1,39 @@
+version: "3.38.0"
+
+vars:
+  VAR_FOLDER_PATH: "./var/{{.ENV}}"
+
+tasks:
+  init:
+    desc: Initialize Terraform in the requirements directory.
+    requires:
+      vars: [ENV]
+    cmds:
+      - terraform init -backend-config="path={{.VAR_FOLDER_PATH}}/terraform.tfstate" -reconfigure
+
+  plan:
+    desc: Generate an execution plan for prerequisite infrastructure.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    deps:
+      - init
+    cmds:
+      - terraform plan -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" -out="{{.VAR_FOLDER_PATH}}/requirements.tfplan"
+
+  apply:
+    desc: Apply changes to prerequisite infrastructure.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    deps:
+      - init
+    cmds:
+      - terraform apply -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" {{.CLI_ARGS}}
+
+  destroy:
+    desc: Destroy prerequisite infrastructure managed by Terraform.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    deps:
+      - init
+    cmds:
+      - terraform destroy -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars"
