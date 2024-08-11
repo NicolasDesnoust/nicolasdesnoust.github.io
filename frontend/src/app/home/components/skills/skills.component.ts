@@ -44,7 +44,6 @@ export class SkillsComponent {
   frameworks: Skill[] = [
     { name: 'Angular', level: 5 },
     { name: 'Spring Boot', level: 5 },
-    { name: 'Quarkus', level: 2 },
     { name: 'NestJS', level: 2 },
   ];
 
