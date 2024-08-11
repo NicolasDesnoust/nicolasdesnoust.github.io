@@ -11,7 +11,7 @@ tasks:
     cmds:
       - pnpm redocly bundle ./api.yaml -o ./build/api.yaml --config redocly.yaml
 
-  preview:
+  serve:
     desc: "Preview the API documentation in a local environment."
     cmds:
       - pnpm redocly preview-docs ./api.yaml --config redocly.yaml --skip-decorator=aws-api-gateway-postprocess/remove-dots

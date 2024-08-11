@@ -1,16 +1,6 @@
 {
   "name": "portfolio",
   "private": true,
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
-  },
   "dependencies": {
     "@angular/animations": "~10.2.0",
     "@angular/common": "~10.2.0",

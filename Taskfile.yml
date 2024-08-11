@@ -12,6 +12,9 @@ includes:
   lambda:
     dir: ./backend
     taskfile: ./backend
+  front:
+    dir: ./frontend
+    taskfile: ./frontend
 
 tasks:
   api:deploy:

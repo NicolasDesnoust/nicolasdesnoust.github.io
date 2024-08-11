@@ -1,0 +1,39 @@
+version: "3.38.0"
+
+tasks:
+  serve:
+    desc: "Serves the Angular app locally for development."
+    cmds:
+      - "pnpm ng serve"
+
+  build:
+    desc: "Builds the Angular app."
+    requires:
+      vars: [ENV]
+    cmds:
+      - "pnpm ng build --{{.ENV}}"
+
+  test:
+    desc: "Runs unit tests for the Angular app."
+    cmds:
+      - "pnpm ng test"
+
+  lint:
+    desc: "Lints the Angular app for style and errors."
+    cmds:
+      - "pnpm ng lint"
+
+  e2e:
+    desc: "Runs end-to-end tests on the Angular app."
+    cmds:
+      - "pnpm ng e2e"
+
+  scully:
+    desc: "Generates static pages with Scully."
+    cmds:
+      - "npx scully --"
+
+  scully:serve:
+    desc: "Serves the static site locally."
+    cmds:
+      - "npx scully serve --"
