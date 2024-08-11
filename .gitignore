@@ -28,5 +28,5 @@
 build/
 builds/
 
-# SAM files
-**/.aws-sam/
+# Angular files
+**/.angular

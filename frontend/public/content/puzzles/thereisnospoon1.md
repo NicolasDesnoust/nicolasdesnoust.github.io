@@ -8,7 +8,7 @@ L'objectif de ce puzzle est de trouver dans un tableau à deux dimensions et pou
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/puzzles/thereisnospoon1_1.png" 
+  <img src="/content/puzzles/thereisnospoon1_1.png" 
        alt="Capture d'écran du puzzle There is no Spoon 1" width="793" height="444">
     <figcaption>Capture d'écran du puzzle There is no Spoon 1</figcaption>
 </figure>

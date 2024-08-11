@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Puzzle } from 'src/app/core/model/puzzle';
-import { PuzzleService } from 'src/app/core/services/puzzle.service';
+import { Puzzle } from '../../core/model/puzzle';
+import { PuzzleService } from '../../core/services/puzzle.service';
 
 @Injectable({
   providedIn: 'root',

@@ -10,7 +10,7 @@ Cette application permet actuellement de rédiger des articles en markdown, de l
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/desnote-book_2.png" 
+  <img src="/content/projects/desnote-book_2.png" 
         alt="Aperçu de l'application" width="1144" height="841">
   <figcaption>Aperçu de l'application</figcaption>
 </figure>
@@ -20,7 +20,7 @@ Les articles sont automatiquement indexés dans le moteur de recherche [Algolia]
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/desnote-book_1.png" 
+  <img src="/content/projects/desnote-book_1.png" 
         alt="Aperçu de la fonctionnalité de recherche d'articles" width="883" height="362">
   <figcaption>Aperçu de la fonctionnalité de recherche d'articles</figcaption>
 </figure>
@@ -30,7 +30,7 @@ L'application tire également avantage des directives d'Angular pour ajouter des
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/desnote-book_3.png" 
+  <img src="/content/projects/desnote-book_3.png" 
         alt="Aperçu des notifications et info-bulles ajoutées aux articles" width="1000" height="363">
   <figcaption>Aperçu de notifications et info-bulles ajoutées aux articles</figcaption>
 </figure>

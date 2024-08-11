@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { PageTitleService } from './core/services/page-title.service';
+import { ScrollBehaviorService } from './core/services/scroll-behavior.service';
 
 @Component({
   selector: 'desn-root',
-  template: ` <router-outlet></router-outlet> `,
+  standalone: true,
+  imports: [RouterOutlet],
+  template: ` <router-outlet /> `,
   styles: [
     `
       :host {
@@ -13,4 +18,12 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(
+    _scrollBehaviorService: ScrollBehaviorService,
+    _pageTitleService: PageTitleService
+  ) {
+    // ! Ces services sont injectés dans le constructeur du module pour qu'ils ne
+    // ! soient pas supprimés par Angular (tree-shaking)
+  }
+}

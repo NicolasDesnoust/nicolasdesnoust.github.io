@@ -12,7 +12,7 @@ L'objectif de l'application développée est de pouvoir identifier les donateurs
 
 <div class="is-flex is-justify-content-center">
 <figure>
-   <img src="/assets/content/projects/geolocalisation_1.png" 
+   <img src="/content/projects/geolocalisation_1.png" 
         alt="Aperçu de l'interface de l'application" width="1280" height="459">
    <figcaption>Aperçu de l'interface de l'application</figcaption>
 </figure>

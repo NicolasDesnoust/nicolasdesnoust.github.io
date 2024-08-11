@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Link } from '../../../home/model/link';
 
 @Component({
   selector: 'desn-footer',
+  standalone: true,
   templateUrl: './footer.component.html',
+  imports: [CommonModule],
 })
 export class FooterComponent {
   readonly currentYear = new Date().getFullYear();
@@ -21,7 +24,7 @@ export class FooterComponent {
       url: 'https://gitlab.com/NicolasDesnoust',
     },
     {
-      customIcon: 'assets/icons/codingame.svg',
+      customIcon: 'icons/codingame.svg',
       label: 'Codingame',
       ariaLabel: 'Voir mon profil Codingame',
       url: 'https://www.codingame.com/profile/afe8db750947c013fd1e82837255813e6027824',

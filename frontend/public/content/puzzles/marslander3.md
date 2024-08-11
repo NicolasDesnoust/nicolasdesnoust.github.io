@@ -8,7 +8,7 @@ L'objectif de ce puzzle est de faire atterrir, sans crash, une capsule sur Mars.
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/puzzles/marslander3_1.png" 
+  <img src="/content/puzzles/marslander3_1.png" 
        alt="Schématisation du problème Mars Lander" width="468" height="265">
     <figcaption>Schématisation du problème Mars Lander</figcaption>
 </figure>
@@ -28,7 +28,7 @@ L'algorithme génétique génére un premier ensemble de trajectoires potentiell
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/puzzles/marslander3_2.png" 
+  <img src="/content/puzzles/marslander3_2.png" 
        alt="Distance entre la capsule et la zone d'atterissage" width="3000" height="1731">
     <figcaption>Distance entre la capsule et la zone d'atterissage</figcaption>
 </figure>
@@ -58,7 +58,7 @@ L'algorithme génétique trouve une solution proche de celle optimale pour tous 
 
 <div class="is-flex is-justify-content-center">
 <figure>
-   <img src="/assets/content/puzzles/marslander3_3.png" 
+   <img src="/content/puzzles/marslander3_3.png" 
         alt="Classement des développeurs en Java" width="1075" height="754">
     <figcaption>Classement des développeurs en Java</figcaption>
 </figure>

@@ -12,7 +12,7 @@ export class PuzzleContentResolver implements Resolve<string> {
 
   resolve(route: ActivatedRouteSnapshot) {
     return this.http
-      .get(`assets/content/puzzles/${route.params['puzzleId']}.md`, {
+      .get(`content/puzzles/${route.params['puzzleId']}.md`, {
         responseType: 'text',
       })
       .pipe(

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -6,7 +7,7 @@ import {
   Input,
   OnDestroy,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { AtroposInstance, AtroposOptions } from 'atropos';
 import { DeviceDetectorService } from 'ngx-device-detector';
@@ -15,12 +16,13 @@ declare const Atropos: (options: AtroposOptions) => AtroposInstance;
 
 @Component({
   selector: 'desn-atropos',
+  standalone: true,
   template: `
     <div class="atropos" #atropos>
       <div class="atropos-scale">
         <div class="atropos-rotate">
           <div class="atropos-inner">
-            <ng-content></ng-content>
+            <ng-content />
           </div>
         </div>
       </div>
@@ -29,6 +31,7 @@ declare const Atropos: (options: AtroposOptions) => AtroposInstance;
   styleUrls: ['./atropos.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule],
 })
 export class AtroposComponent implements AfterViewInit, OnDestroy {
   @Input() atroposOptions: AtroposOptions | undefined;

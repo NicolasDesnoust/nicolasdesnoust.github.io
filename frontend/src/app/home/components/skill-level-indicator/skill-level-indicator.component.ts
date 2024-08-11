@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'desn-skill-level-indicator',
+  standalone: true,
   templateUrl: './skill-level-indicator.component.html',
   styleUrls: ['./skill-level-indicator.component.scss'],
+  imports: [CommonModule],
 })
 export class SkillLevelIndicatorComponent implements OnChanges {
   @Input() value: number = 0;
@@ -33,7 +36,7 @@ export class SkillLevelIndicatorComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.value) {
+    if (changes['value']) {
       this.tooltipText = this.toolTipTextMap.get(this.value) || '';
     }
   }

@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Skill } from '../../model/skill';
+import { SkillBoxComponent } from '../skill-box.component';
+import { SkillListComponent } from '../skill-list/skill-list.component';
 
 @Component({
   selector: 'desn-skills',
+  standalone: true,
   templateUrl: './skills.component.html',
   styles: [
     `
@@ -13,6 +17,7 @@ import { Skill } from '../../model/skill';
       }
     `,
   ],
+  imports: [CommonModule, SkillBoxComponent, SkillListComponent],
 })
 export class SkillsComponent {
   languages: Skill[] = [

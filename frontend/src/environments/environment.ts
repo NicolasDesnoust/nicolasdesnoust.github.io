@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backendUrl:
-    'https://9frkmdroa4.execute-api.eu-west-3.amazonaws.com/Prod',
+    'https://e6b74076wb.execute-api.eu-west-3.amazonaws.com/dev',
 };
 
 /*

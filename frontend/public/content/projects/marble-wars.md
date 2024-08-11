@@ -19,7 +19,7 @@ L'éditeur de niveaux permet de placer le canon à billes, de définir le nombre
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/marble-wars_2.png" 
+  <img src="/content/projects/marble-wars_2.png" 
         alt="Capture d'écran de l'éditeur de niveaux" width="1063" height="555">
   <figcaption>Capture d'écran de l'éditeur de niveaux</figcaption>
 </figure>
@@ -32,7 +32,7 @@ Etant donné que ce projet n'a pas de but commercial mais uniquement d'apprentis
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/marble-wars_1.png" 
+  <img src="/content/projects/marble-wars_1.png" 
         alt="Capture d'écran d'un niveau du jeu" width="799" height="556">
   <figcaption>Capture d'écran d'un niveau du jeu</figcaption>
 </figure>

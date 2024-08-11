@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'desn-hero',
+  standalone: true,
   template: `
     <section class="hero is-medium has-text-centered has-background-white">
       <div class="hero-body">

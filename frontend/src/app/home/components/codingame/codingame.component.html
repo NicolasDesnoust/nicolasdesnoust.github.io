@@ -13,20 +13,13 @@
     *ngIf="featuredPuzzles$ | async as featuredPuzzles"
   >
     <div
-      class="
-        column
-        is-full-mobile
-        is-half-tablet
-        is-half-desktop
-        is-one-third-widescreen
-        is-one-quarter-fullhd
-      "
+      class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
       *ngFor="let featuredPuzzle of featuredPuzzles"
     >
       <desn-puzzle-card
         [puzzle]="featuredPuzzle"
         (viewMoreButtonClicked)="showPuzzleDetails(featuredPuzzle)"
-      ></desn-puzzle-card>
+      />
     </div>
   </div>
   <a [routerLink]="['/codingame']" class="button is-primary mt-3">

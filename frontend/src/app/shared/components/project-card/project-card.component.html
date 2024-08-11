@@ -24,8 +24,8 @@
           <img
             [attr.data-atropos-offset]="layer?.offset"
             sizes="(max-width: 1400px) 100vw, 1400px"
-            [srcset]="project?.image | srcset: index"
-            src="assets/images/{{ project?.image?.folder }}/{{
+            [srcset]="project?.image | srcset : index"
+            src="images/{{ project?.image?.folder }}/{{
               project?.image?.folder
             }}_l{{ index }}_w1400.{{ layer.extension }}"
             alt=""

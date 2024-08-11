@@ -2,13 +2,14 @@
   "name": "send-contact-mail",
   "main": "index.js",
   "private": true,
+  "dependencies": {
+    "@aws-sdk/client-ses": "3.485.0"
+  },
   "devDependencies": {
     "@types/aws-lambda": "8.10.115",
     "@types/node": "18.16.16",
     "send-contact-mail-api": "workspace:*",
-    "tsc-alias": "1.8.7"
-  },
-  "dependencies": {
-    "@aws-sdk/client-ses": "3.485.0"
+    "tsc-alias": "1.8.7",
+    "typescript": "^5.2.2"
   }
 }

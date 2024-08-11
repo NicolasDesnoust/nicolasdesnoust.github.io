@@ -24,15 +24,14 @@
           <desn-quick-overview
             *ngIf="observables.puzzle?.quickOverview"
             [quickOverview]="observables.puzzle?.quickOverview"
-          ></desn-quick-overview>
+          />
           <markdown
             class="markdown-content"
             testDir
             addCodeHeaders
             (error)="onError()"
             [data]="observables.puzzleContent"
-          >
-          </markdown>
+          />
         </div>
       </section>
 

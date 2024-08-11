@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Puzzle } from 'src/app/core/model/puzzle';
+import { Puzzle } from '../model/puzzle';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PuzzleService {
-  private readonly puzzlesUrl = 'assets/data/puzzles.json';
+  private readonly puzzlesUrl = 'data/puzzles.json';
 
   private readonly missingImagePlaceholder = {
     folder: 'defaultbanner',
@@ -17,7 +17,7 @@ export class PuzzleService {
       {
         widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
         offset: -5,
-        extension: 'jpg'
+        extension: 'jpg',
       },
     ],
   };

@@ -11,9 +11,4 @@ tasks:
     requires:
       vars: [ENV]
     cmds:
-      - "pnpm ng build --{{.ENV}}"
-
-  lint:
-    desc: "Lints the Angular app for style and errors."
-    cmds:
-      - "pnpm ng lint"
+      - "pnpm ng build --configuration {{.ENV}}"

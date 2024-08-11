@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
@@ -5,6 +6,7 @@ import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'desn-resume-call-to-action',
+  standalone: true,
   templateUrl: './resume-call-to-action.component.html',
   styles: [
     `
@@ -16,6 +18,7 @@ import { saveAs } from 'file-saver';
       }
     `,
   ],
+  imports: [CommonModule],
 })
 export class ResumeCallToActionComponent implements OnInit {
   resumeUrl: SafeResourceUrl = '';
@@ -36,7 +39,9 @@ export class ResumeCallToActionComponent implements OnInit {
   downloadResume() {
     if (this.isFileSaverSupported) {
       this.http
-        .get('/assets/curriculum-vitae_nicolas-desnoust.pdf', { responseType: 'blob' })
+        .get('/curriculum-vitae_nicolas-desnoust.pdf', {
+          responseType: 'blob',
+        })
         .subscribe((resumeData: any) => {
           const resumeAsBlob = new Blob([resumeData], {
             type: 'application/pdf',

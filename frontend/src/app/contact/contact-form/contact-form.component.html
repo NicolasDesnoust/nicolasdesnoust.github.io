@@ -15,7 +15,8 @@
               <input
                 [ngClass]="{
                   'is-danger':
-                    f.subject.invalid && (f.subject.dirty || f.subject.touched)
+                    f['subject'].invalid &&
+                    (f['subject'].dirty || f['subject'].touched)
                 }"
                 required="required"
                 formControlName="subject"
@@ -25,9 +26,10 @@
             </p>
             <span
               *ngIf="
-                f.subject.invalid && (f.subject.dirty || f.subject.touched)
+                f['subject'].invalid &&
+                (f['subject'].dirty || f['subject'].touched)
               "
-              [appendErrorMessageOf]="f.subject"
+              [appendErrorMessageOf]="f['subject']"
               class="help is-danger error-message"
             >
             </span>
@@ -39,7 +41,7 @@
               <textarea
                 [ngClass]="{
                   'is-danger':
-                    f.body.invalid && (f.body.dirty || f.body.touched)
+                    f['body'].invalid && (f['body'].dirty || f['body'].touched)
                 }"
                 required="required"
                 formControlName="body"
@@ -48,8 +50,10 @@
               ></textarea>
             </p>
             <span
-              *ngIf="f.body.invalid && (f.body.dirty || f.body.touched)"
-              [appendErrorMessageOf]="f.body"
+              *ngIf="
+                f['body'].invalid && (f['body'].dirty || f['body'].touched)
+              "
+              [appendErrorMessageOf]="f['body']"
               class="help is-danger error-message"
             >
             </span>
@@ -65,8 +69,8 @@
               <input
                 [ngClass]="{
                   'is-danger':
-                    f.senderName.invalid &&
-                    (f.senderName.dirty || f.senderName.touched)
+                    f['senderName'].invalid &&
+                    (f['senderName'].dirty || f['senderName'].touched)
                 }"
                 required="required"
                 formControlName="senderName"
@@ -79,10 +83,10 @@
             </p>
             <span
               *ngIf="
-                f.senderName.invalid &&
-                (f.senderName.dirty || f.senderName.touched)
+                f['senderName'].invalid &&
+                (f['senderName'].dirty || f['senderName'].touched)
               "
-              [appendErrorMessageOf]="f.senderName"
+              [appendErrorMessageOf]="f['senderName']"
               class="help is-danger error-message"
             >
             </span>
@@ -97,8 +101,9 @@
                 class="input"
                 [ngClass]="{
                   'is-danger':
-                    f.senderEmailAddress.invalid &&
-                    (f.senderEmailAddress.dirty || f.senderEmailAddress.touched)
+                    f['senderEmailAddress'].invalid &&
+                    (f['senderEmailAddress'].dirty ||
+                      f['senderEmailAddress'].touched)
                 }"
                 type="email"
               />
@@ -108,10 +113,11 @@
             </p>
             <span
               *ngIf="
-                f.senderEmailAddress.invalid &&
-                (f.senderEmailAddress.dirty || f.senderEmailAddress.touched)
+                f['senderEmailAddress'].invalid &&
+                (f['senderEmailAddress'].dirty ||
+                  f['senderEmailAddress'].touched)
               "
-              [appendErrorMessageOf]="f.senderEmailAddress"
+              [appendErrorMessageOf]="f['senderEmailAddress']"
               class="help is-danger error-message"
             >
             </span>

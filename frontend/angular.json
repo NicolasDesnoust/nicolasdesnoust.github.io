@@ -37,34 +37,34 @@
       "prefix": "desn",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
-            "assets": ["src/favicon.ico", "src/assets"],
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": ["src/styles/main.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
             "scripts": ["./node_modules/atropos/atropos.min.js"]
           },
           "configurations": {
-            "production": {
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -76,36 +76,33 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ]
+              ],
+              "outputHashing": "all"
+            },
+            "dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
             }
-          }
+          },
+          "defaultConfiguration": "prod"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "portfolio:build"
-          },
           "configurations": {
-            "production": {
-              "browserTarget": "portfolio:build:production"
+            "prod": {
+              "buildTarget": "portfolio:build:prod"
+            },
+            "dev": {
+              "buildTarget": "portfolio:build:dev"
             }
-          }
+          },
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "portfolio:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         }
       }
     }
-  },
-  "defaultProject": "portfolio"
+  }
 }

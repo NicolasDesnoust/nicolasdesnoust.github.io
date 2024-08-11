@@ -1,13 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MarkdownModule } from 'ngx-markdown';
 import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Project } from 'src/app/core/model/project';
+import { Project } from '../../../core/model/project';
+import { QuickOverviewComponent } from '../quick-overview/quick-overview.component';
 
 @Component({
   selector: 'desn-project-detail',
+  standalone: true,
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],
+  imports: [CommonModule, MarkdownModule, QuickOverviewComponent],
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
   selectedProject$: Observable<Project | null> | undefined;
@@ -26,14 +31,14 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const projects$: Observable<Project[]> = this.route.data.pipe(
-      map((data) => data.projects || [])
+      map((data) => data['projects'] || [])
     );
     this.projectContent$ = this.route.data.pipe(
-      map((data) => data.projectContent || '')
+      map((data) => data['projectContent'] || '')
     );
 
     const selectedProjectId$ = this.route.params.pipe(
-      map((params) => params.projectId),
+      map((params) => params['projectId']),
       tap((e) => console.log(e))
     );
 

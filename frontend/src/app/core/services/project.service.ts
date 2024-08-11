@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Project } from 'src/app/core/model/project';
 import { Image } from '../model/image';
+import { Project } from '../model/project';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
-  private readonly projectsUrl = 'assets/data/projects.json';
+  private readonly projectsUrl = 'data/projects.json';
 
   private readonly missingImagePlaceholder: Image = {
     folder: 'defaultbanner',
@@ -18,7 +18,7 @@ export class ProjectService {
       {
         widths: [200, 727, 944, 1082, 1254, 1383, 1392, 1400],
         offset: -5,
-        extension: 'jpg'
+        extension: 'jpg',
       },
     ],
   };

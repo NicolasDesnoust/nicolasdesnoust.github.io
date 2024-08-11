@@ -5,5 +5,5 @@ tasks:
     desc: "Bundle the lambda function for deployment."
     cmds:
       - rm -rf ./build
-      - tsc -p ./tsconfig.app.json
+      - pnpm tsc -p ./tsconfig.app.json
       - pnpm tsc-alias -p tsconfig.app.json

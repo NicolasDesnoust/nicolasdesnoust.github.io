@@ -12,22 +12,15 @@
     *ngIf="puzzles$ | async as puzzles"
   >
     <div
-      class="
-        column
-        is-full-mobile
-        is-half-tablet
-        is-half-desktop
-        is-one-third-widescreen
-        is-one-quarter-fullhd
-      "
+      class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
       *ngFor="let puzzle of puzzles"
     >
       <desn-puzzle-card
         [puzzle]="puzzle"
         (viewMoreButtonClicked)="showPuzzleDetails(puzzle)"
-      ></desn-puzzle-card>
+      />
     </div>
   </div>
 </section>
 
-<router-outlet></router-outlet>
+<router-outlet />

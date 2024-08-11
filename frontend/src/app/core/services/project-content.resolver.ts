@@ -12,7 +12,7 @@ export class ProjectContentResolver implements Resolve<string> {
 
   resolve(route: ActivatedRouteSnapshot) {
     return this.http
-      .get(`assets/content/projects/${route.params['projectId']}.md`, {
+      .get(`content/projects/${route.params['projectId']}.md`, {
         responseType: 'text',
       })
       .pipe(

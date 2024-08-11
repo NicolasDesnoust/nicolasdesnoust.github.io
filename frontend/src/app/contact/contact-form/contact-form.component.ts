@@ -1,12 +1,28 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import * as bulmaToast from 'bulma-toast';
 import { finalize } from 'rxjs/operators';
+import { ControlErrorDirective } from '../../shared/directives/control-error.directive';
 import { ContactService } from '../contact.service';
+
 @Component({
   selector: 'desn-contact-form',
+  standalone: true,
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ControlErrorDirective,
+  ],
 })
 export class ContactFormComponent {
   contactForm: FormGroup;
@@ -23,7 +39,10 @@ export class ContactFormComponent {
         [Validators.required, Validators.maxLength(5000)],
       ],
       senderName: ['', [Validators.required, Validators.maxLength(200)]],
-      senderEmailAddress: ['', [Validators.required, Validators.email, Validators.maxLength(320)]],
+      senderEmailAddress: [
+        '',
+        [Validators.required, Validators.email, Validators.maxLength(320)],
+      ],
     });
   }
 
@@ -45,8 +64,8 @@ export class ContactFormComponent {
         },
       })
       .pipe(finalize(() => (this.isSubmittingForm = false)))
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           bulmaToast.toast({
             message:
               'Votre message a bien été envoyé. Je vous répondrais dans les plus bref délais !',
@@ -54,15 +73,16 @@ export class ContactFormComponent {
             duration: 7000,
           });
         },
-        () => {
+        error: (err) => {
+          console.log(err);
           bulmaToast.toast({
             message:
               'Votre message n\'a pas pu être envoyé. Je vous conseille de me contacter plutôt via <a href="https://www.linkedin.com/in/nicolas-desnoust" target="_blank" rel="noopener noreferrer">Linkedin</a>',
             type: 'is-danger',
             duration: 10000,
           });
-        }
-      );
+        },
+      });
   }
 
   get f() {

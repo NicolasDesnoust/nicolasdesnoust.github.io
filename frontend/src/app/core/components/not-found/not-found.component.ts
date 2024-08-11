@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ErrorMessage } from './error-message/error-message';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 @Component({
-  template: `
-    <desn-error-message [errorMessage]="errorMessage"></desn-error-message>
-  `,
+  template: ` <desn-error-message [errorMessage]="errorMessage" /> `,
+  standalone: true,
   styles: [
     `
       :host {
@@ -15,11 +16,12 @@ import { ErrorMessage } from './error-message/error-message';
       }
     `,
   ],
+  imports: [CommonModule, RouterModule, ErrorMessageComponent],
 })
 export class NotFoundComponent {
   errorMessage: ErrorMessage = {
     image: {
-      url: 'assets/images/common/not-found.svg',
+      url: 'images/common/not-found.svg',
       realWidth: 860.13137,
       realHeight: 571.14799,
       desiredWidth: 300,

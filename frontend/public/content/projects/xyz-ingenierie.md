@@ -40,7 +40,7 @@ Ce projet a depuis été repris pour faire office de terrain de jeu dans lequel 
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/xyz-ingenierie_1.png" 
+  <img src="/content/projects/xyz-ingenierie_1.png" 
         alt="Capture d'écran de la nouvelle version du projet" width="1000" height="327">
   <figcaption>Capture d'écran de la nouvelle version du projet</figcaption>
 </figure>

@@ -6,7 +6,7 @@ Ce projet est réalisé dans le cadre du cours de Génie logiciel du Master 1 In
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/ascenseur_1.png" 
+  <img src="/content/projects/ascenseur_1.png" 
         alt="Capture d'écran de l'ascenseur en fonctionnement" width="1000" height="583">
   <figcaption>Capture d'écran de l'ascenseur en fonctionnement</figcaption>
 </figure>
@@ -22,7 +22,7 @@ L'interface met à disposition de l'utilisateur les éléments suivants&nbsp;:
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/ascenseur_2.png" 
+  <img src="/content/projects/ascenseur_2.png" 
         alt="Capture d'écran de l'arrêt d'urgence de l'ascenseur" width="1000" height="587">
   <figcaption>Capture d'écran de l'arrêt d'urgence de l'ascenseur</figcaption>
 </figure>

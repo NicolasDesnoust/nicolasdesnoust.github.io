@@ -9,22 +9,15 @@
     class="columns is-multiline is-centered"
   >
     <div
-      class="
-        column
-        is-full-mobile
-        is-half-tablet
-        is-half-desktop
-        is-one-third-widescreen
-        is-one-quarter-fullhd
-      "
+      class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
       *ngFor="let project of projects"
     >
       <desn-project-card
         [project]="project"
         (viewMoreButtonClicked)="showProjectDetails(project)"
-      ></desn-project-card>
+      />
     </div>
   </div>
 </section>
 
-<router-outlet></router-outlet>
+<router-outlet />

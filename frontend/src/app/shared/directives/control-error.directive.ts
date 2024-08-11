@@ -4,6 +4,7 @@ import { FORM_ERRORS } from '../../core/form-errors';
 
 @Directive({
   selector: '[appendErrorMessageOf]',
+  standalone: true,
 })
 export class ControlErrorDirective implements OnInit {
   @Input('appendErrorMessageOf') control: AbstractControl | undefined;

@@ -1,7 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'desn-skill-box',
+  standalone: true,
   template: `
     <div class="tile is-child box">
       <img
@@ -13,7 +15,7 @@ import { Component, Input } from '@angular/core';
       />
       <p class="title is-size-4 is-spaced">{{ title }}</p>
       <div class="mb-4">
-        <ng-content></ng-content>
+        <ng-content />
       </div>
     </div>
   `,
@@ -25,6 +27,7 @@ import { Component, Input } from '@angular/core';
       }
     `,
   ],
+  imports: [CommonModule],
 })
 export class SkillBoxComponent {
   @Input() imageUrl: string = '';

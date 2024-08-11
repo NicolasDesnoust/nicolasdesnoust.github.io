@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
-
-import { Puzzle } from 'src/app/core/model/puzzle';
+import { ActivatedRoute, Data, Router, RouterOutlet } from '@angular/router';
+import { Puzzle } from 'frontend/src/app/core/model/puzzle';
+import { PuzzleCardComponent } from 'frontend/src/app/shared/components/puzzle-card/puzzle-card.component';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'desn-codingame-page',
+  standalone: true,
   templateUrl: './codingame-page.component.html',
   styles: [
     `
@@ -17,6 +18,7 @@ import { Puzzle } from 'src/app/core/model/puzzle';
       }
     `,
   ],
+  imports: [CommonModule, RouterOutlet, PuzzleCardComponent],
 })
 export class CodingamePageComponent implements OnInit {
   puzzles$: Observable<Puzzle[]> | undefined;
@@ -24,7 +26,9 @@ export class CodingamePageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.puzzles$ = this.route.data.pipe(map((data) => data.puzzles));
+    this.puzzles$ = this.route.data.pipe(
+      map<Data, Puzzle[]>((data) => data['puzzles'])
+    );
   }
 
   showPuzzleDetails(puzzle: Puzzle) {

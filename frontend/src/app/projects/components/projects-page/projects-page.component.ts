@@ -1,11 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { Project } from 'frontend/src/app/core/model/project';
+import { ProjectCardComponent } from 'frontend/src/app/shared/components/project-card/project-card.component';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Project } from 'src/app/core/model/project';
 
 @Component({
   selector: 'desn-projects-page',
+  standalone: true,
   templateUrl: './projects-page.component.html',
   styles: [
     `
@@ -16,6 +19,7 @@ import { Project } from 'src/app/core/model/project';
       }
     `,
   ],
+  imports: [CommonModule, RouterOutlet, ProjectCardComponent],
 })
 export class ProjectsPageComponent implements OnInit {
   projects$: Observable<Project[]> | undefined;
@@ -23,7 +27,9 @@ export class ProjectsPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.projects$ = this.route.data.pipe(map((data) => data.projects || []));
+    this.projects$ = this.route.data.pipe(
+      map((data) => data['projects'] || [])
+    );
   }
 
   showProjectDetails(project: Project) {

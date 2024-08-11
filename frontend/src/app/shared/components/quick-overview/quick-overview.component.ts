@@ -1,14 +1,18 @@
-import { KeyValue } from '@angular/common';
+import { CommonModule, KeyValue } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { QuickOverview } from 'src/app/core/model/quick-overview';
+import { QuickOverview } from 'frontend/src/app/core/model/quick-overview';
+import { JoinPipe } from '../../pipes/join.pipe';
 
 @Component({
   selector: 'desn-quick-overview',
+  standalone: true,
   template: `
     <ul class="quick-overview">
       <li
         class="quick-overview-item"
-        *ngFor="let category of quickOverview || {} | keyvalue: keepOriginalOrder"
+        *ngFor="
+          let category of quickOverview || {} | keyvalue : keepOriginalOrder
+        "
       >
         <div class="quick-overview-item__definition">
           <div class="quick-overview-item__field">
@@ -22,6 +26,7 @@ import { QuickOverview } from 'src/app/core/model/quick-overview';
     </ul>
   `,
   styleUrls: ['./quick-overview.component.scss'],
+  imports: [CommonModule, JoinPipe],
 })
 export class QuickOverviewComponent {
   @Input() quickOverview: QuickOverview | undefined;

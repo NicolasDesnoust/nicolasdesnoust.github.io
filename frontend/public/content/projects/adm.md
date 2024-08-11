@@ -20,7 +20,7 @@ Mes responsabilités au sein de ce projet ont été les suivantes&nbsp;:
 
 <div class="is-flex is-justify-content-center">
 <figure>
-  <img src="/assets/content/projects/adm_1.png" 
+  <img src="/content/projects/adm_1.png" 
         alt="Capture d'écran de l'interface du front-office" width="1200" height="1038">
   <figcaption>Capture d'écran de l'interface du front-office</figcaption>
 </figure>

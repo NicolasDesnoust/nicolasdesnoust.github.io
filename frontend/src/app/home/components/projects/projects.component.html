@@ -9,20 +9,13 @@
     *ngIf="featuredProjects$ | async as featuredProjects"
   >
     <div
-      class="
-        column
-        is-full-mobile
-        is-half-tablet
-        is-half-desktop
-        is-one-third-widescreen
-        is-one-quarter-fullhd
-      "
+      class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
       *ngFor="let featuredProject of featuredProjects"
     >
       <desn-project-card
         [project]="featuredProject"
         (viewMoreButtonClicked)="showProjectDetails(featuredProject)"
-      ></desn-project-card>
+      />
     </div>
   </div>
   <a [routerLink]="['/projects']" class="button is-primary mt-3">
