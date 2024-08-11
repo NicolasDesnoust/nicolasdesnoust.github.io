@@ -28,8 +28,5 @@
 build/
 builds/
 
-# Scully files
-**/.scully/
-
 # SAM files
 **/.aws-sam/

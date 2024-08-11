@@ -2,7 +2,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MarkdownModule } from 'ngx-markdown';
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
@@ -20,7 +19,7 @@ const COMPONENTS: any[] = [
   NavbarComponent,
   ResumeCallToActionComponent,
   NotFoundComponent,
-  ErrorMessageComponent
+  ErrorMessageComponent,
 ];
 
 const LAYOUTS: any[] = [HomeLayoutComponent, LightLayoutComponent];
@@ -31,11 +30,10 @@ const LAYOUTS: any[] = [HomeLayoutComponent, LightLayoutComponent];
     BrowserModule,
     RouterModule,
     HttpClientModule,
-    ScullyLibModule.forRoot({ alwaysMonitor: true }),
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
-    SharedModule
+    SharedModule,
   ],
   exports: [...COMPONENTS, ...LAYOUTS],
   providers: [],

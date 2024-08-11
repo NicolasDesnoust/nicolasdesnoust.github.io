@@ -31,7 +31,6 @@ export class SkillsComponent {
     { name: 'Cucumber', level: 3 },
     { name: 'ArchUnit', level: 4 },
     { name: 'Ngrx', level: 3 },
-    { name: 'Scully', level: 3 },
     { name: 'Angular Material Design', level: 4 },
     { name: 'Bootstrap', level: 3 },
     { name: 'Lombok', level: 4 },

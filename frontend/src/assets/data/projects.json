@@ -230,7 +230,6 @@
     "quickOverview": {
       "langages": ["Typescript", "SCSS", "HTML"],
       "frameworks": ["Angular"],
-      "librairies": ["Scully"],
       "concepts": ["JAMstack", "Transpilation de Markdown vers HTML"]
     }
   },

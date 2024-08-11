@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { isScullyRunning } from '@scullyio/ng-lib';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Project } from 'src/app/core/model/project';
 
@@ -13,7 +12,6 @@ import { Project } from 'src/app/core/model/project';
 export class ProjectDetailComponent implements OnInit, OnDestroy {
   selectedProject$: Observable<Project | null> | undefined;
   projectContent$: Observable<any> | undefined;
-  isScullyRunning: boolean = isScullyRunning();
 
   constructor(
     private renderer: Renderer2,

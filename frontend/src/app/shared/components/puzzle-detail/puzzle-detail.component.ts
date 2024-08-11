@@ -1,7 +1,6 @@
-import { Component, Renderer2, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { isScullyRunning } from '@scullyio/ng-lib';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Puzzle } from 'src/app/core/model/puzzle';
 
@@ -13,7 +12,6 @@ import { Puzzle } from 'src/app/core/model/puzzle';
 export class PuzzleDetailComponent implements OnInit, OnDestroy {
   selectedPuzzle$: Observable<Puzzle | null> | undefined;
   puzzleContent$: Observable<any> | undefined;
-  isScullyRunning: boolean = isScullyRunning();
 
   constructor(
     private renderer: Renderer2,
@@ -41,8 +39,7 @@ export class PuzzleDetailComponent implements OnInit, OnDestroy {
     this.selectedPuzzle$ = combineLatest([puzzles$, selectedPuzzleId$]).pipe(
       map(
         ([puzzles, selectedPuzzleId]) =>
-          puzzles.find((puzzle) => puzzle.id === selectedPuzzleId) ||
-          null
+          puzzles.find((puzzle) => puzzle.id === selectedPuzzleId) || null
       )
     );
   }

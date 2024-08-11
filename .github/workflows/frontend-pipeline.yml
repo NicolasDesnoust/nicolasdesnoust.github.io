@@ -17,15 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-
       - name: Disable Jekyll
         working-directory: ${{ env.WORKING_DIRECTORY }}
         run: mkdir -p ./dist/static/ && touch ./dist/static/.nojekyll
-
-      - uses: NicolasDesnoust/scully-gh-pages-action@v12
-        name: Build & Publish app on Github Pages branch
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: main
-          build-args: --prod
-          working-directory: ${{ env.WORKING_DIRECTORY }}

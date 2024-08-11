@@ -17,13 +17,3 @@ tasks:
     desc: "Lints the Angular app for style and errors."
     cmds:
       - "pnpm ng lint"
-
-  scully:
-    desc: "Generates static pages with Scully."
-    cmds:
-      - "npx scully --"
-
-  scully:serve:
-    desc: "Serves the static site locally."
-    cmds:
-      - "npx scully serve --"

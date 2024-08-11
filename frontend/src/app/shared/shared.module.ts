@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MarkdownModule } from 'ngx-markdown';
 import { AtroposComponent } from './components/atropos/atropos.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -32,7 +31,7 @@ const directives = [
 
 const pipes = [SrcsetPipe, JoinPipe];
 
-const modules = [ScullyLibModule, CommonModule];
+const modules = [CommonModule];
 
 @NgModule({
   declarations: [...components, ...directives, ...pipes, ControlErrorDirective],

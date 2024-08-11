@@ -12,7 +12,11 @@
           {{ observables.puzzle?.title }}
         </p>
         <div class="custom-modal-spacer"></div>
-        <a class="delete" aria-label="fermer la fenêtre" (click)="hidePuzzleDetails()"></a>
+        <a
+          class="delete"
+          aria-label="fermer la fenêtre"
+          (click)="hidePuzzleDetails()"
+        ></a>
       </header>
 
       <section class="modal-card-body">
@@ -29,9 +33,6 @@
             [data]="observables.puzzleContent"
           >
           </markdown>
-          <div style="display: none">
-            <scully-content *ngIf="isScullyRunning"></scully-content>
-          </div>
         </div>
       </section>
 

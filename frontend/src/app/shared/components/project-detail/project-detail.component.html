@@ -11,7 +11,11 @@
           {{ observables.project?.title }}
         </p>
         <div class="custom-modal-spacer"></div>
-        <a class="delete" aria-label="fermer la fenêtre" (click)="hideProjectDetails()"></a>
+        <a
+          class="delete"
+          aria-label="fermer la fenêtre"
+          (click)="hideProjectDetails()"
+        ></a>
       </header>
 
       <section class="modal-card-body">
@@ -28,9 +32,6 @@
             [data]="projectContent$ | async"
           >
           </markdown>
-          <div style="display: none">
-            <scully-content *ngIf="isScullyRunning"></scully-content>
-          </div>
         </div>
       </section>
 

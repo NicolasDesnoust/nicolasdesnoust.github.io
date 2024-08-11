@@ -4,7 +4,7 @@ published: true
 
 Cette application est un projet personnel permettant de centraliser et explorer tout type de notes personnelles, pour conserver une trace de mes connaissances, découvertes et recherches.
 
-L'application a été développée sous la forme d'une Single Page Application avec le framework Angular. Elle utilise également l'architecture moderne [JAMstack](https://jamstatic.fr/2019/02/07/c-est-quoi-la-jamstack/) grâce à la librairie [Scully](https://scully.io/).
+L'application a été développée sous la forme d'une Single Page Application avec le framework Angular.
 
 Cette application permet actuellement de rédiger des articles en markdown, de les convertir automatiquement en pages HTML et de les publier au sein d'une catégorie (Java, Angular, CSS, etc.).
 
