@@ -23,7 +23,7 @@ paths:
         responses:
           default:
             statusCode: 200
-        uri: "${send_contact_mail_arn}"
+        uri: "${send_contact_mail}"
         passthroughBehavior: when_no_match
         httpMethod: POST
         type: aws_proxy

@@ -18,7 +18,7 @@ When setting up an application on an AWS account for the first time, it's crucia
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.58.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.62.0 |
 
 ## Modules
 

@@ -66,8 +66,10 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_global_tags"></a> [global\_tags](#output\_global\_tags) | A map of tags that can be applied globally to all resources |
-| <a name="output_pattern-segregation1"></a> [pattern-segregation1](#output\_pattern-segregation1) | Defines a naming pattern for resources as <project\>-<environment\_category\>-<param1\> |
-| <a name="output_pattern-segregation2"></a> [pattern-segregation2](#output\_pattern-segregation2) | Defines a naming pattern for resources as <project\>-<environment\_category\>-<param1\>-<param2\> |
 | <a name="output_pattern1"></a> [pattern1](#output\_pattern1) | Defines a naming pattern for resources as <project\>-<environment\>-<param1\> |
 | <a name="output_pattern2"></a> [pattern2](#output\_pattern2) | Defines a naming pattern for resources as <project\>-<environment\>-<param1\>-<param2\> |
+| <a name="output_pattern_prefix"></a> [pattern\_prefix](#output\_pattern\_prefix) | The common prefix for naming patterns |
+| <a name="output_pattern_segregation1"></a> [pattern\_segregation1](#output\_pattern\_segregation1) | Defines a naming pattern for resources as <project\>-<environment\_category\>-<param1\> |
+| <a name="output_pattern_segregation2"></a> [pattern\_segregation2](#output\_pattern\_segregation2) | Defines a naming pattern for resources as <project\>-<environment\_category\>-<param1\>-<param2\> |
+| <a name="output_pattern_segregation_prefix"></a> [pattern\_segregation\_prefix](#output\_pattern\_segregation\_prefix) | The common prefix for segregation naming patterns |
 <!-- END_TF_DOCS -->

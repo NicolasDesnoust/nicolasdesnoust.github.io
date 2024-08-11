@@ -4,3 +4,54 @@ includes:
   req:
     dir: ./00-requirements
     taskfile: ./00-requirements
+
+vars:
+  VAR_FOLDER_PATH: "./var/{{.ENV}}"
+
+tasks:
+  init:
+    desc: Initialize Terraform in the portfolio directory.
+    requires:
+      vars: [ENV]
+    dir: 01-portfolio
+    cmds:
+      - terraform init --backend-config="{{.VAR_FOLDER_PATH}}/backend.json" -reconfigure
+
+  plan:
+    desc: Generate an execution plan for portfolio infrastructure.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    dir: 01-portfolio
+    deps:
+      - init
+    cmds:
+      - terraform plan -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" -out="{{.VAR_FOLDER_PATH}}/portfolio.tfplan"
+
+  apply:
+    desc: Apply changes to portfolio infrastructure.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    dir: 01-portfolio
+    deps:
+      - init
+    cmds:
+      - terraform apply -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" {{.CLI_ARGS}}
+
+  destroy:
+    desc: Destroy portfolio infrastructure managed by Terraform.
+    requires:
+      vars: [AWS_PROFILE, ENV]
+    dir: 01-portfolio
+    deps:
+      - init
+    cmds:
+      - terraform destroy -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" {{.CLI_ARGS}}
+
+  generate-docs:
+    desc: Enhance Terraform documentation with Auto-Generated metadatas.
+    cmds:
+      - terraform-docs markdown table --output-mode inject modules/naming --output-file README.md
+      - terraform-docs markdown table --output-mode inject modules/lambda --output-file README.md
+      - terraform-docs markdown table --output-mode inject modules/api --output-file README.md
+      - terraform-docs markdown table --output-mode inject 00-requirements --output-file README.md
+      - terraform-docs markdown table --output-mode inject 01-portfolio --output-file README.md

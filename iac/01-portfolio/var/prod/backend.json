@@ -1,0 +1,7 @@
+{
+  "bucket": "nde-portfolio-prod-terraform-states",
+  "dynamodb_table": "nde-portfolio-prod-running-locks",
+  "encrypt": true,
+  "key": "portfolio.tfstate",
+  "region": "eu-west-3"
+}
