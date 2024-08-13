@@ -32,3 +32,13 @@ variable "contact_email" {
   description = "The email address designated to receive contact messages from visitors."
   type        = string
 }
+
+variable "root_domain_name" {
+  description = "Root domain name. Example : my-domain.com"
+  type        = string
+}
+
+variable "domain_name" {
+  description = "Project domain name"
+  type        = string
+}
