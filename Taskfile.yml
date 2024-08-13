@@ -6,20 +6,12 @@ includes:
   iac:
     dir: ./iac
     taskfile: ./iac
-  openapi:
-    dir: ./docs/openapi
-    taskfile: ./docs/openapi
+  api:
+    dir: ./docs/api
+    taskfile: ./docs/api
   lambda:
     dir: ./backend
     taskfile: ./backend
   front:
     dir: ./frontend
     taskfile: ./frontend
-
-tasks:
-  api:deploy:
-    desc: "Deploy the REST API."
-    requires:
-      vars: [ENV, AWS_REGION, REST_API_ID]
-    cmds:
-      - aws apigateway create-deployment --rest-api-id "$REST_API_ID" --stage-name "$ENV" --region "$AWS_REGION"

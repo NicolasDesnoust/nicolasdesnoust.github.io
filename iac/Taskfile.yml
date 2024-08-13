@@ -11,6 +11,7 @@ vars:
 tasks:
   init:
     desc: Initialize Terraform in the portfolio directory.
+    internal: true
     requires:
       vars: [ENV]
     dir: 01-portfolio

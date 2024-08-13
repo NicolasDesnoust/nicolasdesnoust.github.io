@@ -6,6 +6,7 @@ vars:
 tasks:
   init:
     desc: Initialize Terraform in the requirements directory.
+    internal: true
     requires:
       vars: [ENV]
     cmds:

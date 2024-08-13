@@ -2,4 +2,4 @@ packages:
   - "frontend"
   - "backend/functions/*"
   - "backend/apis/*"
-  - "docs/openapi"
+  - "docs/api"

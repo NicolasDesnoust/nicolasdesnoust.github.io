@@ -36,7 +36,7 @@ locals {
 
 resource "local_sensitive_file" "api" {
   filename = "${path.module}/../../../build/api.yaml"
-  content  = templatefile("${path.module}/../../../docs/openapi/build/api.yaml", local.template_variables)
+  content  = templatefile("${path.module}/../../../docs/api/build/api.yaml", local.template_variables)
 }
 
 resource "aws_api_gateway_rest_api" "api" {

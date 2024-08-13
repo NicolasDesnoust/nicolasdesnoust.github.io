@@ -27,6 +27,7 @@
 .archives/
 build/
 builds/
+dist/
 
 # Angular files
 **/.angular
