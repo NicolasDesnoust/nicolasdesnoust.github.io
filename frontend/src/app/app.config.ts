@@ -6,7 +6,7 @@ import {
 import { ExtraOptions, provideRouter, withRouterConfig } from '@angular/router';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { MarkdownModule } from 'ngx-markdown';
 import { routes } from './app.routes';
 
@@ -25,6 +25,6 @@ export const appConfig: ApplicationConfig = {
       MarkdownModule.forRoot({
         loader: HttpClient,
       })
-    ),
+    ), provideClientHydration(),
   ],
 };
