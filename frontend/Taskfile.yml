@@ -17,3 +17,11 @@ tasks:
       vars: [ENV]
     cmds:
       - "pnpm ng build --configuration {{.ENV}}"
+
+  deploy:
+    desc: "Deploy the Angular app."
+    requires:
+      vars: [ENV, AWS_PROFILE, INFRASTRUCTURE_PREFIX, DISTRIBUTION_ID]
+    cmds:
+      - aws s3 sync ./dist/portfolio/browser s3://$INFRASTRUCTURE_PREFIX-bucket-frontend-static-files --delete
+      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*" > /dev/null

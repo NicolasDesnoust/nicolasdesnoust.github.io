@@ -1,16 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
-import { Observable } from 'rxjs';
+import { inject } from '@angular/core';
+import { ResolveFn } from '@angular/router';
 import { Project } from '../../core/model/project';
 import { ProjectService } from '../../core/services/project.service';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ProjectsResolver implements Resolve<Project[]> {
-  constructor(private projectService: ProjectService) {}
-
-  resolve(): Observable<Project[]> {
-    return this.projectService.getProjects();
-  }
-}
+export const projectsResolver: ResolveFn<Project[]> = (): Project[] => {
+  const projectService = inject(ProjectService);
+  return projectService.getProjects();
+};

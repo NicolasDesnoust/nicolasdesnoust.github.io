@@ -1,16 +1,15 @@
 import { Routes } from '@angular/router';
 import { ProjectContentResolver } from '../core/services/project-content.resolver';
-import { ProjectsResolver } from './services/projects.resolver';
+import { ProjectDetailComponent } from '../shared/components/project-detail/project-detail.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
+import { projectsResolver } from './services/projects.resolver';
 
 export const projectsRoutes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./components/projects-page/projects-page.component').then(
-        (m) => m.ProjectsPageComponent
-      ),
+    component: ProjectsPageComponent,
     resolve: {
-      projects: ProjectsResolver,
+      projects: projectsResolver,
     },
     data: {
       title: 'Projets',
@@ -18,12 +17,9 @@ export const projectsRoutes: Routes = [
     children: [
       {
         path: ':projectId',
-        loadComponent: () =>
-          import(
-            '../shared/components/project-detail/project-detail.component'
-          ).then((m) => m.ProjectDetailComponent),
+        component: ProjectDetailComponent,
         resolve: {
-          projects: ProjectsResolver,
+          projects: projectsResolver,
           projectContent: ProjectContentResolver,
         },
         data: {

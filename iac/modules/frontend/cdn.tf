@@ -3,6 +3,30 @@ locals {
   www_domain_name = "www.${var.domain_name}"
 }
 
+resource "aws_cloudfront_function" "path_rewriter" {
+  name    = "path-rewriter-function"
+  runtime = "cloudfront-js-2.0"
+
+  code = <<EOF
+async function handler(event) {
+    const request = event.request;
+    let uri = request.uri;
+
+    // Check whether the URI is missing a file name and ends with a slash.
+    if (uri.endsWith('/')) {
+        uri += 'index.html';
+    }
+    // Check whether the URI is missing a file extension.
+    else if (!uri.includes('.')) {
+        uri += '/index.html';
+    }
+
+    request.uri = uri;
+    return request;
+}
+EOF
+}
+
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.frontend.bucket_regional_domain_name
@@ -22,14 +46,14 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   custom_error_response {
     error_caching_min_ttl = 3000
     error_code            = 404
-    response_code         = 200
-    response_page_path    = "/index.html"
+    response_code         = 404
+    response_page_path    = "/errors/not-found/index.html"
   }
   custom_error_response {
     error_caching_min_ttl = 3000
     error_code            = 403
-    response_code         = 200
-    response_page_path    = "/index.html"
+    response_code         = 404
+    response_page_path    = "/errors/not-found/index.html"
   }
 
   default_cache_behavior {
@@ -51,6 +75,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.path_rewriter.arn
+    }
   }
 
   price_class = "PriceClass_200"

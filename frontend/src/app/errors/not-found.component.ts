@@ -22,9 +22,9 @@ export class NotFoundComponent {
   errorMessage: ErrorMessage = {
     image: {
       url: 'images/common/not-found.svg',
-      realWidth: 860.13137,
-      realHeight: 571.14799,
-      desiredWidth: 300,
+      realWidth: 750,
+      realHeight: 500,
+      desiredWidth: 450,
     },
     title: "La page demandée n'a pas été trouvée",
     message:

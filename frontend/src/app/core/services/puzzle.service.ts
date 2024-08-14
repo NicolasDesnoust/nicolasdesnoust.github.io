@@ -1,15 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { puzzlesData } from '../../data/puzzles';
 import { Puzzle } from '../model/puzzle';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PuzzleService {
-  private readonly puzzlesUrl = 'data/puzzles.json';
-
   private readonly missingImagePlaceholder = {
     folder: 'defaultbanner',
     backgroundColor: '#131c29',
@@ -29,12 +25,8 @@ export class PuzzleService {
     'powerofthor2',
   ]);
 
-  constructor(private http: HttpClient) {}
-
-  getPuzzles(): Observable<Puzzle[]> {
-    return this.http
-      .get<Puzzle[]>(this.puzzlesUrl)
-      .pipe(map((puzzles) => this.replaceMissingImages(puzzles)));
+  getPuzzles(): Puzzle[] {
+    return this.replaceMissingImages(puzzlesData);
   }
 
   private replaceMissingImages(puzzles: Puzzle[]) {
@@ -47,10 +39,8 @@ export class PuzzleService {
     return puzzles;
   }
 
-  getFeaturedPuzzles(): Observable<Puzzle[]> {
-    return this.getPuzzles().pipe(
-      map((puzzles) => this.keepFeaturedPuzzles(puzzles))
-    );
+  getFeaturedPuzzles(): Puzzle[] {
+    return this.keepFeaturedPuzzles(this.getPuzzles());
   }
 
   private keepFeaturedPuzzles(puzzles: Puzzle[]): Puzzle[] {

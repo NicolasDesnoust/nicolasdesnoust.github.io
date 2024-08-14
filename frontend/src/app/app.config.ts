@@ -5,8 +5,11 @@ import {
 } from '@angular/core';
 import { ExtraOptions, provideRouter, withRouterConfig } from '@angular/router';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { MarkdownModule } from 'ngx-markdown';
 import { routes } from './app.routes';
 
@@ -20,11 +23,12 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withRouterConfig(routerOptions)),
     importProvidersFrom(BrowserModule),
-    importProvidersFrom(HttpClientModule),
+    provideHttpClient(withFetch()),
     importProvidersFrom(
       MarkdownModule.forRoot({
         loader: HttpClient,
       })
-    ), provideClientHydration(),
+    ),
+    provideClientHydration(),
   ],
 };

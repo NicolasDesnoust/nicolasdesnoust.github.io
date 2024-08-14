@@ -1,40 +1,34 @@
 import { Routes } from '@angular/router';
 import { ProjectContentResolver } from '../core/services/project-content.resolver';
 import { PuzzleContentResolver } from '../core/services/puzzle-content.resolver';
-import { FeaturedProjectsResolver } from './services/featured-projects.resolver';
-import { FeaturedPuzzlesResolver } from './services/featured-puzzles.resolver';
+import { ProjectDetailComponent } from '../shared/components/project-detail/project-detail.component';
+import { PuzzleDetailComponent } from '../shared/components/puzzle-detail/puzzle-detail.component';
+import { HomePageComponent } from './components/home-page.component';
+import { featuredProjectsResolver } from './services/featured-projects.resolver';
+import { featuredPuzzlesResolver } from './services/featured-puzzles.resolver';
 
 export const homeRoutes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./components/home-page.component').then(
-        (m) => m.HomePageComponent
-      ),
+    component: HomePageComponent,
     resolve: {
-      featuredProjects: FeaturedProjectsResolver,
-      featuredPuzzles: FeaturedPuzzlesResolver,
+      featuredProjects: featuredProjectsResolver,
+      featuredPuzzles: featuredPuzzlesResolver,
     },
     children: [
       {
         path: 'projects/:projectId',
-        loadComponent: () =>
-          import(
-            '../shared/components/project-detail/project-detail.component'
-          ).then((m) => m.ProjectDetailComponent),
+        component: ProjectDetailComponent,
         resolve: {
-          projects: FeaturedProjectsResolver,
+          projects: featuredProjectsResolver,
           projectContent: ProjectContentResolver,
         },
       },
       {
         path: 'puzzles/:puzzleId',
-        loadComponent: () =>
-          import(
-            '../shared/components/puzzle-detail/puzzle-detail.component'
-          ).then((m) => m.PuzzleDetailComponent),
+        component: PuzzleDetailComponent,
         resolve: {
-          puzzles: FeaturedPuzzlesResolver,
+          puzzles: featuredPuzzlesResolver,
           puzzleContent: PuzzleContentResolver,
         },
       },

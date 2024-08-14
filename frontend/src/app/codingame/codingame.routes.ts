@@ -1,27 +1,23 @@
 import { Routes } from '@angular/router';
 import { PuzzleContentResolver } from '../core/services/puzzle-content.resolver';
-import { PuzzlesResolver } from './services/puzzles.resolver';
+import { PuzzleDetailComponent } from '../shared/components/puzzle-detail/puzzle-detail.component';
+import { CodingamePageComponent } from './components/codingame-page/codingame-page.component';
+import { puzzlesResolver } from './services/puzzles.resolver';
 
 export const codingameRoutes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./components/codingame-page/codingame-page.component').then(
-        (m) => m.CodingamePageComponent
-      ),
-    resolve: { puzzles: PuzzlesResolver },
+    component: CodingamePageComponent,
+    resolve: { puzzles: puzzlesResolver },
     data: {
       title: 'Puzzles résolus',
     },
     children: [
       {
         path: 'puzzles/:puzzleId',
-        loadComponent: () =>
-          import(
-            '../shared/components/puzzle-detail/puzzle-detail.component'
-          ).then((m) => m.PuzzleDetailComponent),
+        component: PuzzleDetailComponent,
         resolve: {
-          puzzles: PuzzlesResolver,
+          puzzles: puzzlesResolver,
           puzzleContent: PuzzleContentResolver,
         },
         data: {

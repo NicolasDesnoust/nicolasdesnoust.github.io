@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { projectsData } from '../../data/projects';
 import { Image } from '../model/image';
 import { Project } from '../model/project';
 
@@ -9,8 +7,6 @@ import { Project } from '../model/project';
   providedIn: 'root',
 })
 export class ProjectService {
-  private readonly projectsUrl = 'data/projects.json';
-
   private readonly missingImagePlaceholder: Image = {
     folder: 'defaultbanner',
     backgroundColor: '#131c29',
@@ -30,12 +26,8 @@ export class ProjectService {
     'wordsearch',
   ]);
 
-  constructor(private http: HttpClient) {}
-
-  getProjects(): Observable<Project[]> {
-    return this.http
-      .get<Project[]>(this.projectsUrl)
-      .pipe(map((projects) => this.replaceMissingImages(projects)));
+  getProjects(): Project[] {
+    return this.replaceMissingImages(projectsData);
   }
 
   private replaceMissingImages(projects: Project[]) {
@@ -48,10 +40,8 @@ export class ProjectService {
     return projects;
   }
 
-  getFeaturedProjects(): Observable<Project[]> {
-    return this.getProjects().pipe(
-      map((projects) => this.keepFeaturedProjects(projects))
-    );
+  getFeaturedProjects(): Project[] {
+    return this.keepFeaturedProjects(this.getProjects());
   }
 
   private keepFeaturedProjects(projects: Project[]): Project[] {

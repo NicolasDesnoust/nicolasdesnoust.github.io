@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
+import { ContactPageComponent } from './contact-page.component';
 
 export const contactRoutes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./contact-page.component').then((m) => m.ContactPageComponent),
+    component: ContactPageComponent,
   },
 ];

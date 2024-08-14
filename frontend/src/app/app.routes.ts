@@ -3,6 +3,7 @@ import { codingameRoutes } from './codingame/codingame.routes';
 import { contactRoutes } from './contact/contact.routes';
 import { HomeLayoutComponent } from './core/layouts/home-layout.component';
 import { LightLayoutComponent } from './core/layouts/light-layout.component';
+import { errorsRoutes } from './errors/errors.routes';
 import { homeRoutes } from './home/home.routes';
 import { projectsRoutes } from './projects/projects.routes';
 
@@ -33,16 +34,12 @@ export const routes: Routes = [
     children: [...contactRoutes],
   },
   {
-    path: '',
+    path: 'errors',
     component: LightLayoutComponent,
-    children: [
-      {
-        path: '**',
-        loadComponent: () =>
-          import('./core/components/not-found/not-found.component').then(
-            (m) => m.NotFoundComponent
-          ),
-      },
-    ],
+    children: [...errorsRoutes],
+  },
+  {
+    path: '**',
+    redirectTo: 'errors/not-found',
   },
 ];
