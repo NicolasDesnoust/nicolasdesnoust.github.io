@@ -1,0 +1,200 @@
+name: ContinuousIntegration
+
+on:
+  push:
+    branches: [production]
+  pull_request:
+    branches: [production]
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-deps:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Look-up pnpm store cache
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          lookup-only: true
+
+      - name: Reuse previous pnpm store and save the new one in cache
+        uses: actions/cache@v4
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm i --frozen-lockfile
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+  code-quality:
+    timeout-minutes: 15
+    runs-on: ubuntu-22.04
+    needs: install-deps
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Sets the base and head SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Restore pnpm store from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Pull dependencies from pnpm store
+        run: pnpm i --frozen-lockfile --prefer-offline
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.0
+
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: v0.52.0
+
+      - name: Init TFLint
+        # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
+        run: |
+          tflint --init --config iac/01-portfolio/.tflint.hcl
+
+      - name: Cache Nx task results
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-code-quality-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-code-quality-
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-
+
+      - name: List node_modules/.bin
+        run: ls -la node_modules/.bin
+
+      - name: Check formatting
+        run: npx nx affected --target=format --verbose --parallel
+
+      - name: Lint
+        run: npx nx affected --target=lint --verbose --parallel
+        continue-on-error: true
+
+  build:
+    timeout-minutes: 15
+    runs-on: ubuntu-22.04
+    needs: install-deps
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Sets the base and head SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Restore pnpm store from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Pull dependencies from pnpm store
+        run: pnpm i --frozen-lockfile --prefer-offline
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+      - name: Cache Nx task results
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-build-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-build-
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-
+
+      - name: Build
+        run: npx nx affected --target=build --parallel

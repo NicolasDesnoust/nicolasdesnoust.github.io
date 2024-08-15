@@ -6,13 +6,13 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm task front:build"
+        "command": "task front:build"
       }
     },
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["pnpm task front:deploy"]
+        "command": "task front:deploy"
       }
     }
   }

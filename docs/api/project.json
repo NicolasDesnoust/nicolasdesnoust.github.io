@@ -7,19 +7,19 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm task api:build"
+        "command": "task api:build"
       }
     },
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm task api:deploy"
+        "command": "task api:deploy"
       }
     },
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm task api:lint"
+        "command": "task api:lint"
       }
     }
   }

@@ -6,7 +6,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm task lambda:send-contact-mail:build"
+        "command": "task lambda:send-contact-mail:build"
       }
     }
   }

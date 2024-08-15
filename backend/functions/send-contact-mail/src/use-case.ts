@@ -1,4 +1,4 @@
-import { SendContactMailRequest } from "send-contact-mail-api";
+import { SendContactMailRequest } from "@ndesnoust/send-contact-mail-api";
 import { ContactMessage } from "./domain/contact-message";
 import { MailSender } from "./domain/mail-sender";
 import { Sender } from "./domain/sender";

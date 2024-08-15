@@ -10,7 +10,7 @@ vars:
 
 tasks:
   lint:
-    desc: Run Tflint on infrastructure projects and modules.
+    desc: Run Tflint on portfolio project.
     cmds:
       - tflint --recursive
 
