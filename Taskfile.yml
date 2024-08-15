@@ -15,3 +15,20 @@ includes:
   front:
     dir: ./frontend
     taskfile: ./frontend
+
+tasks:
+  install-node-dependencies:
+    desc: "Install node dependencies."
+    internal: true
+    cmds:
+      - pnpm install
+
+  install-python-dependencies:
+    desc: "Install python dependencies."
+    internal: true
+    cmds:
+      - poetry install
+
+  install:
+    desc: "Install all dependencies."
+    deps: [install-python-dependencies, install-node-dependencies]

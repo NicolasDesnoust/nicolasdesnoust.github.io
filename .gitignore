@@ -3,6 +3,11 @@
 .idea/
 *.iml
 
+# Python files
+__pycache__/
+.venv*
+venv/
+
 # Node files
 **/node_modules
 
@@ -31,3 +36,6 @@ dist/
 
 # Angular files
 **/.angular
+
+# Checkov files
+.external_modules

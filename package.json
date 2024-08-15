@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "@ndesnoust/portfolio",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -8,6 +8,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.3",
     "@commitlint/config-conventional": "17.6.3",
+    "@go-task/cli": "3.38.0",
     "husky": "^9.0.11",
     "nx": "16.5.2"
   }

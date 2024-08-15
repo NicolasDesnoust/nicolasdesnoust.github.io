@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "portfolio"
+version = "0.1.0"
+description = "Manage and configure global python dev-dependencies for the project."
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+
+[tool.poetry.dev-dependencies]
+checkov = "3.2.208"
+
+[build-system]
+requires = ["poetry-core>=1.8.2"]
+build-backend = "poetry.core.masonry.api"

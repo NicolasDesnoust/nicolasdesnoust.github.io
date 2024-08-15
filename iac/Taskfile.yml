@@ -9,6 +9,26 @@ vars:
   VAR_FOLDER_PATH: "./var/{{.ENV}}"
 
 tasks:
+  lint:
+    desc: Run Tflint on infrastructure projects and modules.
+    cmds:
+      - tflint --recursive
+
+  format:
+    desc: Check the formatting of Terraform code for infrastructure projects and modules.
+    cmds:
+      - terraform fmt -check -recursive
+
+  format:fix:
+    desc: Format Terraform code for infrastructure projects and modules.
+    cmds:
+      - terraform fmt -recursive
+
+  security:
+    desc: Run Checkov to perform SAST checks on infrastructure as code.
+    cmds:
+      - poetry run checkov -d . --download-external-modules true {{.CLI_ARGS}}
+
   init:
     desc: Initialize Terraform in the portfolio directory.
     internal: true

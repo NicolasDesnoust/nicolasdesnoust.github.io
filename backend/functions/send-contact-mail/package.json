@@ -1,5 +1,5 @@
 {
-  "name": "send-contact-mail",
+  "name": "@ndesnoust/send-contact-mail",
   "main": "index.js",
   "private": true,
   "dependencies": {
@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/aws-lambda": "8.10.115",
     "@types/node": "18.16.16",
-    "send-contact-mail-api": "workspace:*",
+    "@ndesnoust/send-contact-mail-api": "workspace:*",
     "tsc-alias": "1.8.7",
     "typescript": "^5.2.2"
   }

@@ -1,5 +1,5 @@
 {
-  "name": "send-contact-mail-api",
+  "name": "@ndesnoust/send-contact-mail-api",
   "types": "./index.d.ts",
   "private": true
 }

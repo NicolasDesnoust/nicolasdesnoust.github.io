@@ -14,6 +14,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: 17.6.3
         version: 17.6.3
+      '@go-task/cli':
+        specifier: 3.38.0
+        version: 3.38.0
       husky:
         specifier: ^9.0.11
         version: 9.1.4
@@ -29,15 +32,15 @@ importers:
         specifier: 3.485.0
         version: 3.485.0
     devDependencies:
+      '@ndesnoust/send-contact-mail-api':
+        specifier: workspace:*
+        version: link:../../apis/send-contact-mail
       '@types/aws-lambda':
         specifier: 8.10.115
         version: 8.10.115
       '@types/node':
         specifier: 18.16.16
         version: 18.16.16
-      send-contact-mail-api:
-        specifier: workspace:*
-        version: link:../../apis/send-contact-mail
       tsc-alias:
         specifier: 1.8.7
         version: 1.8.7
@@ -1279,6 +1282,13 @@ packages:
 
   '@exodus/schemasafe@1.3.0':
     resolution: {integrity: sha512-5Aap/GaRupgNx/feGBwLLTVv8OQFfv3pq2lPRzPg9R+IOBnDgghTGW7l7EuVXOvg5cc/xSAlRW8rBrjIC3Nvqw==}
+
+  '@go-task/cli@3.38.0':
+    resolution: {integrity: sha512-5RUVjH9fLcQUUc911XAtz8J65UiiBu52Tj1UfP9e1t87nYpXWZMk0eQEpqc7zbidWn5Ji1SAovVbSVOR019JLg==}
+
+  '@go-task/go-npm@0.2.0':
+    resolution: {integrity: sha512-vQbdtBvesHm8EUFHX8QKg4rbBodmu9VsAXH1ozpbiN5jdTMOYHTCMM31EurAYmY+rNNtxJQ4JGy6t383RPlqbw==}
+    hasBin: true
 
   '@inquirer/checkbox@2.4.7':
     resolution: {integrity: sha512-5YwCySyV1UEgqzz34gNsC38eKxRBtlRDpJLlKcRtTjlYA/yDKuc1rfw+hjw+2WJxbAZtaDPsRl5Zk7J14SBoBw==}
@@ -7681,6 +7691,12 @@ snapshots:
     optional: true
 
   '@exodus/schemasafe@1.3.0': {}
+
+  '@go-task/cli@3.38.0':
+    dependencies:
+      '@go-task/go-npm': 0.2.0
+
+  '@go-task/go-npm@0.2.0': {}
 
   '@inquirer/checkbox@2.4.7':
     dependencies:
