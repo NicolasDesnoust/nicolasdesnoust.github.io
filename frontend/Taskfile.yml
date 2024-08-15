@@ -1,27 +1,47 @@
 version: "3.38.0"
 
 tasks:
+  generate-runtime-config:
+    desc: "Generate a runtime configuration for the Angular app."
+    internal: true
+    requires:
+      vars: [BACKEND_URL, FRONTEND_CONFIG_DIR]
+    cmds:
+      - |
+        jq -n \
+        --arg "backendUrl" "$BACKEND_URL" \
+        -f public/runtime-config.TEMPLATE.jq > {{.FRONTEND_CONFIG_DIR}}/runtime-config.json
+
   serve:
     desc: "Serves the Angular app locally for development."
+    deps:
+      - task: generate-runtime-config
+        vars: { FRONTEND_CONFIG_DIR: "public" }
     cmds:
       - "pnpm ng serve"
 
   serve:ssr:
     desc: "Serves the Angular app locally using Server Side Rendering."
+    deps:
+      - task: generate-runtime-config
+        vars: { FRONTEND_CONFIG_DIR: "public" }
     cmds:
       - "node dist/portfolio/server/server.mjs"
 
   build:
     desc: "Builds the Angular app."
-    requires:
-      vars: [ENV]
     cmds:
-      - "pnpm ng build --configuration {{.ENV}}"
+      - rm -f public/runtime-config.json
+      - pnpm ng build --configuration prod
 
   deploy:
     desc: "Deploy the Angular app."
+    deps:
+      - task: generate-runtime-config
+        vars: { FRONTEND_CONFIG_DIR: "dist/portfolio/browser" }
     requires:
       vars: [ENV, AWS_PROFILE, INFRASTRUCTURE_PREFIX, DISTRIBUTION_ID]
     cmds:
       - aws s3 sync ./dist/portfolio/browser s3://$INFRASTRUCTURE_PREFIX-bucket-frontend-static-files --delete
       - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*" > /dev/null
+      - rm -f dist/portfolio/browser/runtime-config.json

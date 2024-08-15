@@ -1,10 +1,10 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import {
   isNavigationEnd,
-  isNavigationStart
+  isNavigationStart,
 } from '../utils/navigation-typeguards';
 
 @Injectable({
@@ -22,10 +22,13 @@ export class ScrollBehaviorService {
 
   constructor(
     private router: Router,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.recordRouteChanges();
-    this.handleScrollBehaviorOnRouteChange();
+    if (isPlatformBrowser(this.platformId)) {
+      this.recordRouteChanges();
+      this.handleScrollBehaviorOnRouteChange();
+    }
   }
 
   private recordRouteChanges() {
