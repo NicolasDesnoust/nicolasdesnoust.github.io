@@ -68,6 +68,14 @@ tasks:
     cmds:
       - terraform apply -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" {{.CLI_ARGS}}
 
+  output:
+    desc: Display all the outputs for the root module in JSON.
+    requires:
+      vars: [AWS_PROFILE]
+    dir: 01-portfolio
+    cmds:
+      - terraform output -json
+
   destroy:
     desc: Destroy portfolio infrastructure managed by Terraform.
     requires:

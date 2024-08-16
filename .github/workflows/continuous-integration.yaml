@@ -27,16 +27,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install poetry
-        shell: bash
-        run: pip install poetry==1.8.3
-
       - name: Look-up poetry dependencies
         id: poetry-cache
         uses: actions/cache/restore@v4
         with:
           path: |
             ~/.cache/pypoetry
+            ~/.cache/pip
             ~/.venv
           key: ${{ runner.os }}-poetry-dependencies-${{ hashFiles('poetry.lock') }}
           lookup-only: true
@@ -47,13 +44,20 @@ jobs:
         with:
           path: |
             ~/.cache/pypoetry
+            ~/.cache/pip
             ~/.venv
           key: ${{ runner.os }}-poetry-dependencies-${{ hashFiles('poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-poetry-dependencies-
 
+      - name: Install poetry
+        if: steps.poetry-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: pip install poetry==1.8.3
+
       - name: Install poetry dependencies
         if: steps.poetry-cache.outputs.cache-hit != 'true'
+        shell: bash
         run: poetry install --no-interaction --no-ansi
 
       - name: Setup Node.js environment
@@ -164,6 +168,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.5.0
+          terraform_wrapper: false
 
       - name: Setup TFLint
         uses: terraform-linters/setup-tflint@v4
@@ -180,14 +185,14 @@ jobs:
             cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-
 
       - name: Check formatting
-        run: npx nx affected --target=format --verbose --parallel
+        run: pnpm exec nx affected --target=format --verbose --parallel
 
       - name: Lint
-        run: npx nx affected --target=lint --verbose --parallel
+        run: pnpm exec nx affected --target=lint --verbose --parallel
         continue-on-error: true
-      
+
       - name: Run security checks
-        run: npx nx affected --target=security --verbose --parallel
+        run: pnpm exec nx affected --target=security --verbose --parallel
         continue-on-error: true
 
   build:
@@ -244,4 +249,4 @@ jobs:
             cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-
 
       - name: Build
-        run: npx nx affected --target=build --parallel
+        run: pnpm exec nx affected --target=build --parallel

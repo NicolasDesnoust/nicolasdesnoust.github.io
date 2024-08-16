@@ -158,7 +158,7 @@ module "domain_name_records" {
   source           = "../modules/domain-name-records"
   root_domain_name = var.root_domain_name
   domain_name      = var.domain_name
-  cloudfront_id    = module.frontend.cloudfront_id
+  cloudfront_id    = module.frontend.cloudfront_distribution_id
 
   providers = {
     aws                      = aws
