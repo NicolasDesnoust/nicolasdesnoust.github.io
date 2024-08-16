@@ -22,6 +22,40 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Setup Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install poetry
+        shell: bash
+        run: pip install poetry==1.8.3
+
+      - name: Look-up poetry dependencies
+        id: poetry-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cache/pypoetry
+            ~/.venv
+          key: ${{ runner.os }}-poetry-dependencies-${{ hashFiles('poetry.lock') }}
+          lookup-only: true
+
+      - name: Reuse previous poetry dependencies and save new ones in cache
+        uses: actions/cache@v4
+        if: steps.poetry-cache.outputs.cache-hit != 'true'
+        with:
+          path: |
+            ~/.cache/pypoetry
+            ~/.venv
+          key: ${{ runner.os }}-poetry-dependencies-${{ hashFiles('poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-dependencies-
+
+      - name: Install poetry dependencies
+        if: steps.poetry-cache.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-ansi
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
@@ -76,6 +110,23 @@ jobs:
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install poetry
+        shell: bash
+        run: pip install poetry==1.8.3
+
+      - name: Restore poetry dependencies from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cache/pypoetry
+            ~/.venv
+          key: ${{ runner.os }}-poetry-dependencies-${{ hashFiles('poetry.lock') }}
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
@@ -141,6 +192,10 @@ jobs:
 
       - name: Lint
         run: npx nx affected --target=lint --verbose --parallel
+        continue-on-error: true
+      
+      - name: Run security checks
+        run: npx nx affected --target=security --verbose --parallel
         continue-on-error: true
 
   build:
