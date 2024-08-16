@@ -9,10 +9,20 @@ vars:
   VAR_FOLDER_PATH: "./var/{{.ENV}}"
 
 tasks:
-  lint:
-    desc: Run Tflint on portfolio project.
+  validate:
+    desc: Run terraform validate command.
+    internal: true
+    dir: 01-portfolio
     cmds:
-      - tflint --recursive
+      - terraform init -backend=false
+      - terraform validate
+
+  lint:
+    desc: "Lint the Portfolio IAC against best practices."
+    cmds:
+      - task: validate
+      - tflint --init --config .tflint.hcl
+      - tflint --config .tflint.hcl --recursive
 
   format:
     desc: Check the formatting of Terraform code for infrastructure projects and modules.
