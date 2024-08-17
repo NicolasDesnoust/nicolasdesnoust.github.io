@@ -8,7 +8,7 @@ env:
 on:
   workflow_run:
     workflows: ["ContinuousIntegration"]
-    branches: [production]
+    branches: [main]
     types:
       - completed
 
