@@ -8,7 +8,7 @@ aws_region = "eu-west-3"
 ################################################
 project              = "nde-portfolio"
 environment          = "dev"
-environment_category = "non-prod"
+environment_category = "nonprod"
 custom_global_tags = {
   cost-center        = "personal"
   provisionned-by    = "Terraform"

@@ -37,7 +37,14 @@ tasks:
   deploy:
     desc: "Deploy the Angular app."
     requires:
-      vars: [ENV, AWS_PROFILE, INFRASTRUCTURE_PREFIX, DISTRIBUTION_ID]
+      vars:
+        [
+          ENV,
+          ENVIRONMENT_CATEGORY,
+          AWS_PROFILE,
+          INFRASTRUCTURE_PREFIX,
+          DISTRIBUTION_ID,
+        ]
     cmds:
       - '{{if and (eq .ENVIRONMENT_CATEGORY "nonprod") (contains .ENV "prod")}} echo "Are you sure you want to deploy a robots.txt file that disallows all search engines on an environment that appears to be a production environment? This action may result in SEO degradation and prevent search engines from indexing your site properly." >&2 ; exit 1{{end}}'
       - task: generate-runtime-config

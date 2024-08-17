@@ -9,12 +9,12 @@ variable "environment" {
 }
 
 variable "environment_category" {
-  description = "AWS environment segregation (non-prod, prod)"
+  description = "AWS environment segregation (nonprod, prod)"
   type        = string
 
   validation {
-    condition     = contains(["non-prod", "prod"], var.environment_category)
-    error_message = "Valid values for variable \"environment_category\" are (non-prod, prod)."
+    condition     = contains(["nonprod", "prod"], var.environment_category)
+    error_message = "Valid values for variable \"environment_category\" are (nonprod, prod)."
   }
 }
 

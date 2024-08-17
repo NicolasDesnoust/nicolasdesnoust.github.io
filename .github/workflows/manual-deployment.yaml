@@ -1,0 +1,220 @@
+name: ManualDeployment
+run-name: Manual deployment to ${{ inputs.environment }} by @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        type: environment
+        required: true
+        default: dev
+
+permissions:
+  id-token: write
+  contents: read
+  deployments: write
+
+jobs:
+  setup-environment:
+    runs-on: ubuntu-22.04
+    outputs:
+      environment_category: ${{ steps.set-environment.outputs.environment_category }}
+      infrastructure_prefix: ${{ steps.set-environment.outputs.infrastructure_prefix }}
+    steps:
+      - name: "Determine deployment variables"
+        id: set-environment
+        run: |
+          echo "infrastructure_prefix=nde-portfolio-${{ inputs.environment }}" >> $GITHUB_OUTPUT
+          if [ "${{ inputs.environment }}" = "prod" ]; then
+            echo "environment_category=prod" >> $GITHUB_OUTPUT
+          else
+            echo "environment_category=nonprod" >> $GITHUB_OUTPUT
+          fi
+
+  install-deps:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Look-up pnpm store cache
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          lookup-only: true
+
+      - name: Reuse previous pnpm store and save the new one in cache
+        uses: actions/cache@v4
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm i --frozen-lockfile
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+  deployment:
+    needs: [setup-environment, install-deps]
+    runs-on: ubuntu-22.04
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+
+      - name: Create deployment on github
+        id: create-deployment
+        uses: chrnorm/deployment-action@v2
+        with:
+          token: "${{ github.token }}"
+          environment: ${{ inputs.environment }}
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Sets the base and head SHAs
+        uses: nrwl/nx-set-shas@v3
+
+      - name: Restore pnpm store from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.PNPM_STORE_PATH }}
+            node_modules/.bin
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Pull dependencies from pnpm store
+        run: pnpm i --frozen-lockfile --prefer-offline
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+      - name: Cache Nx task results
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-build-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-build-
+            cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-
+
+      - name: Build
+        run: pnpm exec nx run-many --target=build --parallel
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.0
+          terraform_wrapper: false
+
+      - name: Retrieve OIDC Token
+        id: oidc-token
+        run: |
+          OIDC_TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r '.value')
+          echo "${OIDC_TOKEN}" > /tmp/web_identity_token
+
+      - name: Set AWS Profiles
+        id: set-aws-profiles
+        run: |
+          mkdir -p ~/.aws
+
+          echo "[profile nde_portfolio_dev]" > ~/.aws/config
+          echo "role_arn=${{ secrets.HOSTED_ZONE_OIDC_ROLE_ARN }}" >> ~/.aws/config
+          echo "web_identity_token_file=/tmp/web_identity_token" >> ~/.aws/config
+
+          echo "[profile current]" >> ~/.aws/config
+          echo "role_arn=${{ secrets.OIDC_ROLE_ARN }}" >> ~/.aws/config
+          echo "web_identity_token_file=/tmp/web_identity_token" >> ~/.aws/config
+          echo "aws_profile=current" >> $GITHUB_OUTPUT
+
+      - name: Deploy infrastructure
+        id: deploy-infrastructure
+        shell: bash
+        run: |
+          pnpm exec task iac:apply -- -auto-approve
+
+          output=$(pnpm exec task iac:output)
+          echo "aws_region=$(echo "$output" | jq -r ".aws_region.value")" >> $GITHUB_OUTPUT
+          echo "api_id=$(echo "$output" | jq -r ".api_id.value")" >> $GITHUB_OUTPUT
+          echo "distribution_id=$(echo "$output" | jq -r ".distribution_id.value")" >> $GITHUB_OUTPUT
+          echo "backend_url=$(echo "$output" | jq -r ".backend_url.value")" >> $GITHUB_OUTPUT
+          echo "frontend_url=$(echo "$output" | jq -r ".frontend_url.value")" >> $GITHUB_OUTPUT
+        env:
+          AWS_PROFILE: ${{ steps.set-aws-profiles.outputs.aws_profile }}
+          ENV: ${{ inputs.environment }}
+
+      - name: Deploy portfolio
+        run: pnpm exec nx run-many --target=deploy --parallel
+        env:
+          AWS_PROFILE: ${{ steps.set-aws-profiles.outputs.aws_profile }}
+          AWS_REGION: ${{ steps.deploy-infrastructure.outputs.aws_region }}
+          BACKEND_URL: ${{ steps.deploy-infrastructure.outputs.backend_url }}
+          DISTRIBUTION_ID: ${{ steps.deploy-infrastructure.outputs.distribution_id }}
+          ENV: ${{ inputs.environment }}
+          ENVIRONMENT_CATEGORY: ${{ needs.setup-environment.outputs.environment_category }}
+          INFRASTRUCTURE_PREFIX: ${{ needs.setup-environment.outputs.infrastructure_prefix }}
+          REST_API_ID: ${{ steps.deploy-infrastructure.outputs.api_id }}
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          environment-url: ${{ steps.deploy-infrastructure.outputs.frontend_url }}
+          deployment-id: ${{ steps.create-deployment.outputs.deployment_id }}
+          state: "success"
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          deployment-id: ${{ steps.create-deployment.outputs.deployment_id }}
+          state: "failure"

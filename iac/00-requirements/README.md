@@ -43,7 +43,7 @@ When setting up an application on an AWS account for the first time, it's crucia
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Region used to deploy resources | `string` | n/a | yes |
 | <a name="input_custom_global_tags"></a> [custom\_global\_tags](#input\_custom\_global\_tags) | A map of custom tags applied globally to all resources | `map(string)` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment label | `string` | n/a | yes |
-| <a name="input_environment_category"></a> [environment\_category](#input\_environment\_category) | AWS environment segregation (non-prod, prod) | `string` | n/a | yes |
+| <a name="input_environment_category"></a> [environment\_category](#input\_environment\_category) | AWS environment segregation (nonprod, prod) | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Project label | `string` | n/a | yes |
 
 ## Outputs
