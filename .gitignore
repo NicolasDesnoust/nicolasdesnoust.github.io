@@ -40,5 +40,8 @@ dist/
 # Checkov files
 .external_modules
 
+# Nx files
+.nx/cache
+
 # Custom files
 **/runtime-config.json

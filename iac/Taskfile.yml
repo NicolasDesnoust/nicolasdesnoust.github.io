@@ -43,7 +43,7 @@ tasks:
     desc: Initialize Terraform in the portfolio directory.
     internal: true
     requires:
-      vars: [ENV]
+      vars: [AWS_PROFILE, ENV]
     dir: 01-portfolio
     cmds:
       - terraform init --backend-config="{{.VAR_FOLDER_PATH}}/backend.json" -reconfigure
