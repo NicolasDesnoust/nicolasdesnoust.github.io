@@ -15,13 +15,15 @@ on:
 permissions:
   id-token: write
   contents: read
+  deployments: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  determine-environment:
+  setup-environment:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
 
     outputs:
@@ -30,8 +32,7 @@ jobs:
     steps:
       - name: Set Environment
         id: set-env
-        run: |
-          echo "name=${{ env.ENV }}" >> $GITHUB_OUTPUT
+        run: echo "environment=${{ env.ENV }}" >> $GITHUB_OUTPUT
 
   install-deps:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -89,9 +90,9 @@ jobs:
 
   deployment:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    needs: install-deps
+    needs: [setup-environment, install-deps]
     runs-on: ubuntu-22.04
-    environment: ${{ needs.determine-environment.outputs.environment }}
+    environment: ${{ needs.setup-environment.outputs.environment }}
     timeout-minutes: 60
 
     steps:
@@ -100,6 +101,13 @@ jobs:
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
+
+      - name: Create deployment on github
+        id: create-deployment
+        uses: chrnorm/deployment-action@v2
+        with:
+          token: "${{ github.token }}"
+          environment: ${{ needs.setup-environment.outputs.environment }}
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
@@ -177,6 +185,7 @@ jobs:
           echo "api_id=$(echo "$output" | jq -r ".api_id.value")" >> $GITHUB_OUTPUT
           echo "distribution_id=$(echo "$output" | jq -r ".distribution_id.value")" >> $GITHUB_OUTPUT
           echo "backend_url=$(echo "$output" | jq -r ".backend_url.value")" >> $GITHUB_OUTPUT
+          echo "frontend_url=$(echo "$output" | jq -r ".frontend_url.value")" >> $GITHUB_OUTPUT
         env:
           AWS_PROFILE: ${{ steps.set-aws-profile.outputs.aws_profile }}
 
@@ -188,3 +197,20 @@ jobs:
           DISTRIBUTION_ID: ${{ steps.deploy-infrastructure.outputs.distribution_id }}
           REST_API_ID: ${{ steps.deploy-infrastructure.outputs.api_id }}
           BACKEND_URL: ${{ steps.deploy-infrastructure.outputs.backend_url }}
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          environment-url: ${{ steps.deploy-infrastructure.outputs.frontend_url }}
+          deployment-id: ${{ steps.create-deployment.outputs.deployment_id }}
+          state: "success"
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          deployment-id: ${{ steps.create-deployment.outputs.deployment_id }}
+          state: "failure"

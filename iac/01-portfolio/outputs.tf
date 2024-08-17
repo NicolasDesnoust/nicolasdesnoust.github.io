@@ -17,3 +17,9 @@ output "backend_url" {
   description = "Base URL of the application REST API."
   value       = module.api.url
 }
+
+output "frontend_url" {
+  description = "Base URL of the portfolio."
+  value       = "https://${var.domain_name}"
+}
+
