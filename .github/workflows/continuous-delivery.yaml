@@ -21,6 +21,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  determine-environment:
+    runs-on: ubuntu-22.04
+
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+
+    steps:
+      - name: Set Environment
+        id: set-env
+        run: |
+          echo "name=${{ env.ENV }}" >> $GITHUB_OUTPUT
+
   install-deps:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
@@ -79,6 +91,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: install-deps
     runs-on: ubuntu-22.04
+    environment: ${{ needs.determine-environment.outputs.environment }}
     timeout-minutes: 60
 
     steps:
