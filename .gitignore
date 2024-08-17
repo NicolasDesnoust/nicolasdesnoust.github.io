@@ -39,3 +39,6 @@ dist/
 
 # Checkov files
 .external_modules
+
+# Custom files
+**/runtime-config.json

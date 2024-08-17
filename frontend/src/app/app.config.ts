@@ -3,7 +3,11 @@ import {
   importProvidersFrom,
   provideZoneChangeDetection,
 } from '@angular/core';
-import { ExtraOptions, provideRouter, withRouterConfig } from '@angular/router';
+import {
+  ExtraOptions,
+  provideRouter,
+  withInMemoryScrolling,
+} from '@angular/router';
 
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
@@ -21,7 +25,12 @@ const routerOptions: ExtraOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withRouterConfig(routerOptions)),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        anchorScrolling: 'enabled',
+      })
+    ),
     importProvidersFrom(BrowserModule),
     provideHttpClient(withFetch()),
     importProvidersFrom(
