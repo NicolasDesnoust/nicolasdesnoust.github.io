@@ -18,12 +18,6 @@ export class FooterComponent {
       url: 'https://github.com/NicolasDesnoust',
     },
     {
-      faIcon: 'fab fa-gitlab',
-      label: 'Gitlab',
-      ariaLabel: 'Voir mon profil Gitlab',
-      url: 'https://gitlab.com/NicolasDesnoust',
-    },
-    {
       customIcon: 'icons/codingame.svg',
       label: 'Codingame',
       ariaLabel: 'Voir mon profil Codingame',
