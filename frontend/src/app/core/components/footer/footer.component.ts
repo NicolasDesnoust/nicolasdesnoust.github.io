@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SecuredExternalLinkDirective } from 'frontend/src/app/shared/directives/secured-external-link.directive';
 import { Link } from '../../../home/model/link';
 
 @Component({
   selector: 'desn-footer',
   standalone: true,
   templateUrl: './footer.component.html',
-  imports: [CommonModule],
+  imports: [CommonModule, SecuredExternalLinkDirective],
 })
 export class FooterComponent {
   readonly currentYear = new Date().getFullYear();

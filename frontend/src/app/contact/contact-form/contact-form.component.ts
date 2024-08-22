@@ -10,6 +10,7 @@ import {
 import * as bulmaToast from 'bulma-toast';
 import { finalize } from 'rxjs/operators';
 import { ControlErrorDirective } from '../../shared/directives/control-error.directive';
+import { SecuredExternalLinkDirective } from '../../shared/directives/secured-external-link.directive';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -22,6 +23,7 @@ import { ContactService } from '../contact.service';
     FormsModule,
     ReactiveFormsModule,
     ControlErrorDirective,
+    SecuredExternalLinkDirective,
   ],
 })
 export class ContactFormComponent {

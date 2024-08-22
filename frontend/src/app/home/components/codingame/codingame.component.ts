@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PuzzleCardComponent } from 'frontend/src/app/shared/components/puzzle-card/puzzle-card.component';
+import { SecuredExternalLinkDirective } from 'frontend/src/app/shared/directives/secured-external-link.directive';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Puzzle } from '../../../core/model/puzzle';
@@ -10,7 +11,12 @@ import { Puzzle } from '../../../core/model/puzzle';
   selector: 'desn-codingame',
   standalone: true,
   templateUrl: './codingame.component.html',
-  imports: [CommonModule, RouterLink, PuzzleCardComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    PuzzleCardComponent,
+    SecuredExternalLinkDirective,
+  ],
 })
 export class CodingameComponent implements OnInit {
   featuredPuzzles$: Observable<Puzzle[]> | undefined;

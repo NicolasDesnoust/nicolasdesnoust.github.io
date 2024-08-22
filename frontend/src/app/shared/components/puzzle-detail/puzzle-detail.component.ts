@@ -5,6 +5,7 @@ import { Puzzle } from 'frontend/src/app/core/model/puzzle';
 import { MarkdownModule } from 'ngx-markdown';
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SecuredExternalLinkDirective } from '../../directives/secured-external-link.directive';
 import { QuickOverviewComponent } from '../quick-overview/quick-overview.component';
 
 @Component({
@@ -12,7 +13,12 @@ import { QuickOverviewComponent } from '../quick-overview/quick-overview.compone
   standalone: true,
   templateUrl: './puzzle-detail.component.html',
   styleUrls: ['./puzzle-detail.component.scss'],
-  imports: [CommonModule, MarkdownModule, QuickOverviewComponent],
+  imports: [
+    CommonModule,
+    MarkdownModule,
+    QuickOverviewComponent,
+    SecuredExternalLinkDirective,
+  ],
 })
 export class PuzzleDetailComponent implements OnInit, OnDestroy {
   selectedPuzzle$: Observable<Puzzle | null> | undefined;

@@ -5,6 +5,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Project } from '../../../core/model/project';
+import { SecuredExternalLinkDirective } from '../../directives/secured-external-link.directive';
 import { QuickOverviewComponent } from '../quick-overview/quick-overview.component';
 
 @Component({
@@ -12,7 +13,12 @@ import { QuickOverviewComponent } from '../quick-overview/quick-overview.compone
   standalone: true,
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],
-  imports: [CommonModule, MarkdownModule, QuickOverviewComponent],
+  imports: [
+    CommonModule,
+    MarkdownModule,
+    QuickOverviewComponent,
+    SecuredExternalLinkDirective,
+  ],
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
   selectedProject$: Observable<Project | null> | undefined;

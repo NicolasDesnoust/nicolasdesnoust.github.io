@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Router, RouterOutlet } from '@angular/router';
 import { Puzzle } from 'frontend/src/app/core/model/puzzle';
 import { PuzzleCardComponent } from 'frontend/src/app/shared/components/puzzle-card/puzzle-card.component';
+import { SecuredExternalLinkDirective } from 'frontend/src/app/shared/directives/secured-external-link.directive';
 import { Observable, map } from 'rxjs';
 
 @Component({
@@ -18,7 +19,12 @@ import { Observable, map } from 'rxjs';
       }
     `,
   ],
-  imports: [CommonModule, RouterOutlet, PuzzleCardComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    PuzzleCardComponent,
+    SecuredExternalLinkDirective,
+  ],
 })
 export class CodingamePageComponent implements OnInit {
   puzzles$: Observable<Puzzle[]> | undefined;
