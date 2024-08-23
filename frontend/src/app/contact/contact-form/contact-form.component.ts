@@ -70,7 +70,7 @@ export class ContactFormComponent {
         next: () => {
           bulmaToast.toast({
             message:
-              'Votre message a bien été envoyé. Je vous répondrais dans les plus bref délais !',
+              'Your message was sent successfully. I will reply to you promptly!',
             type: 'is-success',
             duration: 7000,
           });
@@ -79,7 +79,7 @@ export class ContactFormComponent {
           console.log(err);
           bulmaToast.toast({
             message:
-              'Votre message n\'a pas pu être envoyé. Je vous conseille de me contacter plutôt via <a href="https://www.linkedin.com/in/nicolas-desnoust" target="_blank" rel="noopener noreferrer">Linkedin</a>',
+              'Your message could not be sent. I recommend contacting me instead via <a href="https://www.linkedin.com/in/nicolas-desnoust" target="_blank" rel="noopener noreferrer">LinkedIn</a>.',
             type: 'is-danger',
             duration: 10000,
           });

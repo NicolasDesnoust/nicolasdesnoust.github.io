@@ -3,16 +3,15 @@ import { ValidationErrors } from '@angular/forms';
 
 export const defaultErrorMessages: ValidationErrors = {
   // For Angular official validators
-  required: (error: any) => 'Ce champ est requis',
+  required: (error: any) => 'This field is required',
   minlength: ({ requiredLength, actualLength }: any) =>
-    `Ce champ doit faire au minimum ${requiredLength} caractères`,
+    `This field must be at least ${requiredLength} characters long`,
   maxlength: ({ requiredLength, actualLength }: any) =>
-    `Ce champ ne doit pas dépasser ${requiredLength} caractères`,
-  email: (error: any) => `Ceci n'est pas un email valide`,
-  min: ({ min }: any) => `Ce champ ne doit pas être inférieur à ${min}`,
-  max: ({ max }: any) => `Ce champ ne doit pas être supérieur à ${max}`,
-  invalidUrl: () =>
-    'Entrez une URL valide. Example : https://www.url-valide.com/',
+    `This field must not exceed ${requiredLength} characters`,
+  email: (error: any) => `This is not a valid email address`,
+  min: ({ min }: any) => `This field must not be less than ${min}`,
+  max: ({ max }: any) => `This field must not be greater than ${max}`,
+  invalidUrl: () => 'Enter a valid URL. Example: https://www.valid-url.com/',
 };
 
 export const FORM_ERRORS = new InjectionToken('FORM_ERRORS', {

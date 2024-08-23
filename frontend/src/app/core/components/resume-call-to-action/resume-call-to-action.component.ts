@@ -46,7 +46,7 @@ export class ResumeCallToActionComponent implements OnInit {
           const resumeAsBlob = new Blob([resumeData], {
             type: 'application/pdf',
           });
-          saveAs(resumeAsBlob, 'cv-nicolas-desnoust.pdf');
+          saveAs(resumeAsBlob, 'nicolas-desnoust-resume.pdf');
         });
     }
   }

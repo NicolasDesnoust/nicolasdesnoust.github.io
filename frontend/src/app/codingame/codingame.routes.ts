@@ -10,7 +10,7 @@ export const codingameRoutes: Routes = [
     component: CodingamePageComponent,
     resolve: { puzzles: puzzlesResolver },
     data: {
-      title: 'Puzzles résolus',
+      title: 'Solved puzzles',
     },
     children: [
       {
@@ -21,7 +21,7 @@ export const codingameRoutes: Routes = [
           puzzleContent: PuzzleContentResolver,
         },
         data: {
-          title: 'Puzzles résolus',
+          title: 'Solved puzzles',
         },
       },
     ],

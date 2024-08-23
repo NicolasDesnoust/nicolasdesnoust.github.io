@@ -1,8 +1,8 @@
 <section class="section is-medium has-text-centered">
   <h1 class="title is-spaced">Contact</h1>
   <h2 class="subtitle">
-    Vous pouvez m'envoyer un message si vous avez des questions à me poser ou si
-    vous souhaitez planifier un entretien.
+    You can send me a message if you have any questions or if you would like to
+    schedule an interview.
   </h2>
 
   <div class="columns mt-6">
@@ -10,7 +10,7 @@
       <div class="block has-text-left">
         <form [formGroup]="contactForm">
           <div class="field">
-            <label class="label required">Objet du message</label>
+            <label class="label required">Message Subject</label>
             <p class="control">
               <input
                 [ngClass]="{
@@ -36,7 +36,7 @@
           </div>
 
           <div class="field">
-            <label class="label required">Corps du message</label>
+            <label class="label required">Message Body</label>
             <p class="control">
               <textarea
                 [ngClass]="{
@@ -58,13 +58,12 @@
             >
             </span>
             <span class="help">
-              Expliquez-ici les raisons pour lesquelles vous souhaitez me
-              contacter.
+              Please describe here why you would like to get in touch with me.
             </span>
           </div>
 
           <div class="field">
-            <label class="label required">Votre nom complet</label>
+            <label class="label required">Your complete name</label>
             <p class="control has-icons-left">
               <input
                 [ngClass]="{
@@ -93,7 +92,7 @@
           </div>
 
           <div class="field">
-            <label class="label required">Votre mail</label>
+            <label class="label required">Your email</label>
             <p class="control has-icons-left">
               <input
                 required="required"
@@ -122,7 +121,7 @@
             >
             </span>
             <span class="help">
-              J'utiliserais uniquement votre mail pour vous répondre.
+              I will use your email solely to reply to you.
             </span>
           </div>
         </form>
@@ -132,7 +131,7 @@
         (click)="sendContactMessage()"
         [ngClass]="{ 'is-loading': isSubmittingForm }"
       >
-        Envoyer le message
+        Send message
       </button>
     </div>
   </div>

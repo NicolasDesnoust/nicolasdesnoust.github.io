@@ -2,7 +2,7 @@ export const puzzlesData: any[] = [
   {
     id: 'marslander3',
     title: 'Mars Lander 3',
-    subtitle: 'Algorithme génétique',
+    subtitle: 'Genetic algorithm',
     difficultyColor: '#ea5974',
     image: {
       folder: 'marslander3',
@@ -18,14 +18,14 @@ export const puzzlesData: any[] = [
       'https://www.codingame.com/training/expert/mars-lander-episode-3',
     sourceCodeUrl: 'https://github.com/nicolasdesnoust-codingame/MarsLander',
     quickOverview: {
-      langages: ['Java', 'Typescript', 'SCSS', 'HTML'],
+      languages: ['Java', 'Typescript', 'SCSS', 'HTML'],
       frameworks: ['Spring Boot', 'Angular'],
-      'base de données': ['Elasticsearch'],
+      databases: ['Elasticsearch'],
       concepts: [
-        'Algorithmes génétiques',
-        'Optimisation',
-        'Exploitation de logs',
-        'Cinématique',
+        'Genetic algorithms',
+        'Optimization',
+        'Log Analysis',
+        'Kinematics',
       ],
     },
   },
@@ -49,14 +49,14 @@ export const puzzlesData: any[] = [
     sourceCodeUrl:
       'https://github.com/nicolasdesnoust-codingame/WinamaxSponsoredChallenge',
     quickOverview: {
-      langages: ['Java'],
-      concepts: ['Backtracking', 'Piles', 'Problèmes NP-Complets'],
+      languages: ['Java'],
+      concepts: ['Back-tracking', 'Stacks', 'NP-Complete Problems'],
     },
   },
   {
     id: 'labyrinthe',
     title: 'Le labyrinthe',
-    subtitle: 'Parcours de graphes',
+    subtitle: 'Graph Traversal',
     difficultyColor: 'rgb(234, 143, 89)',
     image: {
       folder: 'labyrinthe',
@@ -72,19 +72,14 @@ export const puzzlesData: any[] = [
     subjectUrl: 'https://www.codingame.com/training/hard/the-labyrinth',
     sourceCodeUrl: 'https://github.com/nicolasdesnoust-codingame/LeLabyrinthe',
     quickOverview: {
-      langages: ['Java'],
-      concepts: [
-        'Graphes',
-        'Parcours en largeur',
-        'Recherche de chemin',
-        'Brouillard de guerre',
-      ],
+      languages: ['Java'],
+      concepts: ['Graphs', 'Breadth-First Search', 'Pathfinding', 'Fog of War'],
     },
   },
   {
     id: 'powerofthor2',
     title: 'Power of Thor 2',
-    subtitle: 'Barycentres',
+    subtitle: 'Centroids',
     difficultyColor: 'rgb(234, 143, 89)',
     image: {
       folder: 'powerofthor2',
@@ -101,18 +96,18 @@ export const puzzlesData: any[] = [
       'https://www.codingame.com/training/hard/power-of-thor-episode-2',
     sourceCodeUrl: 'https://github.com/nicolasdesnoust-codingame/PowerOfThor',
     quickOverview: {
-      langages: ['Java'],
+      languages: ['Java'],
       concepts: [
-        'Barycentres',
-        'Distance de Manhattan',
-        'Gestion de cas dégénérés',
+        'Centroids',
+        'Manhattan Distance',
+        'Handling of degenerate cases',
       ],
     },
   },
   {
     id: 'bender1',
     title: 'Bender - Episode 1',
-    subtitle: 'Automates',
+    subtitle: 'State machines',
     difficultyColor: 'rgb(234, 218, 89)',
     image: {
       folder: 'bender1',
@@ -127,14 +122,14 @@ export const puzzlesData: any[] = [
     subjectUrl: 'https://www.codingame.com/training/medium/bender-episode-1',
     sourceCodeUrl: 'https://github.com/nicolasdesnoust-codingame/Bender',
     quickOverview: {
-      langages: ['Java'],
-      concepts: ['Automates finis déterministes', 'Historisation'],
+      languages: ['Java'],
+      concepts: ['Deterministic Finite State Machines', 'History Tracking'],
     },
   },
   {
     id: 'shadowsoftheknight1',
     title: 'Shadows of the Knight - Episode 1',
-    subtitle: 'Recherche dichotomique',
+    subtitle: 'Binary Search',
     difficultyColor: 'rgb(234, 218, 89)',
     image: {
       folder: 'shadowsoftheknight1',
@@ -151,14 +146,14 @@ export const puzzlesData: any[] = [
     sourceCodeUrl:
       'https://github.com/nicolasdesnoust-codingame/ShadowsOfTheKnight',
     quickOverview: {
-      langages: ['Java'],
-      concepts: ['Recherche dichotomique'],
+      languages: ['Java'],
+      concepts: ['Binary Search'],
     },
   },
   {
     id: 'labataille',
     title: 'La Bataille',
-    subtitle: 'Files',
+    subtitle: 'Queues',
     difficultyColor: 'rgb(234, 218, 89)',
     image: {
       folder: 'labataille',
@@ -173,8 +168,8 @@ export const puzzlesData: any[] = [
     subjectUrl: 'https://www.codingame.com/training/medium/winamax-battle',
     sourceCodeUrl: 'https://github.com/nicolasdesnoust-codingame/LaBataille',
     quickOverview: {
-      langages: ['Java'],
-      concepts: ['Files'],
+      languages: ['Java'],
+      concepts: ['Queues'],
     },
   },
   {
@@ -197,21 +192,21 @@ export const puzzlesData: any[] = [
     sourceCodeUrl:
       'https://github.com/nicolasdesnoust-codingame/ThereIsNoSpoon',
     quickOverview: {
-      langages: ['Java'],
+      languages: ['Java'],
       concepts: ['Matrices'],
     },
   },
   {
     id: 'byte-pair-encoding',
     title: 'Byte pair encoding',
-    subtitle: 'Encodage',
+    subtitle: 'Encoding',
     difficultyColor: 'rgb(234, 218, 89)',
     subjectUrl: 'https://www.codingame.com/training/medium/byte-pair-encoding',
     sourceCodeUrl:
       'https://github.com/nicolasdesnoust-codingame/BytePairEncoding',
     quickOverview: {
-      langages: ['Java'],
-      concepts: ['Encodage', 'Compression'],
+      languages: ['Java'],
+      concepts: ['Encoding', 'Compression'],
     },
   },
 ];

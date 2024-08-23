@@ -12,7 +12,7 @@ export const projectsRoutes: Routes = [
       projects: projectsResolver,
     },
     data: {
-      title: 'Projets',
+      title: 'Projects',
     },
     children: [
       {
@@ -23,7 +23,7 @@ export const projectsRoutes: Routes = [
           projectContent: ProjectContentResolver,
         },
         data: {
-          title: 'Projets',
+          title: 'Projects',
         },
       },
     ],

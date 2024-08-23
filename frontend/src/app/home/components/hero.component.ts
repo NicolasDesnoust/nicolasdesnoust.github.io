@@ -6,22 +6,16 @@ import { Component } from '@angular/core';
   template: `
     <section class="hero is-medium has-text-centered has-background-white">
       <div class="hero-body">
-        <p class="title is-spaced">Développeur Web Fullstack</p>
+        <p class="title is-spaced">Full-Stack & Cloud Engineer</p>
         <div class="is-flex is-justify-content-center">
           <div class="divider">ᔕ</div>
         </div>
         <p class="subtitle">
-          La passion est un puissant moteur de découverte. Elle entraine avec
-          elle la curiosité, la soif de savoir, de comprendre.<br />
-          L'informatique est une source intarissable d'opportunités pour ses
-          passionnés. Être développeur web fullstack, c'est ne pas fermer la
-          porte à ces opportunités.
-
-          <br />
-          <br />
-          Entretenir la communication entre les experts et les clients,
-          apprendre pour mieux enseigner, être au service d'autrui. <br />
-          C'est mon engagement au quotidien.
+          Passion is a powerful engine of discovery, driving curiosity and a
+          desire to learn and understand. The field of computing offers endless
+          opportunities for those who are passionate about it. <br /><br />
+          Being a Full-Stack & Cloud Engineer means not closing the door to
+          these opportunities.
         </p>
       </div>
     </section>

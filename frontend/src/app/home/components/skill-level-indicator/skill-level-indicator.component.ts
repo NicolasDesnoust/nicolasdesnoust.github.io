@@ -17,21 +17,19 @@ export class SkillLevelIndicatorComponent implements OnChanges {
     this.toolTipTextMap = new Map<number, string>();
     this.toolTipTextMap.set(
       2,
-      "J'ai déjà utilisé cette technologie mais je dois la travailler d'avantage pour l'utiliser sans ralentissements."
+      'I have used this technology before but need to work on it further to use it efficiently.'
     );
     this.toolTipTextMap.set(
       3,
-      "J'ai assimilé cette technologie dans les grandes lignes " +
-        'mais des recherches approfondies sont nécessaires pour compléter ma connaissance.'
+      'I have a general understanding of this technology, but in-depth research is needed to complete my knowledge.'
     );
     this.toolTipTextMap.set(
       4,
-      "J'ai suffisamment d'expérience dans cette " +
-        "technologie pour l'utiliser dans des projets d'entreprise."
+      'I have sufficient experience with this technology to use it in enterprise projects.'
     );
     this.toolTipTextMap.set(
       5,
-      "J'utilise cette technologie au quotidien sans ralentissements."
+      'I use this technology daily without any issues.'
     );
   }
 

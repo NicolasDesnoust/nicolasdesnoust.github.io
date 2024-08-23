@@ -15,25 +15,25 @@ export class FooterComponent {
     {
       faIcon: 'fab fa-github',
       label: 'Github',
-      ariaLabel: 'Voir mon profil Github',
+      ariaLabel: 'See my Github profile',
       url: 'https://github.com/NicolasDesnoust',
     },
     {
       customIcon: 'icons/codingame.svg',
       label: 'Codingame',
-      ariaLabel: 'Voir mon profil Codingame',
+      ariaLabel: 'See my Codingame profile',
       url: 'https://www.codingame.com/profile/afe8db750947c013fd1e82837255813e6027824',
     },
     {
       faIcon: 'fab fa-linkedin-in',
       label: 'Linkedin',
-      ariaLabel: 'Voir mon profil Linkedin',
+      ariaLabel: 'See my LinkedIn profile',
       url: 'https://www.linkedin.com/in/nicolas-desnoust/',
     },
     {
       faIcon: 'fas fa-envelope-open-text',
       label: 'Mail',
-      ariaLabel: "M'envoyer un mail",
+      ariaLabel: 'Send me an email',
       url: 'mailto:desnoust.nicolas451@gmail.com',
     },
   ];

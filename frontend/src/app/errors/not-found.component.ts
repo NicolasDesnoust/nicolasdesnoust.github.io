@@ -26,11 +26,10 @@ export class NotFoundComponent {
       realHeight: 500,
       desiredWidth: 450,
     },
-    title: "La page demandée n'a pas été trouvée",
-    message:
-      "Vous pouvez retourner à la page d'accueil en cliquant sur le bouton ci-dessous.",
+    title: 'Page not found',
+    message: 'You can return to the homepage by clicking the button below.',
     button: {
-      label: "Aller à l'accueil",
+      label: 'Go to Homepage',
       action: () => {
         this.navigateToHomePage();
       },
