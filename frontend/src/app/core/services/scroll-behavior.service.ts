@@ -1,4 +1,4 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, ViewportScroller, isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import {
 })
 export class ScrollBehaviorService {
   private lastUrl: string = '';
+  private lastNavigationTrigger: string | undefined;
 
   private readonly routePrefixesToIgnore = [
     '/home/projects/',
@@ -23,18 +24,25 @@ export class ScrollBehaviorService {
   constructor(
     private router: Router,
     @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private viewportScroller: ViewportScroller
   ) {
     if (isPlatformBrowser(this.platformId)) {
+      this.disableNativeScrollRestoration();
       this.recordRouteChanges();
       this.handleScrollBehaviorOnRouteChange();
     }
   }
 
+  private disableNativeScrollRestoration() {
+    this.viewportScroller.setHistoryScrollRestoration('manual');
+  }
+
   private recordRouteChanges() {
-    this.router.events
-      .pipe(filter(isNavigationStart))
-      .subscribe(() => (this.lastUrl = this.router.url));
+    this.router.events.pipe(filter(isNavigationStart)).subscribe((event) => {
+      this.lastUrl = this.router.url;
+      this.lastNavigationTrigger = event.navigationTrigger;
+    });
   }
 
   private handleScrollBehaviorOnRouteChange() {
@@ -49,6 +57,10 @@ export class ScrollBehaviorService {
           scrollToTop = false;
           break;
         }
+      }
+
+      if (this.lastNavigationTrigger === 'popstate') {
+        scrollToTop = false;
       }
 
       if (scrollToTop) {

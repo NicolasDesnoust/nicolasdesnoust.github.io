@@ -48,8 +48,6 @@ export class AtroposComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (this.isSupportedDevice() && this.isSupportedBrowser()) {
-      console.log('Supported browser & device !');
-
       this.atroposInstance = Atropos({
         el: this.atropos?.nativeElement,
         ...this.atroposOptions,

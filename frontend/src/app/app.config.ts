@@ -3,11 +3,7 @@ import {
   importProvidersFrom,
   provideZoneChangeDetection,
 } from '@angular/core';
-import {
-  ExtraOptions,
-  provideRouter,
-  withInMemoryScrolling,
-} from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
@@ -17,11 +13,6 @@ import {
 import { MarkdownModule } from 'ngx-markdown';
 import { routes } from './app.routes';
 
-const routerOptions: ExtraOptions = {
-  anchorScrolling: 'enabled',
-  scrollOffset: [0, 64],
-};
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -29,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withInMemoryScrolling({
         anchorScrolling: 'enabled',
+        scrollPositionRestoration: 'disabled',
       })
     ),
     importProvidersFrom(BrowserModule),
