@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { Observable, combineLatest } from 'rxjs';
@@ -27,10 +27,11 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
   constructor(
     private renderer: Renderer2,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer.addClass(
-      document.getElementsByTagName('html')[0],
+      this.document.getElementsByTagName('html')[0],
       'hide-scrollbars'
     );
   }
@@ -60,7 +61,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.renderer.removeClass(
-      document.getElementsByTagName('html')[0],
+      this.document.getElementsByTagName('html')[0],
       'hide-scrollbars'
     );
   }
