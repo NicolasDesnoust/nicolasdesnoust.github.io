@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 import { saveAs } from 'file-saver';
+import { SecuredExternalLinkDirective } from 'frontend/src/app/shared/directives/secured-external-link.directive';
 
 @Component({
   selector: 'desn-resume-call-to-action',
@@ -18,7 +20,7 @@ import { saveAs } from 'file-saver';
       }
     `,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, SecuredExternalLinkDirective, RouterLink],
 })
 export class ResumeCallToActionComponent implements OnInit {
   resumeUrl: SafeResourceUrl = '';
