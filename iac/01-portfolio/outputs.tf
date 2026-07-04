@@ -3,11 +3,6 @@ output "aws_region" {
   value       = var.aws_region
 }
 
-output "distribution_id" {
-  description = "ID of the CloudFront distribution used for content delivery."
-  value       = module.frontend.cloudfront_distribution_id
-}
-
 output "api_id" {
   description = "ID of the application REST API."
   value       = module.api.id

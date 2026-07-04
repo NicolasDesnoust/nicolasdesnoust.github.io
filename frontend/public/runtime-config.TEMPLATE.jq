@@ -1,3 +1,4 @@
 {
-  "backendUrl": $backendUrl
+  "backendUrl": $backendUrl,
+  "turnstileSiteKey": $turnstileSiteKey
 }

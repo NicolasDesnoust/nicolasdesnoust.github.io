@@ -33,12 +33,18 @@ variable "contact_email" {
   type        = string
 }
 
-variable "root_domain_name" {
-  description = "Root domain name. Example : my-domain.com"
-  type        = string
-}
-
 variable "domain_name" {
   description = "Project domain name"
   type        = string
+}
+
+variable "turnstile_secret" {
+  description = "Cloudflare Turnstile secret key for this environment (from iac/02-cloudflare turnstile_secrets output). Verified server-side by the send-contact-mail Lambda. Provide via TF_VAR_turnstile_secret; never commit it. For local/non-prod use the Cloudflare Turnstile test secret."
+  type        = string
+  sensitive   = true
+
+  validation {
+    condition     = length(trimspace(var.turnstile_secret)) > 0
+    error_message = "turnstile_secret must be a non-empty Turnstile secret (use the Cloudflare test secret for local/non-prod)."
+  }
 }

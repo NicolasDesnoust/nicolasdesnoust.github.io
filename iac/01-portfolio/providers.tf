@@ -9,25 +9,6 @@ provider "aws" {
   }
 }
 
-provider "aws" {
-  alias   = "hosted_zone_provider"
-  region  = var.aws_region
-  profile = "nde_portfolio_dev"
-
-  default_tags {
-    tags = module.naming.global_tags
-  }
-}
-
-provider "aws" {
-  alias  = "acm_provider"
-  region = "us-east-1"
-
-  default_tags {
-    tags = module.naming.global_tags
-  }
-}
-
 ###############################################
 # Terraform Version and Provider Constraints
 ###############################################
@@ -38,10 +19,6 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 3.74.2"
-    }
-    tls = {
-      source  = "hashicorp/tls"
-      version = "= 3.4.0"
     }
   }
 

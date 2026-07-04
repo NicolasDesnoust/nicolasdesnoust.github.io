@@ -124,11 +124,16 @@
               I will use your email solely to reply to you.
             </span>
           </div>
+
+          <div class="field">
+            <div #turnstileContainer></div>
+          </div>
         </form>
       </div>
       <button
         class="button is-primary"
         (click)="sendContactMessage()"
+        [disabled]="!turnstileReady"
         [ngClass]="{ 'is-loading': isSubmittingForm }"
       >
         Send message

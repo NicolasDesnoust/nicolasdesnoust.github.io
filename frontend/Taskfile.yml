@@ -7,9 +7,12 @@ tasks:
     requires:
       vars: [BACKEND_URL, FRONTEND_CONFIG_DIR]
     cmds:
+      # TURNSTILE_SITE_KEY defaults to Cloudflare's always-passing test sitekey
+      # for local development; real deploys inject the per-env sitekey.
       - |
         jq -n \
         --arg "backendUrl" "$BACKEND_URL" \
+        --arg "turnstileSiteKey" "${TURNSTILE_SITE_KEY:-1x00000000000000000000AA}" \
         -f public/runtime-config.TEMPLATE.jq > {{.FRONTEND_CONFIG_DIR}}/runtime-config.json
 
   serve:
@@ -35,22 +38,8 @@ tasks:
       - pnpm ng build --configuration prod
 
   deploy:
-    desc: "Deploy the Angular app."
+    desc: "Deploy the Angular app to Cloudflare Pages."
     requires:
-      vars:
-        [
-          ENV,
-          ENVIRONMENT_CATEGORY,
-          AWS_PROFILE,
-          INFRASTRUCTURE_PREFIX,
-          DISTRIBUTION_ID,
-        ]
+      vars: [ENV, BACKEND_URL, CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID]
     cmds:
-      - '{{if and (eq .ENVIRONMENT_CATEGORY "nonprod") (contains .ENV "prod")}} echo "Are you sure you want to deploy a robots.txt file that disallows all search engines on an environment that appears to be a production environment? This action may result in SEO degradation and prevent search engines from indexing your site properly." >&2 ; exit 1{{end}}'
-      - task: generate-runtime-config
-        vars:
-          FRONTEND_CONFIG_DIR: "dist/portfolio/browser"
-      - aws s3 sync ./dist/portfolio/browser s3://$INFRASTRUCTURE_PREFIX-bucket-frontend-static-files --delete
-      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*" > /dev/null
-      - aws s3api put-object --bucket $INFRASTRUCTURE_PREFIX-bucket-frontend-static-files --key "robots.txt" --cache-control "public,max-age=86400" --body robots.{{.ENVIRONMENT_CATEGORY}}.txt
-      - rm -f dist/portfolio/browser/runtime-config.json
+      - node deploy.mjs --env={{.ENV}}

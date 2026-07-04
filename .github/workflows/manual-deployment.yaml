@@ -160,16 +160,11 @@ jobs:
           OIDC_TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r '.value')
           echo "${OIDC_TOKEN}" > /tmp/web_identity_token
 
-      - name: Set AWS Profiles
+      - name: Set AWS Profile
         id: set-aws-profiles
         run: |
           mkdir -p ~/.aws
-
-          echo "[profile nde_portfolio_dev]" > ~/.aws/config
-          echo "role_arn=${{ secrets.HOSTED_ZONE_OIDC_ROLE_ARN }}" >> ~/.aws/config
-          echo "web_identity_token_file=/tmp/web_identity_token" >> ~/.aws/config
-
-          echo "[profile current]" >> ~/.aws/config
+          echo "[profile current]" > ~/.aws/config
           echo "role_arn=${{ secrets.OIDC_ROLE_ARN }}" >> ~/.aws/config
           echo "web_identity_token_file=/tmp/web_identity_token" >> ~/.aws/config
           echo "aws_profile=current" >> $GITHUB_OUTPUT
@@ -183,24 +178,20 @@ jobs:
           output=$(pnpm exec task iac:output)
           echo "aws_region=$(echo "$output" | jq -r ".aws_region.value")" >> $GITHUB_OUTPUT
           echo "api_id=$(echo "$output" | jq -r ".api_id.value")" >> $GITHUB_OUTPUT
-          echo "distribution_id=$(echo "$output" | jq -r ".distribution_id.value")" >> $GITHUB_OUTPUT
           echo "backend_url=$(echo "$output" | jq -r ".backend_url.value")" >> $GITHUB_OUTPUT
           echo "frontend_url=$(echo "$output" | jq -r ".frontend_url.value")" >> $GITHUB_OUTPUT
         env:
           AWS_PROFILE: ${{ steps.set-aws-profiles.outputs.aws_profile }}
           ENV: ${{ inputs.environment }}
+          TF_VAR_turnstile_secret: ${{ secrets.TURNSTILE_SECRET }}
 
-      - name: Deploy portfolio
+      - name: Deploy portfolio to Cloudflare Pages
         run: pnpm exec nx run-many --target=deploy --parallel
         env:
-          AWS_PROFILE: ${{ steps.set-aws-profiles.outputs.aws_profile }}
-          AWS_REGION: ${{ steps.deploy-infrastructure.outputs.aws_region }}
-          BACKEND_URL: ${{ steps.deploy-infrastructure.outputs.backend_url }}
-          DISTRIBUTION_ID: ${{ steps.deploy-infrastructure.outputs.distribution_id }}
           ENV: ${{ inputs.environment }}
-          ENVIRONMENT_CATEGORY: ${{ needs.setup-environment.outputs.environment_category }}
-          INFRASTRUCTURE_PREFIX: ${{ needs.setup-environment.outputs.infrastructure_prefix }}
-          REST_API_ID: ${{ steps.deploy-infrastructure.outputs.api_id }}
+          BACKEND_URL: ${{ steps.deploy-infrastructure.outputs.backend_url }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Update deployment status (success)
         if: success()

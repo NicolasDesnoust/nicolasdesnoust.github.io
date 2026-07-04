@@ -6,6 +6,7 @@ components:
         - subject
         - body
         - sender
+        - turnstileToken
       properties:
         subject:
           type: string
@@ -15,6 +16,10 @@ components:
           maxLength: 5000
         sender:
           $ref: "#/components/schemas/SendContactMailRequest.Sender"
+        turnstileToken:
+          type: string
+          description: Cloudflare Turnstile token, verified server-side before sending.
+          maxLength: 2048
 
     SendContactMailRequest.Sender:
       type: object

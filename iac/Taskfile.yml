@@ -86,6 +86,43 @@ tasks:
     cmds:
       - terraform destroy -var-file="{{.VAR_FOLDER_PATH}}/terraform.tfvars" {{.CLI_ARGS}}
 
+  cloudflare:init:
+    desc: Initialize Terraform for the Cloudflare stack.
+    internal: true
+    requires:
+      vars: [AWS_PROFILE]
+    dir: 02-cloudflare
+    cmds:
+      - terraform init --backend-config="backend.json" -reconfigure
+
+  cloudflare:plan:
+    desc: Generate an execution plan for the Cloudflare stack.
+    requires:
+      vars: [AWS_PROFILE]
+    dir: 02-cloudflare
+    deps:
+      - cloudflare:init
+    cmds:
+      - terraform plan -var-file="terraform.tfvars" -out="cloudflare.tfplan"
+
+  cloudflare:apply:
+    desc: Apply changes to the Cloudflare stack.
+    requires:
+      vars: [AWS_PROFILE]
+    dir: 02-cloudflare
+    deps:
+      - cloudflare:init
+    cmds:
+      - terraform apply -var-file="terraform.tfvars" {{.CLI_ARGS}}
+
+  cloudflare:output:
+    desc: Display all the outputs for the Cloudflare stack in JSON.
+    requires:
+      vars: [AWS_PROFILE]
+    dir: 02-cloudflare
+    cmds:
+      - terraform output -json
+
   generate-docs:
     desc: Enhance Terraform documentation with Auto-Generated metadatas.
     cmds:

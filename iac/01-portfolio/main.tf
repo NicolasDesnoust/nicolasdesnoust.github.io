@@ -84,6 +84,10 @@ module "send_contact_mail" {
   naming_pattern        = module.naming.pattern2
   infrastructure_prefix = module.naming.pattern_prefix
   lambda_role           = aws_iam_role.lambda_common.arn
+
+  environment_variables = {
+    TURNSTILE_SECRET = var.turnstile_secret
+  }
 }
 
 module "api" {
@@ -96,72 +100,5 @@ module "api" {
       arn  = module.send_contact_mail.function_arn,
       name = module.send_contact_mail.function_name
     }
-  }
-}
-
-############################################
-# Portfolio Frontend
-############################################
-
-data "aws_route53_zone" "zone" {
-  name     = var.root_domain_name
-  provider = aws.hosted_zone_provider
-}
-
-resource "aws_acm_certificate" "certificate" {
-  provider          = aws.acm_provider # because ACM needs to be used in the "us-east-1" region
-  domain_name       = "*.${var.domain_name}"
-  validation_method = "DNS"
-
-  lifecycle {
-    create_before_destroy = true
-  }
-
-  // We also want the cert to be valid for the root domain even though we'll be
-  // redirecting to the www. domain immediately.
-  subject_alternative_names = ["${var.domain_name}"]
-}
-
-resource "aws_route53_record" "certificate_records" {
-  for_each = {
-    for dvo in aws_acm_certificate.certificate.domain_validation_options : dvo.domain_name => {
-      name   = dvo.resource_record_name
-      record = dvo.resource_record_value
-      type   = dvo.resource_record_type
-    }
-  }
-
-  allow_overwrite = true
-  name            = each.value.name
-  records         = [each.value.record]
-  ttl             = 60
-  type            = each.value.type
-  zone_id         = data.aws_route53_zone.zone.id
-
-  provider = aws.hosted_zone_provider
-}
-
-resource "aws_acm_certificate_validation" "default" {
-  provider                = aws.acm_provider # because ACM needs to be used in the "us-east-1" region
-  certificate_arn         = aws_acm_certificate.certificate.arn
-  validation_record_fqdns = [for record in aws_route53_record.certificate_records : record.fqdn]
-}
-
-module "frontend" {
-  source              = "../modules/frontend"
-  naming_pattern      = module.naming.pattern2
-  domain_name         = var.domain_name
-  acm_certificate_arn = aws_acm_certificate_validation.default.certificate_arn
-}
-
-module "domain_name_records" {
-  source           = "../modules/domain-name-records"
-  root_domain_name = var.root_domain_name
-  domain_name      = var.domain_name
-  cloudfront_id    = module.frontend.cloudfront_distribution_id
-
-  providers = {
-    aws                      = aws
-    aws.hosted_zone_provider = aws.hosted_zone_provider
   }
 }

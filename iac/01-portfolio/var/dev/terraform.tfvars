@@ -16,5 +16,4 @@ custom_global_tags = {
 }
 contact_email = "desnoust.nicolas451@gmail.com"
 
-root_domain_name = "nicolasdesnoust.com"
-domain_name      = "dev.nicolasdesnoust.com"
+domain_name = "dev.nicolasdesnoust.com"
